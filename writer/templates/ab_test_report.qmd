@@ -1,7 +1,0 @@
----
-title: "A/B test report"
-format: html
----
-
-## Purpose
-Summarise an experiment with counts, effect size, and a short interpretation.
