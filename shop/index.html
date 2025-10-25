@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<title> - Flair Marketing Intelligence (FlairMI)</title>
+<title>Starter Pack — ₹790 (mock checkout) - Flair Marketing Intelligence (FlairMI)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -107,52 +107,49 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"></h1>
+<h1 class="title">Starter Pack — ₹790 (mock checkout)</h1>
 </div>
 </header>
 
-
 <p>This page is a client side mock. It does not charge a card.</p>
-
 <form id="checkout-form" style="max-width:520px">
-<p>  <fieldset></p>
-<p>    <legend>Your details</legend></p>
-<p>    <label for="name">Name</label><br></p>
-<p>    <input id="name" name="name" required style="width:100%"><br><br></p>
-<p>    <label for="email">Email</label><br></p>
-<p>    <input id="email" name="email" type="email" required style="width:100%"><br><br></p>
-<p>    <button id="proceed" type="button">Proceed</button></p>
-<p>  </fieldset></p>
-<p>  <div id="step2" style="display:none; margin-top:1rem; padding:0.5rem; border:1px solid #ddd"></p>
-<p>    <p><strong>Order</strong>: FlairMI Starter Pack · <strong>₹790</strong></p></p>
-<p>    <button id="complete" type="button">Complete order (mock)</button></p>
-<p>  </div></p>
-<p>  <div id="done" style="display:none; margin-top:1rem; padding:0.5rem; border:1px solid #0a0"></p>
-<p>    <p><strong>Order complete</strong> (mock). Download your files below.</p></p>
-<p>    <ul></p>
-<p>      <li><a href="../downloads/FlairMI_Starter_Pack.zip">FlairMI_Starter_Pack.zip</a></li></p>
-<p>    </ul></p>
-<p>  </div></p>
+<fieldset>
+<legend>Your details</legend>
+<label for="name">Name</label><br>
+<input id="name" name="name" required style="width:100%"><br><br>
+<label for="email">Email</label><br>
+<input id="email" name="email" type="email" required style="width:100%"><br><br>
+<button id="proceed" type="button">Proceed</button>
+</fieldset>
+<div id="step2" style="display:none; margin-top:1rem; padding:0.5rem; border:1px solid #ddd">
+<p><strong>Order</strong>: FlairMI Starter Pack · <strong>₹790</strong></p>
+<button id="complete" type="button">Complete order (mock)</button>
+</div>
+<div id="done" style="display:none; margin-top:1rem; padding:0.5rem; border:1px solid #0a0">
+<p><strong>Order complete</strong> (mock). Download your files below.</p>
+<ul>
+<li><a href="../downloads/FlairMI_Starter_Pack.zip">FlairMI_Starter_Pack.zip</a></li>
+</ul>
+</div>
 </form>
-
 <script>
-<p>const form = document.getElementById('checkout-form');</p>
-<p>const step2 = document.getElementById('step2');</p>
-<p>const done = document.getElementById('done');</p>
-<p>document.getElementById('proceed').addEventListener('click', () => {</p>
-<p>  if (form.name.checkValidity() && form.email.checkValidity()) {</p>
-<p>    step2.style.display = 'block';</p>
-<p>    form.name.disabled = true;</p>
-<p>    form.email.disabled = true;</p>
-<p>  } else {</p>
-<p>    form.reportValidity();</p>
-<p>  }</p>
-<p>});</p>
-<p>document.getElementById('complete').addEventListener('click', () => {</p>
-<p>  step2.style.display = 'none';</p>
-<p>  done.style.display = 'block';</p>
-<p>  if (window.console) console.log('mock_purchase', {amount:790, email: form.email.value});</p>
-<p>});</p>
+const form = document.getElementById('checkout-form');
+const step2 = document.getElementById('step2');
+const done = document.getElementById('done');
+document.getElementById('proceed').addEventListener('click', () => {
+  if (form.name.checkValidity() && form.email.checkValidity()) {
+    step2.style.display = 'block';
+    form.name.disabled = true;
+    form.email.disabled = true;
+  } else {
+    form.reportValidity();
+  }
+});
+document.getElementById('complete').addEventListener('click', () => {
+  step2.style.display = 'none';
+  done.style.display = 'block';
+  if (window.console) console.log('mock_purchase', {amount:790, email: form.email.value});
+});
 </script>
 
 </main>
