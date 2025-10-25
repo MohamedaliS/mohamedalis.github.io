@@ -1,0 +1,47 @@
+
+```{webr-r}
+# APA helpers (base R; webR-safe)
+
+apa_p <- function(p) ifelse(p < .001, "< .001", sprintf("= %.3f", p))
+
+cohen_d <- function(x, y){
+  n1 <- length(x); n2 <- length(y)
+  s1 <- var(x); s2 <- var(y)
+  s_pooled <- sqrt(((n1-1)*s1 + (n2-1)*s2)/(n1+n2-2))
+  d <- (mean(x)-mean(y))/s_pooled
+  # Hedges g small-sample correction
+  J <- 1 - 3/(4*(n1+n2)-9)
+  g <- J*d
+  c(d=d, g=g)
+}
+
+cohen_h <- function(p1, p2){
+  2*(asin(sqrt(p1)) - asin(sqrt(p2)))
+}
+
+apa_t_line <- function(tt){
+  df <- unname(tt$parameter)
+  t  <- unname(tt$statistic)
+  p  <- tt$p.value
+  ci <- tt$conf.int
+  sprintf("t(%d) = %.2f, p %s, 95%% CI [%.2f, %.2f]",
+          round(df), t, apa_p(p), ci[1], ci[2])
+}
+
+apa_lm_line <- function(fit){
+  s <- summary(fit)
+  b1 <- coef(s)[2,1]; se <- coef(s)[2,2]
+  t  <- coef(s)[2,3]; p <- coef(s)[2,4]
+  ci <- confint.default(fit)[2,]   # Wald CI (profile not used)
+  r2 <- s$r.squared
+  sprintf("b = %.3f (SE = %.3f), t = %.2f, p %s, 95%% CI [%.3f, %.3f], R² = %.3f",
+          b1, se, t, apa_p(p), ci[1], ci[2], r2)
+}
+
+or_ci <- function(fit, term){
+  s <- summary(fit)$coefficients
+  b <- s[term,1]; se <- s[term,2]
+  lo <- b - 1.96*se; hi <- b + 1.96*se
+  c(or = exp(b), lo = exp(lo), hi = exp(hi), b=b, se=se)
+}
+```

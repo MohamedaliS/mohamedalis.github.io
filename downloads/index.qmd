@@ -1,0 +1,20 @@
+---
+title: "Downloads"
+---
+
+## Public files
+- [FlairMI Starter Pack (zip)](FlairMI_Starter_Pack.zip)
+- [200-episode index (CSV)](flairmi_200_episodes.csv)
+- Policies: [Privacy](PrivacyPolicy.md) · [Terms](TermsOfUse.md) · [Refunds](Refund_Cancellation_Policy.md) · [Disclosure](Affiliate_Sponsorship_Disclosure.md)
+- Business: [Invoice PDF](Invoice_INR.pdf) · [Invoice DOCX](Invoice_INR.docx) · [Insertion Order](Insertion_Order_MiniSponsor.pdf) · [Rate Card](Rate_Card_INR.pdf)
+- Ops: [KPI Tracker](KPI_Tracker.csv) · [Welcome Sequence](Email_Welcome_Sequence.txt) · [Availability Calendar](Availability_Calendar.md)
+- Sponsors: [Sponsor Kit](FlairMI_Sponsor_Kit.md) · [Outreach Email](FlairMI_Sponsor_Email.txt)
+
+## Plans (read-only)
+- [Plan](../plans/FlairMI_Plan.md)
+- [Style Guide](../plans/FlairMI_Style_Guide.md)
+- [Roadmap](../plans/FlairMI_Roadmap_16w.md)
+- [AI SEO Playbook](../plans/FlairMI_AI_SEO_Playbook.md)
+- [PR Checklist](../plans/FlairMI_PR_Checklist.md)
+- [Book Plan](../plans/FlairMI_Book_Plan.md)
+- [Book Proposal Template](../plans/FlairMI_Book_Proposal_Template.md)

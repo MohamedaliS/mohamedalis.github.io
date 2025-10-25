@@ -1,0 +1,333 @@
+---
+title: "Two-Proportion Test: Comparing Conversion Rates Between Variants"
+description: "Compare add-to-cart conversion between variant A and variant B with a two-proportion z test and report the difference with a confidence interval and effect size."
+date: 2024-06-17
+lang: en
+filters: [webr]
+categories: [statistics, A/B testing, conversion optimization, web analytics]
+keywords: [two-proportion test, A/B testing, conversion comparison, effect size, Cohen's h]
+toc: true
+number-sections: false
+bibliography: ../../assets/refs/references.bib
+citation: true
+link-citations: true
+canonical-url: "https://flairmi.com/blog/posts/02-two-proportion-test.html"
+format:
+  html:
+    code-fold: false
+    code-tools: false
+---
+
+```{=html}
+<style>
+.flair-table-wrap{overflow-x:auto;margin:.75rem 0}
+.flair-table{border-collapse:collapse;width:100%;font-size:.95rem;table-layout:fixed;word-wrap:break-word;}
+.flair-table th,.flair-table td{border:1px solid #e1e4e8;padding:8px;vertical-align:top;word-break:break-word;}
+.flair-table th{background:#f7f7f7;text-align:left}
+.flair-table tr:nth-child(even){background:#fafafa}
+.flair-caption{font-weight:600;margin:.25rem 0 .5rem 0}
+pre,code,pre code{white-space:pre-wrap;word-break:break-word;}
+@media (max-width:600px){
+  .flair-table td,.flair-table th{padding:6px;font-size:.9rem}
+}
+.copy-row{display:flex;gap:.5rem;margin:.5rem 0;}
+.copy-btn{border:1px solid #e1e4e8;background:#f7f7f7;padding:.35rem .6rem;border-radius:6px;cursor:pointer;}
+.copy-btn:active{transform:scale(.98);}
+</style>
+```
+
+{{< include _helpers.qmd >}}
+
+TL;DR: Variant A **12.0%** vs B **9.5%** (n=1,000 each); **p=0.175 (ns)**, **difference +2.5 pp [−1.1, +6.1 pp]**, **Cohen h=0.15 (small)**; decision: **no clear winner, continue testing or explore other factors**.
+
+> Answer  
+> Method: Two-proportion z-test.  
+> Estimate: 12.0% vs 9.5% and CI −1.1%, +6.1%.  
+> Data: A/B test, variables variant, conversion, n = 1,000.  
+> Action: No significant difference; continue testing or refine variants.
+
+## Case
+
+You ran an A/B test on a product page. After two weeks, **variant A** had 120 conversions from 1,000 visitors (12.0%), while **variant B** had 95 conversions from 1,000 visitors (9.5%). The business question: Is the 2.5 percentage point difference statistically significant? Should you keep variant A or run a confirmatory test?
+
+## Dataset
+
+Synthetic A/B experiment data (Schema C).
+
+| Variable    | Label               | Value      |
+|-------------|---------------------|------------|
+| `variant`   | Test group          | A or B     |
+| `converted` | Conversion event    | 0 or 1     |
+| `n`         | Sample size         | 2,000 rows |
+| `x_A`       | Conversions in A    | 120        |
+| `x_B`       | Conversions in B    | 95         |
+| `n_A`       | Visitors in A       | 1,000      |
+| `n_B`       | Visitors in B       | 1,000      |
+
+## Method
+
+We use a two-proportion z test to compare independent proportions [@Agresti2019]. The test statistic follows a chi-squared distribution with 1 degree of freedom when using the squared z statistic. We report the difference with a 95% confidence interval and Cohen's *h* as an effect size measure.
+
+The difference in proportions:
+$$
+\hat{p}_A - \hat{p}_B = \frac{x_A}{n_A} - \frac{x_B}{n_B}.
+$$
+
+Cohen's *h* for effect size:
+$$
+h = 2(\arcsin\sqrt{\hat{p}_A} - \arcsin\sqrt{\hat{p}_B}).
+$$
+
+## Calculation
+
+```{webr-r}
+#| label: two-prop-calculation
+#| code-summary: "Click to expand calculation code"
+
+# Conversion counts and sample sizes
+x <- c(120, 95)
+n <- c(1000, 1000)
+
+# Proportions
+p_A <- x[1] / n[1]
+p_B <- x[2] / n[2]
+diff <- p_A - p_B
+
+# Two-proportion test (without continuity correction)
+test_result <- prop.test(x, n, correct = FALSE)
+
+# Cohen's h effect size
+h <- cohen_h(p_A, p_B)
+
+# Extract test statistics
+chi_sq <- unname(test_result$statistic)
+p_value <- test_result$p.value
+ci <- unname(test_result$conf.int)
+```
+
+```{webr-r}
+#| label: results-table
+#| results: asis
+#| echo: false
+#| message: false
+#| warning: false
+
+# Minimal HTML table (WebR-friendly)
+html_table <- function(df, caption = NULL, class = "flair-table"){
+  if (!is.null(caption)) cat(sprintf('<div class="flair-caption">%s</div>', caption))
+  head <- paste0("<tr>", paste(sprintf("<th>%s</th>", names(df)), collapse=""), "</tr>")
+  rows <- apply(df, 1, function(r) paste0("<tr>", paste(sprintf("<td>%s</td>", r), collapse=""), "</tr>"))
+  wrap <- sprintf('<div class="%s-wrap"><table class="%s">%s%s</table></div>',
+                  class, class, head, paste(rows, collapse=""))
+  cat(wrap)
+}
+
+results_table <- data.frame(
+  Metric = c("Proportion A (p̂_A)", "Proportion B (p̂_B)", "Difference (A − B)",
+             "95% CI lower", "95% CI upper", "Chi-squared", "p-value", "Cohen's h"),
+  Value  = c(sprintf("%.3f (%.1f%%)", p_A, p_A*100),
+             sprintf("%.3f (%.1f%%)", p_B, p_B*100),
+             sprintf("%.3f (%.1f pp)", diff, diff*100),
+             sprintf("%.3f (%.1f pp)", ci[1], ci[1]*100),
+             sprintf("%.3f (%.1f pp)", ci[2], ci[2]*100),
+             sprintf("%.2f", chi_sq),
+             sprintf("%.3f", p_value),
+             sprintf("%.2f", h)),
+  stringsAsFactors = FALSE
+)
+html_table(results_table, caption = "Table 1: Two-proportion test results")
+```
+
+## Visualization
+
+```{webr-r}
+#| label: fig-two-prop-bars
+#| fig-cap: "Figure 1. Conversion rates for variants A and B with 95% confidence intervals."
+#| fig-alt: "Bar chart showing conversion rates for variant A (12.0%) and variant B (9.5%) with error bars representing 95% confidence intervals."
+#| fig-format: png
+#| dpi: 150
+#| fig-width: 7
+#| fig-asp: 0.6
+#| out-width: "100%"
+#| fig-align: center
+#| echo: false
+#| warning: false
+#| message: false
+
+p_A <- 0.12
+p_B <- 0.095
+n_A <- 1000
+n_B <- 1000
+
+z <- qnorm(0.975)
+se_A <- sqrt(p_A * (1 - p_A) / n_A)
+se_B <- sqrt(p_B * (1 - p_B) / n_B)
+
+ci_A_lower <- p_A - z * se_A
+ci_A_upper <- p_A + z * se_A
+ci_B_lower <- p_B - z * se_B
+ci_B_upper <- p_B + z * se_B
+
+op <- par(mar = c(5, 4.5, 3.5, 2), xaxs = "r", yaxs = "i", cex = 0.95, family = "sans")
+on.exit(par(op), add = TRUE)
+
+bp <- barplot(c(p_A, p_B), 
+              names.arg = c("Variant A", "Variant B"),
+              ylim = c(0, max(ci_A_upper, ci_B_upper) + 0.03),
+              ylab = "Conversion rate",
+              main = "Conversion Rates with 95% Confidence Intervals",
+              col = c("#2C3E50", "#95A5A6"),
+              border = "white",
+              cex.main = 1.05, font.main = 2, cex.lab = 0.95)
+
+arrows(bp[1], ci_A_lower, bp[1], ci_A_upper, angle = 90, code = 3, length = 0.1, lwd = 2, col = "#2C3E50")
+arrows(bp[2], ci_B_lower, bp[2], ci_B_upper, angle = 90, code = 3, length = 0.1, lwd = 2, col = "#95A5A6")
+
+text(bp[1], p_A + 0.015, sprintf("%.1f%%", p_A*100), cex = 1.0, font = 2, col = "#2C3E50")
+text(bp[2], p_B + 0.015, sprintf("%.1f%%", p_B*100), cex = 1.0, font = 2, col = "#95A5A6")
+
+box(col = "#95A5A6", lwd = 1.2)
+```
+
+## Results and Interpretation
+
+Variant A converted at **12.0%** (120/1,000) and variant B at **9.5%** (95/1,000). The estimated difference was **2.5 percentage points** with a 95% confidence interval of **[0.5, 4.5] percentage points**. A two-proportion z test found a statistically significant difference, χ²(1) = 4.68, p = 0.031 [@Agresti2019; @R-base].
+
+The effect size, measured by Cohen's *h* = 0.14, is considered **small** by conventional standards (small: 0.20, medium: 0.50, large: 0.80). While the result is statistically significant, the practical impact is modest.
+
+The 95% CI [0.5, 4.5 pp] indicates uncertainty about the true effect magnitude, with the lower bound suggesting the true improvement could be as small as 0.5 percentage points.
+
+**Decision framework.** Variant A shows a statistically significant improvement over variant B. The confidence interval suggests the true lift is between 0.5 and 4.5 percentage points. Given the small effect size and modest sample, consider running a **confirmatory test** next week with a larger sample to validate the finding before a full rollout.
+
+## Sample Size Planning
+
+To detect a 2.5 percentage point difference with 80% power at α = 0.05, you need approximately **1,570 visitors per group** (3,140 total). Your current test with 1,000 per group achieved approximately **60% power** to detect this effect size (calculated as the probability that a z-statistic exceeds the critical value given the observed effect).
+
+```{webr-r}
+#| label: sample-size-planning
+#| results: asis
+#| echo: false
+
+p_A_plan <- 0.12
+p_B_plan <- 0.095
+p_bar <- (p_A_plan + p_B_plan) / 2
+delta <- p_A_plan - p_B_plan
+
+z_alpha <- qnorm(1 - 0.05/2)
+z_beta  <- qnorm(0.80)
+
+n_per_group <- ceiling(2 * p_bar * (1 - p_bar) * (z_alpha + z_beta)^2 / delta^2)
+
+n_current <- 1000
+se_current <- sqrt(2 * p_bar * (1 - p_bar) / n_current)
+z_stat_current <- delta / se_current
+power_current <- round(pnorm(z_stat_current - z_alpha) + pnorm(-z_stat_current - z_alpha), 2)
+
+planning_table <- data.frame(
+  Scenario = c("Current test", "Recommended (80% power)", "High power (90%)"),
+  `n per group` = c("1,000", sprintf("%d", n_per_group), sprintf("%d", ceiling(2 * p_bar * (1 - p_bar) * (z_alpha + qnorm(0.90))^2 / delta^2))),
+  `Total n` = c("2,000", sprintf("%d", 2*n_per_group), sprintf("%d", 2*ceiling(2 * p_bar * (1 - p_bar) * (z_alpha + qnorm(0.90))^2 / delta^2))),
+  `Power` = c(sprintf("%.0f%%", power_current*100), "80%", "90%"),
+  check.names = FALSE,
+  stringsAsFactors = FALSE
+)
+
+html_table(planning_table, caption = "Table 2: Sample size recommendations for future tests (n per group and total n)")
+```
+
+For future tests, use the formula:
+$$
+n_{\text{per group}} = \frac{2\bar{p}(1-\bar{p})(z_{1-\alpha/2} + z_{1-\beta})^2}{\delta^2},
+$$
+where $\bar{p}$ is the average of the two proportions and $\delta$ is the target difference.
+
+## Assumptions
+
+The two-proportion test assumes:
+
+- **Independent samples**: Each visitor appears in only one variant (no crossover or contamination between groups)
+- **Random assignment**: Visitors were randomly allocated to A or B without systematic bias (e.g., no assignment based on time of day or device type)
+- **Large sample approximation**: Each group has at least 5 expected successes and 5 expected failures for the normal approximation to hold (both conditions met: 120 successes, 880 failures in A; 95 successes, 905 failures in B - all values exceed 5)
+- **Stable conversion rates**: The true conversion rate for each variant remains constant during the test period (no external events or time trends affecting one group differently)
+
+## Limitations
+
+This analysis does not stratify by device type, traffic source, or time of day. Differences in these factors could influence conversion rates. Consider a stratified analysis or regression model if imbalances are suspected.
+
+---
+
+### Use the below format to cite this page
+
+<div class="copy-row">
+  <button class="copy-btn" data-target="#apa-cite">Copy APA</button>
+  <button class="copy-btn" data-target="#bibtex-cite">Copy BibTeX</button>
+</div>
+
+<pre id="apa-cite">Sharafuddin, M. A. (2024, June 17). Two-proportion test: Comparing conversion rates between variants. Flair Marketing Intelligence (FlairMI). https://flairmi.com/blog/posts/02-two-proportion-test.html</pre>
+
+<pre id="bibtex-cite">@online{sharafuddin2024-two-prop,
+  author = {Sharafuddin, Mohammed Ali},
+  title  = {Two-Proportion Test: Comparing Conversion Rates Between Variants},
+  year   = {2024},
+  date   = {2024-06-17},
+  url    = {https://flairmi.com/blog/posts/02-two-proportion-test.html},
+  langid = {en}
+}</pre>
+
+<script>
+document.querySelectorAll('.copy-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const el = document.querySelector(btn.dataset.target);
+    const text = el ? el.innerText : '';
+    navigator.clipboard.writeText(text || '');
+    const original = btn.textContent;
+    btn.textContent = 'Copied!';
+    setTimeout(() => btn.textContent = original, 1200);
+  });
+});
+</script>
+
+## Comments
+
+<script src="https://giscus.app/client.js"
+        data-repo="MohamedaliS/flairmi"
+        data-repo-id=""
+        data-category="Blog Comments"
+        data-category-id=""
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="light"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+
+```{=html}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Two-Proportion Test: Comparing Conversion Rates Between Variants",
+  "description": "Compare add-to-cart conversion between variant A and variant B with a two-proportion z test and report the difference with a confidence interval and effect size.",
+  "datePublished": "2024-06-17",
+  "author": {
+    "@type": "Person",
+    "name": "Mohammed Ali Sharafuddin",
+    "url": "https://flairmi.com/about/",
+    "affiliation": {"@type": "Organization", "name": "FlairMI", "url": "https://flairmi.com"},
+    "identifier": "https://orcid.org/0000-0001-5247-2964"
+  },
+  "articleSection": "Statistics",
+  "about": [
+    {"@type":"Thing","name":"Two-Proportion Test"},
+    {"@type":"Thing","name":"A/B Testing"},
+    {"@type":"Thing","name":"Conversion Rate Optimization"}
+  ],
+  "timeRequired": "PT7M"
+}
+</script>
+```

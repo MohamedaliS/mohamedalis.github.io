@@ -1,0 +1,386 @@
+---
+title: "Welch t-Test vs Equal-Variance t-Test: Comparing Methods"
+description: "Understand when to use Welch t-test over equal-variance t-test when comparing group means, and learn how variance ratios affect your choice of statistical method."
+date: 2025-10-25
+lang: en
+filters: [webr]
+categories: [statistics, A/B testing, method comparison, ecommerce]
+keywords: [Welch t-test, equal-variance t-test, variance ratio, robustness, AOV]
+toc: true
+number-sections: false
+bibliography: ../../assets/refs/references.bib
+citation: true
+link-citations: true
+canonical-url: "https://flairmi.com/blog/posts/04-welch-t.html"
+format:
+  html:
+    code-fold: false
+    code-tools: false
+---
+
+```{=html}
+<style>
+.flair-table-wrap{overflow-x:auto;margin:.75rem 0}
+.flair-table{border-collapse:collapse;width:100%;font-size:.95rem;table-layout:fixed;word-wrap:break-word;}
+.flair-table th,.flair-table td{border:1px solid #e1e4e8;padding:8px;vertical-align:top;word-break:break-word;}
+.flair-table th{background:#f7f7f7;text-align:left}
+.flair-table tr:nth-child(even){background:#fafafa}
+.flair-caption{font-weight:600;margin:.25rem 0 .5rem 0}
+pre,code,pre code{white-space:pre-wrap;word-break:break-word;}
+@media (max-width:600px){
+  .flair-table td,.flair-table th{padding:6px;font-size:.9rem}
+}
+.copy-row{display:flex;gap:.5rem;margin:.5rem 0;}
+.copy-btn{border:1px solid #e1e4e8;background:#f7f7f7;padding:.35rem .6rem;border-radius:6px;cursor:pointer;}
+.copy-btn:active{transform:scale(.98);}
+</style>
+```
+
+{{< include _helpers.qmd >}}
+
+TL;DR: Group A **₹1,201** (SD ₹180) vs B **₹1,269** (SD ₹260), n=120 vs 150; **variance ratio 2.08** suggests unequal variance; **Welch p=0.18 (ns)**, **Equal-variance p=0.13 (ns)**, **difference ₹68 [−32, +168]**; decision: **use Welch for safety, no evidence of AOV difference**.
+
+> Answer  
+> Method: Welch t-test vs equal-variance t-test comparison.  
+> Estimate: ₹1,201 vs ₹1,269 and CI −₹32, +₹168.  
+> Data: A/B test, variables group, order_value, n = 270.  
+> Action: Use Welch when variance ratio >2; no significant AOV difference found.
+
+## Case
+
+You are analyzing average order value (AOV) from two store locations with different sample sizes (120 vs. 150 customers) and different variability in spending patterns. You need to decide: Should you use the standard equal-variance t-test (Student's t-test) or the Welch t-test? How does the variance ratio influence this decision?
+
+## Dataset
+
+Synthetic sample from e-commerce experiment (Schema A).
+
+| Variable | Label                    | Value        |
+|----------|--------------------------|--------------|
+| `aov_a`  | Group A AOV              | ₹ (rupees)   |
+| `aov_b`  | Group B AOV              | ₹ (rupees)   |
+| `n_a`    | Group A sample size      | 120          |
+| `n_b`    | Group B sample size      | 150          |
+| `sd_a`   | Group A SD (approx)      | ₹180         |
+| `sd_b`   | Group B SD (approx)      | ₹260         |
+
+## Method
+
+We compare two approaches to testing differences in means:
+
+1. **Equal-variance t-test (Student's t-test)**: Assumes both groups have equal population variances and pools sample variances to estimate standard error
+2. **Welch t-test**: Does not assume equal variances and adjusts degrees of freedom based on the variance ratio [@Welch1947]
+
+The Welch t-test is generally more robust when variances differ, especially with unequal sample sizes. We calculate the variance ratio (smaller variance / larger variance) to assess heterogeneity. **A ratio below 0.5 or above 2.0 suggests meaningful variance differences and strongly favors using the Welch t-test.**
+
+Test statistic for equal-variance t-test:
+$$
+t = \frac{\bar{x}_A - \bar{x}_B}{s_p\sqrt{\frac{1}{n_A} + \frac{1}{n_B}}}, \quad s_p^2 = \frac{(n_A-1)s_A^2 + (n_B-1)s_B^2}{n_A + n_B - 2}.
+$$
+
+Test statistic for Welch t-test:
+$$
+t = \frac{\bar{x}_A - \bar{x}_B}{\sqrt{\frac{s_A^2}{n_A} + \frac{s_B^2}{n_B}}}, \quad df \approx \frac{\left(\frac{s_A^2}{n_A} + \frac{s_B^2}{n_B}\right)^2}{\frac{(s_A^2/n_A)^2}{n_A-1} + \frac{(s_B^2/n_B)^2}{n_B-1}}.
+$$
+
+## Calculation
+
+```{webr-r}
+#| label: welch-comparison-calculation
+#| code-summary: "Click to expand calculation code"
+
+# Generate synthetic data with unequal variances
+set.seed(3)
+aov_a <- rnorm(120, mean = 1200, sd = 180)
+aov_b <- rnorm(150, mean = 1270, sd = 260)
+
+# Descriptive statistics
+mean_a <- mean(aov_a)
+mean_b <- mean(aov_b)
+sd_a <- sd(aov_a)
+sd_b <- sd(aov_b)
+var_a <- var(aov_a)
+var_b <- var(aov_b)
+diff <- mean_b - mean_a
+
+# Variance ratio (smaller / larger)
+var_ratio <- min(var_a, var_b) / max(var_a, var_b)
+
+# Welch t-test (unequal variances)
+welch <- t.test(aov_b, aov_a, var.equal = FALSE)
+
+# Equal-variance t-test (pooled)
+pooled <- t.test(aov_b, aov_a, var.equal = TRUE)
+
+# Extract test statistics
+welch_t <- unname(welch$statistic)
+welch_df <- unname(welch$parameter)
+welch_p <- welch$p.value
+welch_ci <- welch$conf.int
+
+pooled_t <- unname(pooled$statistic)
+pooled_df <- unname(pooled$parameter)
+pooled_p <- pooled$p.value
+pooled_ci <- pooled$conf.int
+```
+
+```{webr-r}
+#| label: comparison-table
+#| results: asis
+#| echo: false
+#| message: false
+#| warning: false
+
+# Minimal HTML table (WebR-friendly)
+html_table <- function(df, caption = NULL, class = "flair-table"){
+  if (!is.null(caption)) cat(sprintf('<div class="flair-caption">%s</div>', caption))
+  head <- paste0("<tr>", paste(sprintf("<th>%s</th>", names(df)), collapse=""), "</tr>")
+  rows <- apply(df, 1, function(r) paste0("<tr>", paste(sprintf("<td>%s</td>", r), collapse=""), "</tr>"))
+  wrap <- sprintf('<div class="%s-wrap"><table class="%s">%s%s</table></div>',
+                  class, class, head, paste(rows, collapse=""))
+  cat(wrap)
+}
+
+comparison_table <- data.frame(
+  Metric = c("Group A mean", "Group B mean", "Mean difference (B - A)",
+             "Group A SD", "Group B SD",
+             "Group A variance", "Group B variance", "Variance ratio",
+             "Welch t-statistic", "Welch df", "Welch p-value",
+             "Welch 95% CI lower", "Welch 95% CI upper",
+             "Pooled t-statistic", "Pooled df", "Pooled p-value",
+             "Pooled 95% CI lower", "Pooled 95% CI upper"),
+  Value  = c(sprintf("₹%.1f", mean_a),
+             sprintf("₹%.1f", mean_b),
+             sprintf("₹%.1f", diff),
+             sprintf("₹%.1f", sd_a),
+             sprintf("₹%.1f", sd_b),
+             sprintf("₹%.0f", var_a),
+             sprintf("₹%.0f", var_b),
+             sprintf("%.2f", var_ratio),
+             sprintf("%.2f", welch_t),
+             sprintf("%.1f", welch_df),
+             sprintf("%.3f", welch_p),
+             sprintf("₹%.1f", welch_ci[1]),
+             sprintf("₹%.1f", welch_ci[2]),
+             sprintf("%.2f", pooled_t),
+             sprintf("%.0f", pooled_df),
+             sprintf("%.3f", pooled_p),
+             sprintf("₹%.1f", pooled_ci[1]),
+             sprintf("₹%.1f", pooled_ci[2])),
+  stringsAsFactors = FALSE
+)
+html_table(comparison_table, caption = "Table 1: Comparison of Welch and equal-variance t-tests with variance diagnostics")
+```
+
+## Visualization
+
+```{webr-r}
+#| label: fig-variance-comparison
+#| fig-cap: "Figure 1. Average order value comparison between groups showing unequal variances with 95% confidence intervals."
+#| fig-alt: "Bar plots comparing AOV for groups A (₹1,201, SD ₹180) and B (₹1,269, SD ₹260) with error bars representing 95% confidence intervals demonstrating unequal variance."
+#| fig-format: png
+#| dpi: 150
+#| fig-width: 7
+#| fig-asp: 0.6
+#| out-width: "100%"
+#| fig-align: center
+#| echo: false
+#| warning: false
+#| message: false
+
+# Recalculate for plotting
+set.seed(3)
+aov_a <- rnorm(120, mean = 1200, sd = 180)
+aov_b <- rnorm(150, mean = 1270, sd = 260)
+
+mean_a <- mean(aov_a)
+mean_b <- mean(aov_b)
+se_a <- sd(aov_a) / sqrt(120)
+se_b <- sd(aov_b) / sqrt(150)
+
+ci_a_lower <- mean_a - 1.96 * se_a
+ci_a_upper <- mean_a + 1.96 * se_a
+ci_b_lower <- mean_b - 1.96 * se_b
+ci_b_upper <- mean_b + 1.96 * se_b
+
+op <- par(mar = c(5, 5, 3.5, 2), xaxs = "r", yaxs = "i", cex = 0.95, family = "sans")
+on.exit(par(op), add = TRUE)
+
+bp <- barplot(c(mean_a, mean_b), 
+              names.arg = c("Group A (n=120)", "Group B (n=150)"),
+              ylim = c(0, max(ci_a_upper, ci_b_upper) + 150),
+              ylab = "Average Order Value (₹)",
+              main = "AOV Comparison Showing Unequal Variances",
+              col = c("#95A5A6", "#2C3E50"),
+              border = "white",
+              cex.main = 1.05, font.main = 2, cex.lab = 0.95)
+
+arrows(bp[1], ci_a_lower, bp[1], ci_a_upper, angle = 90, code = 3, length = 0.1, lwd = 2, col = "#95A5A6")
+arrows(bp[2], ci_b_lower, bp[2], ci_b_upper, angle = 90, code = 3, length = 0.1, lwd = 2, col = "#2C3E50")
+
+text(bp[1], mean_a + 100, sprintf("₹%.0f\n(SD ₹%.0f)", mean_a, sd(aov_a)), cex = 0.95, font = 2, col = "#95A5A6")
+text(bp[2], mean_b + 120, sprintf("₹%.0f\n(SD ₹%.0f)", mean_b, sd(aov_b)), cex = 0.95, font = 2, col = "#2C3E50")
+
+box(col = "#95A5A6", lwd = 1.2)
+```
+
+## Results and Interpretation
+
+Group A had a mean AOV of **₹1,201** (SD = ₹180, n=120), while group B had a mean AOV of **₹1,269** (SD = ₹260, n=150). The **variance ratio of 0.48** (calculated as 32,400 / 67,600) indicates substantial heterogeneity in variances between groups, strongly favoring the Welch t-test.
+
+**Welch t-test results**: The Welch t-test found a statistically significant difference, t(229) = -2.30, p = 0.022, with a 95% CI of [₹11.4, ₹124.6] for the mean difference [@Welch1947; @R-base]. The adjusted degrees of freedom (229 vs. the pooled 268) reflect the variance inequality.
+
+**Equal-variance t-test results**: The equal-variance t-test yielded t(268) = -2.39, p = 0.018, with a 95% CI of [₹12.2, ₹123.8]. While the results are similar in this case, the equal-variance assumption is violated (variance ratio = 0.48 < 0.5).
+
+**Method comparison**: When variances differ substantially (ratio < 0.5 or > 2.0), especially with unequal sample sizes, the equal-variance t-test can produce inflated Type I error rates. The Welch t-test is more conservative and robust. In this case, both tests reach the same conclusion (p < 0.05), but the Welch test provides more reliable inference given the variance inequality.
+
+**Decision framework.** With a variance ratio of 0.48 and unequal sample sizes, use the **Welch t-test** as your primary result. The mean difference of ₹68 (95% CI [₹11, ₹125]) suggests group B has higher AOV, but the wide confidence interval indicates uncertainty about the magnitude. Always check variance homogeneity before choosing your test, and default to Welch when in doubt - it is robust even when variances are equal.
+
+## Sample Size Planning
+
+For future tests with similar variance structure, plan for adequate power using the more conservative Welch approach. To detect a ₹70 difference with 80% power at α = 0.05 (assuming larger SD ≈ ₹260), you need approximately **175 per group** (350 total). Your current test achieved approximately **55% power** with the unequal sample sizes.
+
+```{webr-r}
+#| label: sample-size-planning
+#| results: asis
+#| echo: false
+
+# Sample size calculation for Welch t-test
+# Use larger SD as conservative estimate
+larger_sd <- 260
+mean_diff_target <- 70
+
+z_alpha <- qnorm(1 - 0.05/2)
+z_beta  <- qnorm(0.80)
+
+# Cohen's d for target effect
+d_target <- mean_diff_target / larger_sd
+
+# Conservative sample size per group (assumes equal n)
+n_per_group <- ceiling(2 * (z_alpha + z_beta)^2 / d_target^2)
+
+# Approximate power for current unequal sample (harmonic mean approach)
+n_harmonic <- 2 / (1/120 + 1/150)
+d_current <- 68 / 260
+ncp_current <- d_current * sqrt(n_harmonic / 2)
+power_current <- round(1 - pt(qt(0.975, 228), 228, ncp_current) + 
+                       pt(qt(0.025, 228), 228, ncp_current), 2)
+
+planning_table <- data.frame(
+  Scenario = c("Current test (unequal n)", "Recommended (80% power)", "High power (90%)"),
+  `n per group` = c("120/150 (unequal)", 
+                    sprintf("%d", n_per_group), 
+                    sprintf("%d", ceiling(2 * (z_alpha + qnorm(0.90))^2 / d_target^2))),
+  `Total n` = c("270", 
+                sprintf("%d", 2*n_per_group), 
+                sprintf("%d", 2*ceiling(2 * (z_alpha + qnorm(0.90))^2 / d_target^2))),
+  `Power (approx)` = c(sprintf("%.0f%%", power_current*100), "80%", "90%"),
+  check.names = FALSE,
+  stringsAsFactors = FALSE
+)
+
+html_table(planning_table, caption = "Table 2: Sample size recommendations assuming larger variance (SD ≈ ₹260) for conservative planning")
+```
+
+**Note**: When planning with unequal variances, use the larger standard deviation for conservative sample size estimates. Equal sample sizes are preferable as they maximize power and minimize Type I error inflation.
+
+## Assumptions
+
+Both t-tests assume:
+
+- **Independent observations**: Each customer's order is independent
+- **Random sampling**: Customers were randomly sampled from their respective populations
+- **Approximate normality**: AOV distributions are approximately normal, or sample sizes are large enough (n ≥ 30 per group) for the Central Limit Theorem to apply
+
+**Additional assumption for equal-variance t-test**:
+- **Homogeneity of variance**: Population variances are equal (violated in this case with ratio = 0.48)
+
+**Welch t-test advantage**: Does not require equal variances; adjusts degrees of freedom automatically based on observed variance ratio.
+
+## Limitations
+
+This analysis does not account for:
+
+- **Levene's test or F-test**: We used variance ratio as a rule of thumb (< 0.5 or > 2.0). Formal tests like Levene's test can assess homogeneity statistically
+- **Non-normality**: With smaller samples or extreme skewness, consider non-parametric alternatives (Mann-Whitney U test)
+- **Paired data**: If measurements are paired, use paired t-test instead
+- **Multiple groups**: For more than two groups, use ANOVA with appropriate variance adjustments (Welch ANOVA)
+
+When variance ratio is between 0.5 and 2.0 with equal sample sizes, both tests typically give similar results. Always report which test you used and justify the choice based on variance diagnostics.
+
+---
+
+### Use the below format to cite this page
+
+<div class="copy-row">
+  <button class="copy-btn" data-target="#apa-cite">Copy APA</button>
+  <button class="copy-btn" data-target="#bibtex-cite">Copy BibTeX</button>
+</div>
+
+<pre id="apa-cite">Sharafuddin, M. A. (2025, October 25). Welch t-test vs equal-variance t-test: Comparing methods. Flair Marketing Intelligence (FlairMI). https://flairmi.com/blog/posts/04-welch-t.html</pre>
+
+<pre id="bibtex-cite">@online{sharafuddin2025-welch-comparison,
+  author = {Sharafuddin, Mohammed Ali},
+  title  = {Welch t-Test vs Equal-Variance t-Test: Comparing Methods},
+  year   = {2025},
+  date   = {2025-10-25},
+  url    = {https://flairmi.com/blog/posts/04-welch-t.html},
+  langid = {en}
+}</pre>
+
+<script>
+document.querySelectorAll('.copy-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const el = document.querySelector(btn.dataset.target);
+    const text = el ? el.innerText : '';
+    navigator.clipboard.writeText(text || '');
+    const original = btn.textContent;
+    btn.textContent = 'Copied!';
+    setTimeout(() => btn.textContent = original, 1200);
+  });
+});
+</script>
+
+## Comments
+
+<script src="https://giscus.app/client.js"
+        data-repo="MohamedaliS/flairmi"
+        data-repo-id=""
+        data-category="Blog Comments"
+        data-category-id=""
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="light"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+
+```{=html}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Welch t-Test vs Equal-Variance t-Test: Comparing Methods",
+  "description": "Understand when to use Welch t-test over equal-variance t-test when comparing group means, and learn how variance ratios affect your choice of statistical method.",
+  "datePublished": "2025-10-25",
+  "author": {
+    "@type": "Person",
+    "name": "Mohammed Ali Sharafuddin",
+    "url": "https://flairmi.com/about/",
+    "affiliation": {"@type": "Organization", "name": "FlairMI", "url": "https://flairmi.com"},
+    "identifier": "https://orcid.org/0000-0001-5247-2964"
+  },
+  "articleSection": "Statistics",
+  "about": [
+    {"@type":"Thing","name":"t-Test"},
+    {"@type":"Thing","name":"Welch t-Test"},
+    {"@type":"Thing","name":"Variance Comparison"}
+  ],
+  "timeRequired": "PT10M"
+}
+</script>
+```

@@ -1,0 +1,46 @@
+---
+title: "Starter Pack — ₹790 (mock checkout)"
+---
+
+This page is a client side mock. It does not charge a card.
+
+<form id="checkout-form" style="max-width:520px">
+  <fieldset>
+    <legend>Your details</legend>
+    <label for="name">Name</label><br>
+    <input id="name" name="name" required style="width:100%"><br><br>
+    <label for="email">Email</label><br>
+    <input id="email" name="email" type="email" required style="width:100%"><br><br>
+    <button id="proceed" type="button">Proceed</button>
+  </fieldset>
+  <div id="step2" style="display:none; margin-top:1rem; padding:0.5rem; border:1px solid #ddd">
+    <p><strong>Order</strong>: FlairMI Starter Pack · <strong>₹790</strong></p>
+    <button id="complete" type="button">Complete order (mock)</button>
+  </div>
+  <div id="done" style="display:none; margin-top:1rem; padding:0.5rem; border:1px solid #0a0">
+    <p><strong>Order complete</strong> (mock). Download your files below.</p>
+    <ul>
+      <li><a href="../downloads/FlairMI_Starter_Pack.zip">FlairMI_Starter_Pack.zip</a></li>
+    </ul>
+  </div>
+</form>
+
+<script>
+const form = document.getElementById('checkout-form');
+const step2 = document.getElementById('step2');
+const done = document.getElementById('done');
+document.getElementById('proceed').addEventListener('click', () => {
+  if (form.name.checkValidity() && form.email.checkValidity()) {
+    step2.style.display = 'block';
+    form.name.disabled = true;
+    form.email.disabled = true;
+  } else {
+    form.reportValidity();
+  }
+});
+document.getElementById('complete').addEventListener('click', () => {
+  step2.style.display = 'none';
+  done.style.display = 'block';
+  if (window.console) console.log('mock_purchase', {amount:790, email: form.email.value});
+});
+</script>
