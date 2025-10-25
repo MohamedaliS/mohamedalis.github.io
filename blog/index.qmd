@@ -1,0 +1,32 @@
+---
+title: "Statistics Blog"
+description: "Applied statistics tutorials for marketing analytics with interactive WebR examples"
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
+  fields: [date, title, description, categories]
+---
+
+## Welcome to FlairMI Statistics Blog
+
+Practical statistics tutorials for marketing and e-commerce analytics. Each post includes:
+
+- **Interactive calculations** running directly in your browser (powered by WebR)
+- **Real-world business cases** from A/B testing, conversion optimization, and revenue analysis
+- **Comprehensive explanations** with method, assumptions, limitations, and decision frameworks
+- **Sample size planning** guidance for designing future experiments
+- **Reproducible code** with detailed statistical computations
+
+All posts use academic-style presentation with no dependency on Python or external servers - just open and run R code in your browser.
+
+### Featured Topics
+
+- **Confidence Intervals**: Margin of error analysis for conversion rates
+- **Hypothesis Testing**: Two-proportion tests, t-tests (Welch and pooled methods)
+- **Regression Analysis**: Simple linear regression for ad spend modeling
+- **Logistic Regression**: Purchase prediction from behavioral data
+- **Effect Sizes**: Cohen's h, Cohen's d, Hedges g with practical interpretation
+
+Browse posts below or explore the [Stats Suite](/stats/index.html) for interactive tools.

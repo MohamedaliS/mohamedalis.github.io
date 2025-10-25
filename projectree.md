@@ -1,0 +1,53 @@
+# Project Tree
+
+```
+flairmi/
+   CODEX_README.md
+   PROJECT_STATUS.md
+   README.md
+   _quarto.yml
+   chatgpt_codex_prompt.txt
+   index.qmd
+.github/
+   workflows/
+      publish.yml
+assets/
+   seo/
+      answer_card_template.md
+      site_schema.html
+   images/
+blog/
+   index.qmd
+   posts/
+      01-margin-of-error.qmd
+      02-two-proportion-test.qmd
+      03-t-test.qmd
+      04-welch-t.qmd
+      05-simple-regression.qmd
+      06-logistic-basics.qmd
+stats/
+   index.qmd
+writer/
+   index.qmd
+   templates/
+      ab_test_report.qmd
+      regression_report.qmd
+survey/
+   index.qmd
+shop/
+   index.qmd
+downloads/
+   FlairMI_Sponsor_Email.txt
+   FlairMI_Sponsor_Kit.md
+   FlairMI_Starter_Pack.zip
+   flairmi_200_episodes.csv
+   index.qmd
+plans/
+   FlairMI_AI_SEO_Playbook.md
+   FlairMI_Book_Plan.md
+   FlairMI_Book_Proposal_Template.md
+   FlairMI_PR_Checklist.md
+   FlairMI_Plan.md
+   FlairMI_Roadmap_16w.md
+   FlairMI_Style_Guide.md
+```

@@ -1,0 +1,16 @@
+---
+title: "Survey"
+---
+
+Purpose: host schema and sampling tools that connect to Writer.
+
+Planned tools
+- Sample size and margin of error
+- Weighting and raking
+- Export to a Google Forms template
+
+---
+
+<div style="text-align: center; margin: 3rem 0;">
+  <img src="https://via.placeholder.com/600x400/6366f1/ffffff?text=Coming+Soon" alt="Coming Soon" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+</div>
