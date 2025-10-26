@@ -3,10 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FlairMI CSS Fixes</title>
+    <title>Flair Marketing Intelligence</title>
     <style>
-        /* Updated CSS with padding and text wrapping fixes */
-        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header and Navigation */
+        header {
+            background: #343a40;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .navbar-brand {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: white;
+            text-decoration: none;
+        }
+
+        .navbar-nav {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+            margin: 0;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: white;
+        }
+
+        .navbar-toggler {
+            display: none;
+            background: none;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            color: white;
+            padding: 0.5rem 0.75rem;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 60px;
+            padding: 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Hero Section */
         .hero-section {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -59,12 +136,12 @@
             text-decoration: none;
         }
 
+        /* Features Grid */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
             margin: 2.5rem 0;
-            padding: 0 1rem;
         }
 
         .feature-card {
@@ -100,41 +177,8 @@
             overflow-wrap: break-word;
         }
 
-        .feature-description pre {
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-            margin: 0;
-            padding: 0;
-            background: none;
-            border: none;
-            font-family: inherit;
-        }
-
-        .feature-description code {
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-            background: none;
-            padding: 0;
-            font-family: inherit;
-        }
-
-        .highlight-box {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 1.25rem;
-            margin: 2rem 1rem;
-            border-radius: 4px;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        /* Content sections */
+        /* Content Sections */
         section {
-            padding: 0 1rem;
             margin-bottom: 2rem;
         }
 
@@ -142,6 +186,7 @@
             margin-bottom: 1.5rem;
             word-wrap: break-word;
             overflow-wrap: break-word;
+            color: #343a40;
         }
 
         section p, section ul {
@@ -151,8 +196,71 @@
             margin-bottom: 1rem;
         }
 
-        /* Mobile optimization */
+        .highlight-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1.25rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #ffc107;
+            color: #856404;
+            font-size: 0.85em;
+            padding: 0.15em 0.6em;
+            border-radius: 0.5em;
+            margin-left: 0.3em;
+            vertical-align: middle;
+        }
+
+        /* Footer */
+        footer {
+            background: #f8f9fa;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+            border-top: 1px solid #e9ecef;
+        }
+
+        /* Mobile Responsiveness */
         @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem;
+                flex-wrap: wrap;
+            }
+
+            .navbar-toggler {
+                display: block;
+            }
+
+            .navbar-nav {
+                display: none;
+                width: 100%;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #343a40;
+                flex-direction: column;
+                padding: 1rem;
+                gap: 1rem;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+
+            .navbar-nav.show {
+                display: flex;
+            }
+
+            main {
+                padding: 1rem;
+            }
+
             .hero-section {
                 padding: 2rem 1rem;
                 margin: -1rem -1rem 1.5rem -1rem;
@@ -179,7 +287,6 @@
             .features-grid {
                 grid-template-columns: 1fr;
                 gap: 1.25rem;
-                padding: 0 0.5rem;
             }
 
             .feature-card {
@@ -196,16 +303,11 @@
 
             .highlight-box {
                 padding: 1rem;
-                margin: 1.5rem 0.5rem;
+                margin: 1.5rem 0;
                 font-size: 0.95rem;
-            }
-
-            section {
-                padding: 0 0.5rem;
             }
         }
 
-        /* Extra small screens */
         @media (max-width: 480px) {
             .hero-section {
                 padding: 1.5rem 0.75rem;
@@ -222,54 +324,109 @@
     </style>
 </head>
 <body>
-    <div class="hero-section">
-        <h1 class="hero-title">Marketing Analytics Made Simple</h1>
-        <p class="hero-subtitle">
-            Run sound statistical analyses with clear datasets, reproducible R code, and practical business insights.
-        </p>
-        <div>
-            <a href="#" class="hero-cta">Read the Blog</a>
-            <a href="#" class="hero-cta">Explore Tools</a>
-        </div>
-    </div>
+    <header>
+        <nav class="navbar">
+            <a href="#" class="navbar-brand">Flair Marketing Intelligence (FlairMI)</a>
+            <button class="navbar-toggler" onclick="toggleMenu()">☰</button>
+            <ul class="navbar-nav" id="navMenu">
+                <li><a href="#" class="nav-link active">Home</a></li>
+                <li><a href="#" class="nav-link">Survey</a></li>
+                <li><a href="#" class="nav-link">Stats</a></li>
+                <li><a href="#" class="nav-link">Writer</a></li>
+                <li><a href="#" class="nav-link">Blog</a></li>
+                <li><a href="#" class="nav-link">About</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <section>
-        <h2>What Makes FlairMI Different</h2>
-        <p>FlairMI provides <strong>practical, reproducible statistical tutorials</strong> for marketing professionals who need real applied answers, not just academic theory.</p>
-
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-title">Interactive WebR</div>
-                <div class="feature-description">
-                    Run R code directly in your browser. No installation, no servers, no setup. All calculations happen on your device.
-                </div>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-title">Real Business Cases</div>
-                <div class="feature-description">
-                    Every tutorial uses realistic marketing scenarios: A/B tests, conversion analysis, ad spend optimization, customer behavior.
-                </div>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-title">Complete Structure</div>
-                <div class="feature-description">
-                    TL;DR, data, method, calculation, results, visualization, sample size planning, assumptions, and limitations. Everything you need.
-                </div>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-title">Mobile-First Design</div>
-                <div class="feature-description">
-                    Optimized for reading and interaction on any device. Professional results whether you're at your desk or on the go.
-                </div>
+    <main>
+        <div class="hero-section">
+            <h1 class="hero-title">Marketing Analytics Made Simple</h1>
+            <p class="hero-subtitle">
+                Run sound statistical analyses with clear datasets, reproducible R code, and practical business insights.
+            </p>
+            <div>
+                <a href="#" class="hero-cta">Read the Blog</a>
+                <a href="#" class="hero-cta">Explore Tools</a>
             </div>
         </div>
 
-        <div class="highlight-box">
-            <strong>Get Started:</strong> Browse the blog posts to learn statistical methods with interactive examples, or check the Stats suite for quick calculations.
-        </div>
-    </section>
+        <section>
+            <h2>What Makes FlairMI Different</h2>
+            <p>FlairMI provides <strong>practical, reproducible statistical tutorials</strong> for marketing professionals who need real applied answers, not just academic theory.</p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-title">Interactive WebR</div>
+                    <div class="feature-description">
+                        Run R code directly in your browser. No installation, no servers, no setup. All calculations happen on your device.
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-title">Real Business Cases</div>
+                    <div class="feature-description">
+                        Every tutorial uses realistic marketing scenarios: A/B tests, conversion analysis, ad spend optimization, customer behavior.
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-title">Complete Structure</div>
+                    <div class="feature-description">
+                        TL;DR, data, method, calculation, results, visualization, sample size planning, assumptions, and limitations. Everything you need.
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-title">Mobile-First Design</div>
+                    <div class="feature-description">
+                        Optimized for reading and interaction on any device. Professional results whether you're at your desk or on the go.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>What You'll Find Here</h2>
+            
+            <p><strong>Blog</strong><br>
+            Comprehensive statistical tutorials covering confidence intervals, hypothesis testing, regression, and logistic models. Each post includes interactive WebR code, business decision frameworks, and sample size planning.</p>
+
+            <p><strong>Stats Suite</strong> <span class="badge">Coming Soon</span><br>
+            Quick calculators for common statistical tests. Get results instantly without writing code. Each calculator links to the detailed blog tutorial.</p>
+
+            <p><strong>Writer Suite</strong> <span class="badge">Coming Soon</span><br>
+            Report templates with clean language and professional figures. Export your analysis as polished deliverables for stakeholders.</p>
+
+            <p><strong>Survey Suite</strong> <span class="badge">Coming Soon</span><br>
+            Schema and sampling tools for survey design. Calculate sample sizes, apply weighting, and export to Google Forms.</p>
+
+            <div class="highlight-box">
+                <strong>Get Started:</strong> Browse the blog posts to learn statistical methods with interactive examples, or check the Stats suite for quick calculations.
+            </div>
+        </section>
+
+        <section>
+            <h2>Approach</h2>
+            <ul>
+                <li><strong>Simple language:</strong> No jargon. Traditional grammar. Standard Reporting styles with clear explanations that respect your time.</li>
+                <li><strong>Named datasets:</strong> Small, understandable examples with clear variable names and business context.</li>
+                <li><strong>Short code:</strong> Base R only. WebR-compatible. Copy-paste ready. No hidden complexity.</li>
+                <li><strong>INR and SI units:</strong> All monetary values in Indian Rupees. Metric system throughout.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p><em>FlairMI is maintained by Mohammed Ali Sharafuddin, a marketing analytics professional focused on making statistics accessible to practitioners.</em></p>
+        <p><a href="mailto:contact@flairmi.com">Feedback</a></p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('navMenu');
+            menu.classList.toggle('show');
+        }
+    </script>
 </body>
 </html>
