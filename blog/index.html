@@ -7,8 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Mohammed Ali Sharafuddin">
+<meta name="description" content="Applied statistics tutorials for marketing analytics with interactive WebR examples">
 
-<title>Flair Marketing Intelligence – Flair Marketing Intelligence (FlairMI)</title>
+<title>Statistics Blog – Flair Marketing Intelligence (FlairMI)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,24 +25,26 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-19d27813f1524be4f82ab4aac4671233.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-listing/list.min.js"></script>
+<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-19d27813f1524be4f82ab4aac4671233.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,18 +72,76 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"Flair Marketing Intelligence","url":"https://flairmi.com"}
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta property="og:title" content="Flair Marketing Intelligence – Flair Marketing Intelligence (FlairMI)">
-<meta property="og:description" content="">
-<meta property="og:image" content="https://flairmi.com/data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="Statistics Blog – Flair Marketing Intelligence (FlairMI)">
+<meta property="og:description" content="Applied statistics tutorials for marketing analytics with interactive WebR examples">
+<meta property="og:image" content="https://flairmi.com/blog/data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==">
 <meta property="og:site_name" content="Flair Marketing Intelligence (FlairMI)">
-<meta name="twitter:title" content="Flair Marketing Intelligence – Flair Marketing Intelligence (FlairMI)">
-<meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://flairmi.com/data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==">
+<meta name="twitter:title" content="Statistics Blog – Flair Marketing Intelligence (FlairMI)">
+<meta name="twitter:description" content="Applied statistics tutorials for marketing analytics with interactive WebR examples">
+<meta name="twitter:image" content="https://flairmi.com/blog/data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -91,9 +152,9 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Flair Marketing Intelligence (FlairMI)</span>
     </a>
   </div>
@@ -104,27 +165,27 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./survey/index.html"> 
+    <a class="nav-link" href="../survey/index.html"> 
 <span class="menu-text">Survey</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./stats/index.html"> 
+    <a class="nav-link" href="../stats/index.html"> 
 <span class="menu-text">Stats</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./writer/index.html"> 
+    <a class="nav-link" href="../writer/index.html"> 
 <span class="menu-text">Writer</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog/index.html"> 
+    <a class="nav-link active" href="../blog/index.html" aria-current="page"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -143,20 +204,26 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-makes-flairmi-different" id="toc-what-makes-flairmi-different" class="nav-link active" data-scroll-target="#what-makes-flairmi-different">What Makes FlairMI Different</a></li>
-  <li><a href="#what-youll-find-here" id="toc-what-youll-find-here" class="nav-link" data-scroll-target="#what-youll-find-here">What You’ll Find Here</a></li>
-  <li><a href="#approach" id="toc-approach" class="nav-link" data-scroll-target="#approach">Approach</a></li>
+  <li><a href="#welcome-to-flairmi-statistics-blog" id="toc-welcome-to-flairmi-statistics-blog" class="nav-link active" data-scroll-target="#welcome-to-flairmi-statistics-blog">Welcome to FlairMI Statistics Blog</a>
+  <ul class="collapse">
+  <li><a href="#featured-topics" id="toc-featured-topics" class="nav-link" data-scroll-target="#featured-topics">Featured Topics</a></li>
+  </ul></li>
   </ul>
 </nav>
-    </div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(6)</span></div><div class="category" data-category="QSUyRkIlMjB0ZXN0aW5n">A/B testing <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Y29udmVyc2lvbiUyMG9wdGltaXphdGlvbg==">conversion optimization <span class="quarto-category-count">(3)</span></div><div class="category" data-category="ZWNvbW1lcmNl">ecommerce <span class="quarto-category-count">(3)</span></div><div class="category" data-category="bG9naXN0aWMlMjByZWdyZXNzaW9u">logistic regression <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bWFya2V0aW5nJTIwYW5hbHl0aWNz">marketing analytics <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bWV0aG9kJTIwY29tcGFyaXNvbg==">method comparison <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cmVncmVzc2lvbg==">regression <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cmV2ZW51ZSUyMG9wdGltaXphdGlvbg==">revenue optimization <span class="quarto-category-count">(2)</span></div><div class="category" data-category="c3RhdGlzdGljcw==">statistics <span class="quarto-category-count">(6)</span></div><div class="category" data-category="d2ViJTIwYW5hbHl0aWNz">web analytics <span class="quarto-category-count">(2)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Flair Marketing Intelligence</h1>
+<h1 class="title">Statistics Blog</h1>
 </div>
 
+<div>
+  <div class="description">
+    Applied statistics tutorials for marketing analytics with interactive WebR examples
+  </div>
+</div>
 
 <div class="quarto-title-meta-author">
   <div class="quarto-title-meta-heading">Author</div>
@@ -186,204 +253,206 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<style>
-.hero-section {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  padding: 2rem 1rem;
-  margin: -2rem -2rem 1.5rem -2rem;
-  border-radius: 0 0 12px 12px;
-  text-align: center;
-}
-
-.hero-title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 0.75rem;
-  line-height: 1.3;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-}
-
-.hero-subtitle {
-  font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.95);
-  margin-bottom: 1.25rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.5;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  padding: 0 1rem;
-}
-
-.hero-cta {
-  display: inline-block;
-  background: white;
-  color: #667eea;
-  padding: 0.6rem 1.5rem;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 600;
-  margin: 0.4rem;
-  transition: transform 0.2s, box-shadow 0.2s;
-  font-size: 0.95rem;
-}
-
-.hero-cta:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  color: #667eea;
-  text-decoration: none;
-}
-
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.25rem;
-  margin: 2rem 0;
-}
-
-.feature-card {
-  padding: 1.25rem;
-  border-radius: 10px;
-  background: #f8f9fa;
-  border: 1px solid #e9ecef;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.feature-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
-
-.feature-title {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #667eea;
-  margin-bottom: 0.6rem;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-}
-
-.feature-description {
-  color: #6c757d;
-  line-height: 1.5;
-  font-size: 0.95rem;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-}
-
-.highlight-box {
-  background: #fff3cd;
-  border-left: 4px solid #ffc107;
-  padding: 1rem;
-  margin: 1.5rem 0;
-  border-radius: 4px;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  font-size: 0.95rem;
-}
-
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 1.5rem;
-  }
-  .hero-subtitle {
-    font-size: 0.95rem;
-  }
-  .hero-section {
-    padding: 1.5rem 0.75rem;
-  }
-  .feature-card {
-    padding: 1rem;
-  }
-  .hero-cta {
-    padding: 0.5rem 1.2rem;
-    font-size: 0.9rem;
-  }
-}
-</style>
-
-<div class="hero-section">
-  <h1 class="hero-title">Marketing Analytics Made Simple</h1>
-  <p class="hero-subtitle">
-    Run sound statistical analyses with clear datasets, reproducible R code, and practical business insights. 
-  </p>
-  <div>
-    <a href="blog/index.html" class="hero-cta">Read the Blog</a>
-    <a href="stats/index.html" class="hero-cta">Explore Tools</a>
-  </div>
-</div>
-<section id="what-makes-flairmi-different" class="level2">
-<h2 class="anchored" data-anchor-id="what-makes-flairmi-different">What Makes FlairMI Different</h2>
-<p>FlairMI provides <strong>practical, reproducible statistical tutorials</strong> for marketing professionals who need real applied answers, not just academic theory.</p>
-<div class="features-grid">
-<div class="feature-card">
-<div class="feature-title">
-Interactive WebR
-</div>
-<div class="feature-description">
-<pre><code>Run R code directly in your browser. No installation, no servers, no setup. All calculations happen on your device.</code></pre>
-</div>
-</div>
-<div class="feature-card">
-<div class="feature-title">
-Real Business Cases
-</div>
-<div class="feature-description">
-<pre><code>Every tutorial uses realistic marketing scenarios: A/B tests, conversion analysis, ad spend optimization, customer behavior.</code></pre>
-</div>
-</div>
-<div class="feature-card">
-<div class="feature-title">
-Complete Structure
-</div>
-<div class="feature-description">
-<pre><code>TL;DR, data, method, calculation, results, visualization, sample size planning, assumptions, and limitations. Everything you need.</code></pre>
-</div>
-</div>
-<div class="feature-card">
-<div class="feature-title">
-Mobile-First Design
-</div>
-<div class="feature-description">
-<pre><code>Optimized for reading and interaction on any device. Professional results whether you're at your desk or on the go.</code></pre>
-</div>
-</div>
-</div>
-</section>
-<section id="what-youll-find-here" class="level2">
-<h2 class="anchored" data-anchor-id="what-youll-find-here">What You’ll Find Here</h2>
-<p><strong>Blog</strong><br>
-Comprehensive statistical tutorials covering confidence intervals, hypothesis testing, regression, and logistic models. Each post includes interactive WebR code, business decision frameworks, and sample size planning.</p>
-<p><strong>Stats Suite</strong> <span style="display:inline-block;background:#ffc107;color:#856404;font-size:0.85em;padding:0.15em 0.6em;border-radius:0.5em;margin-left:0.3em;vertical-align:middle;">Coming Soon</span><br>
-Quick calculators for common statistical tests. Get results instantly without writing code. Each calculator links to the detailed blog tutorial.</p>
-<p><strong>Writer Suite</strong> <span style="display:inline-block;background:#ffc107;color:#856404;font-size:0.85em;padding:0.15em 0.6em;border-radius:0.5em;margin-left:0.3em;vertical-align:middle;">Coming Soon</span><br>
-Report templates with clean language and professional figures. Export your analysis as polished deliverables for stakeholders.</p>
-<p><strong>Survey Suite</strong> <span style="display:inline-block;background:#ffc107;color:#856404;font-size:0.85em;padding:0.15em 0.6em;border-radius:0.5em;margin-left:0.3em;vertical-align:middle;">Coming Soon</span><br>
-Schema and sampling tools for survey design. Calculate sample sizes, apply weighting, and export to Google Forms. <strong>Survey Suite</strong> (Coming Soon)<br>
-Schema and sampling tools for survey design. Calculate sample sizes, apply weighting, and export to Google Forms.</p>
-<div class="highlight-box">
-<p><strong>Get Started:</strong> Browse the <a href="blog/index.html">blog posts</a> to learn statistical methods with interactive examples, or check the <a href="stats/index.html">Stats suite</a> for quick calculations.</p>
-</div>
-</section>
-<section id="approach" class="level2">
-<h2 class="anchored" data-anchor-id="approach">Approach</h2>
+<section id="welcome-to-flairmi-statistics-blog" class="level2">
+<h2 class="anchored" data-anchor-id="welcome-to-flairmi-statistics-blog">Welcome to FlairMI Statistics Blog</h2>
+<p>Practical statistics tutorials for marketing and e-commerce analytics. Each post includes:</p>
 <ul>
-<li><p><strong>Simple language:</strong> No jargon. Traditional grammar. Standard Reporting styles with clear explanations that respect your time.</p></li>
-<li><p><strong>Named datasets:</strong> Small, understandable examples with clear variable names and business context.</p></li>
-<li><p><strong>Short code:</strong> Base R only. WebR-compatible. Copy-paste ready. No hidden complexity.</p></li>
-<li><p><strong>INR and SI units:</strong> All monetary values in Indian Rupees. Metric system throughout.</p></li>
+<li><strong>Interactive calculations</strong> running directly in your browser (powered by WebR)</li>
+<li><strong>Real-world business cases</strong> from A/B testing, conversion optimization, and revenue analysis</li>
+<li><strong>Comprehensive explanations</strong> with method, assumptions, limitations, and decision frameworks</li>
+<li><strong>Sample size planning</strong> guidance for designing future experiments</li>
+<li><strong>Reproducible code</strong> with detailed statistical computations</li>
 </ul>
-<hr>
-<p><em>FlairMI is maintained by <a href="about.html">Mohammed Ali Sharafuddin</a>, a marketing analytics professional focused on making statistics accessible to practitioners.</em></p>
+<p>All posts use academic-style presentation with no dependency on Python or external servers - just open and run R code in your browser.</p>
+<section id="featured-topics" class="level3">
+<h3 class="anchored" data-anchor-id="featured-topics">Featured Topics</h3>
+<ul>
+<li><strong>Confidence Intervals</strong>: Margin of error analysis for conversion rates</li>
+<li><strong>Hypothesis Testing</strong>: Two-proportion tests, t-tests (Welch and pooled methods)</li>
+<li><strong>Regression Analysis</strong>: Simple linear regression for ad spend modeling</li>
+<li><strong>Logistic Regression</strong>: Purchase prediction from behavioral data</li>
+<li><strong>Effect Sizes</strong>: Cohen’s h, Cohen’s d, Hedges g with practical interpretation</li>
+</ul>
+<p>Browse posts below or explore the <a href="../stats/index.html">Stats Suite</a> for interactive tools.</p>
+
 
 
 </section>
+</section>
 
-</main> <!-- /main -->
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="c3RhdGlzdGljcyUyQ0ElMkZCJTIwdGVzdGluZyUyQ21ldGhvZCUyMGNvbXBhcmlzb24lMkNlY29tbWVyY2U=" data-listing-date-sort="1761332400000" data-listing-file-modified-sort="1761458508466" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2744">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../blog/posts/04-welch-t.html" class="no-external">Welch t-Test vs Equal-Variance t-Test: Comparing Methods</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('c3RhdGlzdGljcw=='); return false;">statistics</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('QSUyRkIlMjB0ZXN0aW5n'); return false;">A/B testing</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('bWV0aG9kJTIwY29tcGFyaXNvbg=='); return false;">method comparison</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZWNvbW1lcmNl'); return false;">ecommerce</div>
+
+</div>
+<div class="delink listing-description"><a href="../blog/posts/04-welch-t.html" class="no-external">
+<p>Understand when to use Welch t-test over equal-variance t-test when comparing group means, and learn how variance ratios affect your choice of statistical method.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="../blog/posts/04-welch-t.html" class="no-external">
+<div class="listing-date">
+Oct 25, 2025
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="c3RhdGlzdGljcyUyQ3JlZ3Jlc3Npb24lMkNtYXJrZXRpbmclMjBhbmFseXRpY3MlMkNyZXZlbnVlJTIwb3B0aW1pemF0aW9u" data-listing-date-sort="1761332400000" data-listing-file-modified-sort="1761458517713" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13" data-listing-word-count-sort="2538">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../blog/posts/05-simple-regression.html" class="no-external">Simple Linear Regression: Modeling Revenue from Ad Spend</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('c3RhdGlzdGljcw=='); return false;">statistics</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cmVncmVzc2lvbg=='); return false;">regression</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('bWFya2V0aW5nJTIwYW5hbHl0aWNz'); return false;">marketing analytics</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cmV2ZW51ZSUyMG9wdGltaXphdGlvbg=='); return false;">revenue optimization</div>
+
+</div>
+<div class="delink listing-description"><a href="../blog/posts/05-simple-regression.html" class="no-external">
+<p>Estimate the relationship between advertising spend and revenue using ordinary least squares regression, with slope, confidence intervals, R-squared, and diagnostic insights.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="../blog/posts/05-simple-regression.html" class="no-external">
+<div class="listing-date">
+Oct 25, 2025
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="c3RhdGlzdGljcyUyQ2xvZ2lzdGljJTIwcmVncmVzc2lvbiUyQ2NvbnZlcnNpb24lMjBvcHRpbWl6YXRpb24lMkNlY29tbWVyY2U=" data-listing-date-sort="1761332400000" data-listing-file-modified-sort="1761458526158" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="15" data-listing-word-count-sort="2850">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../blog/posts/06-logistic-basics.html" class="no-external">Logistic Regression Basics: Predicting Purchase from Session Count</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('c3RhdGlzdGljcw=='); return false;">statistics</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('bG9naXN0aWMlMjByZWdyZXNzaW9u'); return false;">logistic regression</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Y29udmVyc2lvbiUyMG9wdGltaXphdGlvbg=='); return false;">conversion optimization</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZWNvbW1lcmNl'); return false;">ecommerce</div>
+
+</div>
+<div class="delink listing-description"><a href="../blog/posts/06-logistic-basics.html" class="no-external">
+<p>Model purchase probability as a function of on-site sessions using logistic regression, with odds ratios, confidence intervals, and interpretation guidance for binary outcomes.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="../blog/posts/06-logistic-basics.html" class="no-external">
+<div class="listing-date">
+Oct 25, 2025
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="3" data-categories="c3RhdGlzdGljcyUyQ0ElMkZCJTIwdGVzdGluZyUyQ3JldmVudWUlMjBvcHRpbWl6YXRpb24lMkNlY29tbWVyY2U=" data-listing-date-sort="1719169200000" data-listing-file-modified-sort="1761458499660" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2346">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../blog/posts/03-t-test.html" class="no-external">Welch t-Test: Comparing Average Order Value Between Groups</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('c3RhdGlzdGljcw=='); return false;">statistics</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('QSUyRkIlMjB0ZXN0aW5n'); return false;">A/B testing</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('cmV2ZW51ZSUyMG9wdGltaXphdGlvbg=='); return false;">revenue optimization</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZWNvbW1lcmNl'); return false;">ecommerce</div>
+
+</div>
+<div class="delink listing-description"><a href="../blog/posts/03-t-test.html" class="no-external">
+<p>Compare average order value between control and treatment groups with a Welch t-test and report the mean difference with a confidence interval and effect size.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="../blog/posts/03-t-test.html" class="no-external">
+<div class="listing-date">
+Jun 24, 2024
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="4" data-categories="c3RhdGlzdGljcyUyQ0ElMkZCJTIwdGVzdGluZyUyQ2NvbnZlcnNpb24lMjBvcHRpbWl6YXRpb24lMkN3ZWIlMjBhbmFseXRpY3M=" data-listing-date-sort="1718564400000" data-listing-file-modified-sort="1761458491035" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2137">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../blog/posts/02-two-proportion-test.html" class="no-external">Two-Proportion Test: Comparing Conversion Rates Between Variants</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('c3RhdGlzdGljcw=='); return false;">statistics</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('QSUyRkIlMjB0ZXN0aW5n'); return false;">A/B testing</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Y29udmVyc2lvbiUyMG9wdGltaXphdGlvbg=='); return false;">conversion optimization</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('d2ViJTIwYW5hbHl0aWNz'); return false;">web analytics</div>
+
+</div>
+<div class="delink listing-description"><a href="../blog/posts/02-two-proportion-test.html" class="no-external">
+<p>Compare add-to-cart conversion between variant A and variant B with a two-proportion z test and report the difference with a confidence interval and effect size.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="../blog/posts/02-two-proportion-test.html" class="no-external">
+<div class="listing-date">
+Jun 17, 2024
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="5" data-categories="c3RhdGlzdGljcyUyQ0ElMkZCJTIwdGVzdGluZyUyQ2NvbnZlcnNpb24lMjBvcHRpbWl6YXRpb24lMkN3ZWIlMjBhbmFseXRpY3M=" data-listing-date-sort="1717959600000" data-listing-file-modified-sort="1761458481564" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1774">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../blog/posts/01-margin-of-error.html" class="no-external">Confidence Interval for a Proportion: Analyzing Add-to-Cart Rate</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('c3RhdGlzdGljcw=='); return false;">statistics</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('QSUyRkIlMjB0ZXN0aW5n'); return false;">A/B testing</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Y29udmVyc2lvbiUyMG9wdGltaXphdGlvbg=='); return false;">conversion optimization</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('d2ViJTIwYW5hbHl0aWNz'); return false;">web analytics</div>
+
+</div>
+<div class="delink listing-description"><a href="../blog/posts/01-margin-of-error.html" class="no-external">
+<p>Estimate the add to cart rate with a 95% confidence interval, read the margin of error, and decide if KPIs are acceptable. Runnable R/WebR code.</p>
+</a></div>
+</div>
+<div class="metadata">
+<a href="../blog/posts/01-margin-of-error.html" class="no-external">
+<div class="listing-date">
+Jun 10, 2024
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
