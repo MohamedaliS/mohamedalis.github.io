@@ -1,0 +1,100 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Data-Driven Management",
+    "section": "",
+    "text": "Welcome. This site accompanies the open textbook Data-Driven Management: Statistics for Managers. Here you will find chapter materials, datasets, worked examples, lecture slides, and instructor resources — all free under CC BY 4.0.\n\n\nQuick links\n\n\n\nResource\nDescription\n\n\n\n\nTextbook\n27 chapters across 8 parts, HTML format\n\n\nLecture Slides\nRevealJS decks for every unit\n\n\nWorked Examples\nFully worked R examples with kable output\n\n\nDatasets\nClean CSV files for all units\n\n\nFor Instructors\nPacing guides, discussion questions, Moodle quizzes\n\n\nDownloads\nAll resources in one place\n\n\n\n\n\n\nAbout this resource\nThis textbook was designed for management students with no prior background in statistics. It emphasises interpretation and decision-making rather than mathematical derivation, and uses realistic business datasets throughout. All R code is shown and reproducible."
+  },
+  {
+    "objectID": "teachers/index.html",
+    "href": "teachers/index.html",
+    "title": "For Instructors",
+    "section": "",
+    "text": "Instructor packs for all units are available in the password-protected instructor section.\nOpen instructor resources\nEach unit pack includes:\n\nA 75-minute pacing guide with activity timings\nThree discussion questions at whole-class, small-group, and challenge levels\nTwo common misconception notes with corrective framing\nDataset notes and a live data preview\nMoodle quiz bundle (XML) aligned to unit objectives\n\n\n\nQuiz bundles are in shared/quizzes/moodle_xml/quiz01.xml through quiz05.xml. Import directly via Moodle’s Question Bank import tool using the Moodle XML format.\n\n\n\nAll materials are released under CC BY 4.0. You may adapt, redistribute, and use them in commercial and non-commercial settings with attribution."
+  },
+  {
+    "objectID": "teachers/index.html#instructor-resources",
+    "href": "teachers/index.html#instructor-resources",
+    "title": "For Instructors",
+    "section": "",
+    "text": "Instructor packs for all units are available in the password-protected instructor section.\nOpen instructor resources\nEach unit pack includes:\n\nA 75-minute pacing guide with activity timings\nThree discussion questions at whole-class, small-group, and challenge levels\nTwo common misconception notes with corrective framing\nDataset notes and a live data preview\nMoodle quiz bundle (XML) aligned to unit objectives\n\n\n\nQuiz bundles are in shared/quizzes/moodle_xml/quiz01.xml through quiz05.xml. Import directly via Moodle’s Question Bank import tool using the Moodle XML format.\n\n\n\nAll materials are released under CC BY 4.0. You may adapt, redistribute, and use them in commercial and non-commercial settings with attribution."
+  },
+  {
+    "objectID": "chapters/index.html",
+    "href": "chapters/index.html",
+    "title": "Lecture Slides",
+    "section": "",
+    "text": "Each unit has a corresponding RevealJS slide deck for classroom or self-study use. Slides are available as interactive HTML presentations.\n\n\n\nBlock\nUnits\nTopic area\n\n\n\n\n01\nLec 01–05\nFoundations\n\n\n02\nLec 06–10\nDescribing Data\n\n\n03\nLec 11–14\nProbability\n\n\n04\nLec 15–16\nRelationships\n\n\n05\nLec 17–19\nEstimation\n\n\n06\nLec 20–21\nHypothesis Testing Logic\n\n\n07\nLec 22–26\nCore Tests\n\n\n08\nLec 27\nInterpretation\n\n\n\nNavigate slides with arrow keys. Press F for full screen, S for speaker notes, ? for all keyboard shortcuts."
+  },
+  {
+    "objectID": "chapters/index.html#lecture-slides-by-block",
+    "href": "chapters/index.html#lecture-slides-by-block",
+    "title": "Lecture Slides",
+    "section": "",
+    "text": "Each unit has a corresponding RevealJS slide deck for classroom or self-study use. Slides are available as interactive HTML presentations.\n\n\n\nBlock\nUnits\nTopic area\n\n\n\n\n01\nLec 01–05\nFoundations\n\n\n02\nLec 06–10\nDescribing Data\n\n\n03\nLec 11–14\nProbability\n\n\n04\nLec 15–16\nRelationships\n\n\n05\nLec 17–19\nEstimation\n\n\n06\nLec 20–21\nHypothesis Testing Logic\n\n\n07\nLec 22–26\nCore Tests\n\n\n08\nLec 27\nInterpretation\n\n\n\nNavigate slides with arrow keys. Press F for full screen, S for speaker notes, ? for all keyboard shortcuts."
+  },
+  {
+    "objectID": "videos/index.html",
+    "href": "videos/index.html",
+    "title": "Videos",
+    "section": "",
+    "text": "This section is reserved for chapter walkthroughs, worked-solution videos, and short revision clips aligned to the book and slide deck."
+  },
+  {
+    "objectID": "downloads/index.html",
+    "href": "downloads/index.html",
+    "title": "Downloads",
+    "section": "",
+    "text": "Resource\nFormat\nDescription\n\n\n\n\nFull textbook\nHTML\nAll 27 chapters\n\n\nLecture slides\nHTML (RevealJS)\n27 decks\n\n\nWorked examples\nHTML\n5 complete examples (Part 1)\n\n\nDatasets\nCSV\nAvailable in shared/datasets/dmm/clean/\n\n\nMoodle quizzes\nXML\nAvailable in shared/quizzes/moodle_xml/\n\n\n\n\n\nThe full source is available at: https://github.com/MohamedaliS/DMM_Suite\nClone the repo and run source(\"render_all.R\") to rebuild all outputs locally."
+  },
+  {
+    "objectID": "downloads/index.html#downloads",
+    "href": "downloads/index.html#downloads",
+    "title": "Downloads",
+    "section": "",
+    "text": "Resource\nFormat\nDescription\n\n\n\n\nFull textbook\nHTML\nAll 27 chapters\n\n\nLecture slides\nHTML (RevealJS)\n27 decks\n\n\nWorked examples\nHTML\n5 complete examples (Part 1)\n\n\nDatasets\nCSV\nAvailable in shared/datasets/dmm/clean/\n\n\nMoodle quizzes\nXML\nAvailable in shared/quizzes/moodle_xml/\n\n\n\n\n\nThe full source is available at: https://github.com/MohamedaliS/DMM_Suite\nClone the repo and run source(\"render_all.R\") to rebuild all outputs locally."
+  },
+  {
+    "objectID": "examples/index.html",
+    "href": "examples/index.html",
+    "title": "Worked Examples",
+    "section": "",
+    "text": "Each unit includes a fully worked example using the unit’s dataset. Steps cover data inspection, descriptive summaries, visualisation, and interpretation.\nBrowse all worked examples\n\n\n\nUnit\nExample\nDataset\n\n\n\n\n01\nDescribing branch performance data\nch01_main.csv\n\n\n02\nDescriptive vs inferential reasoning\nch02_main.csv\n\n\n03\nPopulations, samples, and sampling error\nch03_main.csv\n\n\n04\nChoosing and evaluating sampling methods\nch04_main.csv\n\n\n05\nIdentifying and handling variable types\nch05_main.csv\n\n\n\nAll examples include R code, kable-formatted output tables, and reflection questions."
+  },
+  {
+    "objectID": "examples/index.html#worked-examples",
+    "href": "examples/index.html#worked-examples",
+    "title": "Worked Examples",
+    "section": "",
+    "text": "Each unit includes a fully worked example using the unit’s dataset. Steps cover data inspection, descriptive summaries, visualisation, and interpretation.\nBrowse all worked examples\n\n\n\nUnit\nExample\nDataset\n\n\n\n\n01\nDescribing branch performance data\nch01_main.csv\n\n\n02\nDescriptive vs inferential reasoning\nch02_main.csv\n\n\n03\nPopulations, samples, and sampling error\nch03_main.csv\n\n\n04\nChoosing and evaluating sampling methods\nch04_main.csv\n\n\n05\nIdentifying and handling variable types\nch05_main.csv\n\n\n\nAll examples include R code, kable-formatted output tables, and reflection questions."
+  },
+  {
+    "objectID": "books/index.html",
+    "href": "books/index.html",
+    "title": "Textbook",
+    "section": "",
+    "text": "The full textbook is available as a searchable HTML book. It covers all 27 units across eight parts, from descriptive statistics through to choosing and interpreting hypothesis tests.\nOpen the textbook\n\n\n\n\n\n\n\n\n\n\nPart\nUnits\nTopics\n\n\n\n\n1\n01–05\nFoundations: what statistics is, populations, sampling, variable types\n\n\n2\n06–10\nDescribing data: distributions, graphs, measures of centre and spread\n\n\n3\n11–14\nProbability: rules, distributions, expected value\n\n\n4\n15–16\nRelationships: correlation and regression\n\n\n5\n17–19\nEstimation: CLT, confidence intervals\n\n\n6\n20–21\nHypothesis testing logic\n\n\n7\n22–26\nCore tests: t-tests, ANOVA, chi-square, non-parametric tests\n\n\n8\n27\nInterpretation and decision use\n\n\n\nAll chapters include worked examples, key term tables, and exercises."
+  },
+  {
+    "objectID": "books/index.html#data-driven-management-statistics-for-managers",
+    "href": "books/index.html#data-driven-management-statistics-for-managers",
+    "title": "Textbook",
+    "section": "",
+    "text": "The full textbook is available as a searchable HTML book. It covers all 27 units across eight parts, from descriptive statistics through to choosing and interpreting hypothesis tests.\nOpen the textbook\n\n\n\n\n\n\n\n\n\n\nPart\nUnits\nTopics\n\n\n\n\n1\n01–05\nFoundations: what statistics is, populations, sampling, variable types\n\n\n2\n06–10\nDescribing data: distributions, graphs, measures of centre and spread\n\n\n3\n11–14\nProbability: rules, distributions, expected value\n\n\n4\n15–16\nRelationships: correlation and regression\n\n\n5\n17–19\nEstimation: CLT, confidence intervals\n\n\n6\n20–21\nHypothesis testing logic\n\n\n7\n22–26\nCore tests: t-tests, ANOVA, chi-square, non-parametric tests\n\n\n8\n27\nInterpretation and decision use\n\n\n\nAll chapters include worked examples, key term tables, and exercises."
+  },
+  {
+    "objectID": "datasets/index.html",
+    "href": "datasets/index.html",
+    "title": "Datasets",
+    "section": "",
+    "text": "All datasets are available as clean CSV files in the shared/datasets/dmm/clean/ directory of the project repository.\n\n\n\n\n\n\n\n\n\n\nFile\nUnit\nDescription\nRows\nKey variables\n\n\n\n\nch01_main.csv\n01\nRetail branch performance\n47\nregion, revenue, complaints, rating\n\n\nch01_practice.csv\n01\nPractice subset\n30\nAs above\n\n\nch02_main.csv\n02\nConsultancy analyst performance\n120\nteam, billable hours, satisfaction\n\n\nch03_main.csv\n03\nRetail transactions\n200\ntransaction value, items, channel\n\n\nch04_main.csv\n04\nEmployee workforce\n600\ndepartment, tenure, engagement\n\n\nch05_main.csv\n05\nHotel guest records\n300\nroom type, spend, satisfaction, loyalty\n\n\n\nPractice versions (smaller subsets) are available for each unit. All datasets are synthetic and generated with fixed random seeds for reproducibility.\n\n\n# From within the project\ndf &lt;- dmm_load(\"01\", \"main\")   # uses dmm_helpers.R\n\n# Direct path\ndf &lt;- read.csv(\"shared/datasets/dmm/clean/ch01_main.csv\")"
+  },
+  {
+    "objectID": "datasets/index.html#datasets",
+    "href": "datasets/index.html#datasets",
+    "title": "Datasets",
+    "section": "",
+    "text": "All datasets are available as clean CSV files in the shared/datasets/dmm/clean/ directory of the project repository.\n\n\n\n\n\n\n\n\n\n\nFile\nUnit\nDescription\nRows\nKey variables\n\n\n\n\nch01_main.csv\n01\nRetail branch performance\n47\nregion, revenue, complaints, rating\n\n\nch01_practice.csv\n01\nPractice subset\n30\nAs above\n\n\nch02_main.csv\n02\nConsultancy analyst performance\n120\nteam, billable hours, satisfaction\n\n\nch03_main.csv\n03\nRetail transactions\n200\ntransaction value, items, channel\n\n\nch04_main.csv\n04\nEmployee workforce\n600\ndepartment, tenure, engagement\n\n\nch05_main.csv\n05\nHotel guest records\n300\nroom type, spend, satisfaction, loyalty\n\n\n\nPractice versions (smaller subsets) are available for each unit. All datasets are synthetic and generated with fixed random seeds for reproducibility.\n\n\n# From within the project\ndf &lt;- dmm_load(\"01\", \"main\")   # uses dmm_helpers.R\n\n# Direct path\ndf &lt;- read.csv(\"shared/datasets/dmm/clean/ch01_main.csv\")"
+  }
+]

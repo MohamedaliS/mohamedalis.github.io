@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research — Mohammed Ali Sharafuddin</title>
+<meta name="description" content="Publications, conference presentations, research grants, and academic themes by Mohammed Ali Sharafuddin.">
+<style>
+/* ─────────────────────────────────────────
+   FlairMI / MAS — Shared Stylesheet
+   Light academic editorial
+───────────────────────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --ink:        #1C1C1A;
+  --ink-soft:   #3D3D38;
+  --rule:       #D4D0C8;
+  --rule-light: #ECEAE4;
+  --warm-white: #FAF9F6;
+  --warm-mid:   #F0EEE8;
+  --grey:       #8A8780;
+  --accent:     #6B4F35;
+  --accent-lt:  #C9AA87;
+  --tag-bg:     #EDEAE2;
+  --max-w:      1180px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--warm-white);
+  color: var(--ink);
+  font-family: 'Lora', Georgia, serif;
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAV ── */
+.site-nav {
+  border-bottom: 1px solid var(--rule);
+  background: var(--warm-white);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 5vw, 3rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  height: 52px;
+}
+
+.nav-brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+.nav-brand span { color: var(--accent); font-style: italic; }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-soft);
+  text-decoration: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 2px;
+  transition: color 0.18s, background 0.18s;
+  white-space: nowrap;
+}
+
+.nav-links a:hover,
+.nav-links a.active { color: var(--accent); }
+
+.nav-links a.nav-cta {
+  border: 1px solid var(--rule);
+  color: var(--ink);
+}
+
+.nav-links a.nav-cta:hover {
+  border-color: var(--accent-lt);
+  color: var(--accent);
+}
+
+/* ── PAGE MASTHEAD ── */
+.page-masthead {
+  border-bottom: 3px double var(--ink);
+  padding: 2.5rem clamp(1.5rem, 5vw, 3rem) 1.8rem;
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.page-masthead .eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.page-masthead h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+.page-masthead .lead {
+  font-size: 0.97rem;
+  color: var(--ink-soft);
+  margin-top: 0.6rem;
+  max-width: 60ch;
+}
+
+/* ── LAYOUT ── */
+.page-body {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 3rem clamp(1.5rem, 5vw, 3rem) 5rem;
+}
+
+.section {
+  margin-bottom: 3.5rem;
+}
+
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.64rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--grey);
+  border-bottom: 1px solid var(--rule-light);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: 1.55rem;
+  color: var(--ink);
+  margin-bottom: 0.8rem;
+}
+
+/* ── CARD GRID ── */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: 1.5rem;
+}
+
+.card-grid.two-col {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr));
+}
+
+.card {
+  border: 1px solid var(--rule);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.22s, border-color 0.22s, transform 0.2s;
+}
+
+.card:hover {
+  border-color: var(--accent-lt);
+  box-shadow: 3px 5px 22px rgba(0,0,0,0.06);
+  transform: translateY(-2px);
+}
+
+.card-band {
+  height: 3px;
+}
+.band-textbook  { background: linear-gradient(90deg, #3A5A8C, #7AABD4); }
+.band-template  { background: linear-gradient(90deg, #6B4F35, #C9AA87); }
+.band-tool      { background: linear-gradient(90deg, #3A6835, #7BA67A); }
+.band-research  { background: linear-gradient(90deg, #4A6741, #7BA67A); }
+.band-web       { background: linear-gradient(90deg, #5A3D6B, #A07DC0); }
+.band-course    { background: linear-gradient(90deg, #7A4A3A, #D4907A); }
+.band-conf      { background: linear-gradient(90deg, #3A5A5A, #7AB4B4); }
+.band-workshop  { background: linear-gradient(90deg, #4A3A6B, #9A7AC0); }
+
+.card-body {
+  padding: 1.3rem 1.4rem 1.1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.7rem;
+  margin-bottom: 0.75rem;
+}
+
+.card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+.card-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.58rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.badge-live    { background: #EAF2E8; color: #3A6835; border: 1px solid #B4D4AF; }
+.badge-planned { background: #F0EDEA; color: #7A6050; border: 1px solid #D4C4B4; }
+.badge-wip     { background: #EDF0F5; color: #3A507A; border: 1px solid #B0C4DA; }
+.badge-free    { background: #EAF2E8; color: #3A6835; border: 1px solid #B4D4AF; }
+.badge-open    { background: var(--tag-bg); color: var(--grey); border: 1px solid var(--rule); }
+
+.card-desc {
+  font-size: 0.9rem;
+  line-height: 1.72;
+  color: var(--ink-soft);
+  flex: 1;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 1rem;
+}
+
+.tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.18rem 0.5rem;
+  background: var(--tag-bg);
+  color: var(--grey);
+  border-radius: 2px;
+}
+
+.card-footer {
+  border-top: 1px solid var(--rule-light);
+  padding: 0.75rem 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.card-meta {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--grey);
+}
+
+.card-link {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent-lt);
+  padding-bottom: 1px;
+  transition: opacity 0.18s;
+  white-space: nowrap;
+}
+.card-link:hover { opacity: 0.65; }
+.card-link.disabled { color: var(--grey); border-color: var(--rule); pointer-events: none; }
+
+/* ── TOOL ENTRY (tools page) ── */
+.tool-entry {
+  border: 1px solid var(--rule-light);
+  padding: 1.2rem 1.4rem;
+  background: #fff;
+  margin-bottom: 0.85rem;
+  transition: border-color 0.18s;
+}
+.tool-entry:hover { border-color: var(--accent-lt); }
+
+.tool-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+  margin-bottom: 0.4rem;
+}
+
+.tool-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--ink);
+}
+
+.tool-role {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.58rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  background: var(--tag-bg);
+  padding: 0.15rem 0.45rem;
+  border-radius: 2px;
+}
+
+.tool-desc {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  line-height: 1.68;
+}
+
+.tool-link {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--grey);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 1px;
+  margin-top: 0.5rem;
+  display: inline-block;
+  transition: color 0.18s, border-color 0.18s;
+}
+.tool-link:hover { color: var(--accent); border-color: var(--accent-lt); }
+
+/* ── PUB LIST ── */
+.pub-list { list-style: none; border-top: 1px solid var(--rule-light); }
+
+.pub-item {
+  display: flex;
+  gap: 1.1rem;
+  align-items: flex-start;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--rule-light);
+}
+
+.pub-year {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  min-width: 2.8rem;
+  flex-shrink: 0;
+  padding-top: 0.15rem;
+}
+
+.pub-content { flex: 1; }
+
+.pub-title {
+  font-family: 'Lora', serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  line-height: 1.5;
+  display: block;
+  transition: color 0.18s;
+}
+a.pub-title:hover { color: var(--accent); }
+.pub-title.no-link { font-weight: 400; color: var(--ink-soft); }
+
+.pub-venue {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 0.77rem;
+  color: var(--grey);
+  margin-top: 0.12rem;
+  line-height: 1.4;
+}
+
+.pub-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.55rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.1rem 0.4rem;
+  border-radius: 2px;
+  margin-left: 0.4rem;
+  vertical-align: middle;
+}
+.pub-badge.q1 { background: #EAF2E8; color: #3A6835; }
+.pub-badge.q2 { background: #EDF0F5; color: #3A507A; }
+.pub-badge.q3 { background: #F5F0ED; color: #6A5040; }
+
+/* ── STATS ROW ── */
+.stat-row {
+  display: flex;
+  gap: 0;
+  border: 1px solid var(--rule-light);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.stat-cell {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.8rem 0.5rem;
+  border-right: 1px solid var(--rule-light);
+  background: var(--warm-mid);
+}
+.stat-cell:last-child { border-right: none; }
+
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 1.55rem;
+  line-height: 1;
+  color: var(--ink);
+}
+
+.stat-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.56rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--grey);
+  margin-top: 0.2rem;
+  text-align: center;
+}
+
+/* ── TOGGLE BUTTON ── */
+.show-more {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.63rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--accent);
+  background: none;
+  border: 1px solid var(--accent-lt);
+  padding: 0.35rem 0.9rem;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-top: 0.9rem;
+  transition: background 0.18s, color 0.18s;
+  display: block;
+}
+.show-more:hover { background: var(--accent); color: var(--warm-white); }
+
+/* ── FOOTER ── */
+.site-footer {
+  border-top: 3px double var(--rule);
+  padding: 1.8rem clamp(1.5rem, 5vw, 3rem);
+}
+
+.footer-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-note {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.88rem;
+  color: var(--grey);
+}
+
+.footer-mono {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  color: var(--rule);
+  text-transform: uppercase;
+}
+
+/* ── UTILITIES ── */
+.divider {
+  border: none;
+  border-top: 1px solid var(--rule-light);
+  margin: 2.5rem 0;
+}
+
+.text-mono {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 700px) {
+  .nav-links { display: none; }
+  .stat-row  { flex-wrap: wrap; }
+  .stat-cell { min-width: 45%; }
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">Mohammed Ali <span>Sharafuddin</span></a>
+    <div class="nav-links">
+      <a href="textbooks.html">Textbooks</a>
+      <a href="templates.html">Templates</a>
+      <a href="tools.html">Open-Source Tools</a>
+      <a href="blog.html">Blog</a>
+      <a href="research.html" class="active">Research</a>
+      <a href="about.html">About</a>
+      <a href="assets/docs/MAS_CV.pdf" class="nav-cta" target="_blank" rel="noopener">CV</a>
+      <a href="index.html#contact" class="nav-cta">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<div style="max-width:var(--max-w); margin:0 auto;">
+  <div class="page-masthead">
+    <div class="eyebrow">Academic Output</div>
+    <h1>Research</h1>
+    <p class="lead">Publications, conference papers, funded projects, and research themes — 2014 to 2026.</p>
+  </div>
+</div>
+
+<div class="page-body">
+
+  <!-- Stats -->
+  <div class="stat-row" style="margin-bottom:2.5rem;">
+    <div class="stat-cell"><span class="stat-num">23</span><span class="stat-label">Journal Papers</span></div>
+    <div class="stat-cell"><span class="stat-num">20</span><span class="stat-label">Conferences</span></div>
+    <div class="stat-cell"><span class="stat-num">8</span><span class="stat-label">Funded Projects</span></div>
+    <div class="stat-cell"><span class="stat-num">12</span><span class="stat-label">Years Active</span></div>
+    <div class="stat-cell"><span class="stat-num">2026</span><span class="stat-label">Most Recent</span></div>
+  </div>
+
+  <!-- Research Themes -->
+  <section class="section">
+    <div class="section-label">Research Themes</div>
+    <div style="display:flex; flex-wrap:wrap; gap:0.6rem;">
+      <div style="border:1px solid var(--rule); padding:0.45rem 0.85rem; background:#fff; display:flex; align-items:center; gap:0.5rem;">
+        <span style="font-family:'Lora',serif; font-size:0.83rem; color:var(--ink);">Digital Marketing Capabilities</span>
+        <span style="font-family:'JetBrains Mono',monospace; font-size:0.58rem; color:var(--accent); background:var(--tag-bg); padding:0.1rem 0.38rem; border-radius:2px;">6 papers</span>
+      </div>
+      <div style="border:1px solid var(--rule); padding:0.45rem 0.85rem; background:#fff; display:flex; align-items:center; gap:0.5rem;">
+        <span style="font-family:'Lora',serif; font-size:0.83rem; color:var(--ink);">Sustainable SME Performance</span>
+        <span style="font-family:'JetBrains Mono',monospace; font-size:0.58rem; color:var(--accent); background:var(--tag-bg); padding:0.1rem 0.38rem; border-radius:2px;">5 papers</span>
+      </div>
+      <div style="border:1px solid var(--rule); padding:0.45rem 0.85rem; background:#fff; display:flex; align-items:center; gap:0.5rem;">
+        <span style="font-family:'Lora',serif; font-size:0.83rem; color:var(--ink);">Tourism &amp; Destination Studies</span>
+        <span style="font-family:'JetBrains Mono',monospace; font-size:0.58rem; color:var(--accent); background:var(--tag-bg); padding:0.1rem 0.38rem; border-radius:2px;">5 papers</span>
+      </div>
+      <div style="border:1px solid var(--rule); padding:0.45rem 0.85rem; background:#fff; display:flex; align-items:center; gap:0.5rem;">
+        <span style="font-family:'Lora',serif; font-size:0.83rem; color:var(--ink);">Research Methodology</span>
+        <span style="font-family:'JetBrains Mono',monospace; font-size:0.58rem; color:var(--accent); background:var(--tag-bg); padding:0.1rem 0.38rem; border-radius:2px;">3 papers</span>
+      </div>
+      <div style="border:1px solid var(--rule); padding:0.45rem 0.85rem; background:#fff; display:flex; align-items:center; gap:0.5rem;">
+        <span style="font-family:'Lora',serif; font-size:0.83rem; color:var(--ink);">Industry 4.0 &amp; 5.0</span>
+        <span style="font-family:'JetBrains Mono',monospace; font-size:0.58rem; color:var(--accent); background:var(--tag-bg); padding:0.1rem 0.38rem; border-radius:2px;">3 papers</span>
+      </div>
+      <div style="border:1px solid var(--rule); padding:0.45rem 0.85rem; background:#fff; display:flex; align-items:center; gap:0.5rem;">
+        <span style="font-family:'Lora',serif; font-size:0.83rem; color:var(--ink);">Education &amp; Learning Environments</span>
+        <span style="font-family:'JetBrains Mono',monospace; font-size:0.58rem; color:var(--accent); background:var(--tag-bg); padding:0.1rem 0.38rem; border-radius:2px;">2 papers</span>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- Publications -->
+  <section class="section">
+    <div class="section-label">Journal Publications — SCOPUS &amp; Web of Science</div>
+
+    <ul class="pub-list" id="pubList">
+      <li class="pub-item"><div class="pub-year">2025</div><div class="pub-content"><a href="https://doi.org/10.3390/encyclopedia5040212" class="pub-title" target="_blank" rel="noopener">Why Method Matters: A Systematic Review and Meta-Analysis of the Marketing Capability–Performance Relationship</a><div class="pub-venue">Encyclopedia, 5(4), 212 &middot; Sharafuddin &amp; Janarthanam <span class="pub-badge q3">SCOPUS</span></div></div></li>
+      <li class="pub-item"><div class="pub-year">2025</div><div class="pub-content"><a href="https://doi.org/10.3390/su17083632" class="pub-title" target="_blank" rel="noopener">Factors Influencing Cross-Border E-Commerce Adoption of Thai MSMEs: A Fuzzy DEMATEL Approach</a><div class="pub-venue">Sustainability, 17(8), 3632 &middot; Madhavan, Sharafuddin &amp; Wangtueai <span class="pub-badge q1">Q1</span></div></div></li>
+      <li class="pub-item"><div class="pub-year">2025</div><div class="pub-content"><a href="https://doi.org/10.31893/multirev.2025252" class="pub-title" target="_blank" rel="noopener">A Bibliometric and Conceptual Analysis of Digital Marketing: Capabilities, Strategies, Innovation, and Firm Performance</a><div class="pub-venue">Multidisciplinary Reviews, 8(8), 2025252 &middot; Sharafuddin &amp; Janarthanam <span class="pub-badge q3">SCOPUS</span></div></div></li>
+      <li class="pub-item"><div class="pub-year">2024</div><div class="pub-content"><a href="https://doi.org/10.3390/admsci14110273" class="pub-title" target="_blank" rel="noopener">Assessing the Effectiveness of Digital Marketing in Enhancing Tourist Experiences and Satisfaction: A Study of Thailand's Tourism Services</a><div class="pub-venue">Administrative Sciences, 14(11), 273 &middot; Sharafuddin, Madhavan &amp; Wangtueai <span class="pub-badge q2">Q2</span></div></div></li>
+      <li class="pub-item"><div class="pub-year">2024</div><div class="pub-content"><a href="https://doi.org/10.3390/admsci14060110" class="pub-title" target="_blank" rel="noopener">Impact of Industry 5.0 Readiness on Sustainable Business Growth of Marine Food Processing SMEs in Thailand</a><div class="pub-venue">Administrative Sciences, 14(6), 110 &middot; Madhavan, Sharafuddin &amp; Wangtueai <span class="pub-badge q2">Q2</span></div></div></li>
+
+      <!-- Hidden older papers -->
+      <li class="pub-item pub-hidden" style="display:none;"><div class="pub-year">2024</div><div class="pub-content"><a href="https://doi.org/10.3390/su16052205" class="pub-title" target="_blank" rel="noopener">Measuring the Industry 5.0-Readiness Level of SMEs Using Industry 1.0–5.0 Practices: The Case of the Seafood Processing Industry</a><div class="pub-venue">Sustainability, 16(5), 2205 &middot; Madhavan, Sharafuddin &amp; Wangtueai <span class="pub-badge q1">Q1</span></div></div></li>
+      <li class="pub-item pub-hidden" style="display:none;"><div class="pub-year">2023</div><div class="pub-content"><a href="https://doi.org/10.1177/0972150920923316" class="pub-title" target="_blank" rel="noopener">Short-Term Forecasting for Airline Industry: The Case of Indian Air Passenger and Air Cargo</a><div class="pub-venue">Global Business Review, 24(6), 1145–1179 &middot; Madhavan, Sharafuddin, Piboonrungroj &amp; Yang <span class="pub-badge q2">Q2</span></div></div></li>
+      <li class="pub-item pub-hidden" style="display:none;"><div class="pub-year">2022</div><div class="pub-content"><a href="https://doi.org/10.3390/joitmc8030152" class="pub-title" target="_blank" rel="noopener">The Precipitative Effects of Pandemic on Open Innovation of SMEs: A Scientometrics and Systematic Review of Industry 4.0 and Industry 5.0</a><div class="pub-venue">Journal of Open Innovation, 8(3), 152 &middot; Madhavan, Wangtueai, Sharafuddin &amp; Chaichana <span class="pub-badge q1">Q1</span></div></div></li>
+      <li class="pub-item pub-hidden" style="display:none;"><div class="pub-year">2022</div><div class="pub-content"><a href="https://doi.org/10.3390/su14159673" class="pub-title" target="_blank" rel="noopener">Impact of Business Model Innovation on Sustainable Performance of Processed Marine Food Product SMEs in Thailand — a PLS-SEM Approach</a><div class="pub-venue">Sustainability, 14(15), 9673 &middot; Madhavan, Sharafuddin &amp; Chaichana <span class="pub-badge q1">Q1</span></div></div></li>
+      <li class="pub-item pub-hidden" style="display:none;"><div class="pub-year">2022</div><div class="pub-content"><a href="https://doi.org/10.3390/su14159099" class="pub-title" target="_blank" rel="noopener">The Effects of Innovation Adoption and Social Factors between Sustainable Supply Chain Management Practices and Sustainable Firm Performance</a><div class="pub-venue">Sustainability, 14(15), 9099 &middot; Sharafuddin, Madhavan &amp; Chaichana <span class="pub-badge q1">Q1</span></div></div></li>
+      <li class="pub-item pub-hidden" style="display:none;"><div class="pub-year">2022</div><div class="pub-content"><a href="https://doi.org/10.1177/09721509221124789" class="pub-title" target="_blank" rel="noopener">Assessing Island Destination Service Quality — An Integrated Model through Co-Creation of Destination e-Image</a><div class="pub-venue">Global Business Review &middot; Sharafuddin, Madhavan &amp; Wangtueai <span class="pub-badge q2">Q2</span></div></div></li>
+      <li class="pub-item pub-hidden" style="display:none;"><div class="pub-year">2022</div><div class="pub-content"><a href="https://doi.org/10.33175/mtr.2022.254043" class="pub-title" target="_blank" rel="noopener">Blue Economy: The Past and Present from the World and Future Directions for Thailand</a><div class="pub-venue">Maritime Technology and Research, 4(2) &middot; Koondee, Sharafuddin &amp; Madhavan <span class="pub-badge q3">Q4</span></div></div></li>
+      <li class="pub-item pub-hidden" style="display:none;"><div class="pub-year">2021</div><div class="pub-content"><a href="https://doi.org/10.11591/eei.v10i6.3199" class="pub-title" target="_blank" rel="noopener">Assessing Mangrove Deforestation Using Pixel-Based Image: A Machine Learning Approach</a><div class="pub-venue">Bulletin of Electrical Engineering and Informatics, 10(6) &middot; Dawod &amp; Sharafuddin <span class="pub-badge q3">Q3</span></div></div></li>
+      <li class="pub-item pub-hidden" style="display:none;"><div class="pub-year">2021</div><div class="pub-content"><a href="https://doi.org/10.1177/09721509211046335" class="pub-title" target="_blank" rel="noopener">Assessing Trade Attractiveness Using International Marketing Environmental Factors and Fuzzy DEMATEL</a><div class="pub-venue">Global Business Review &middot; Madhavan, Sharafuddin &amp; Wangtueai <span class="pub-badge q2">Q2</span></div></div></li>
+      <li class="pub-item pub-hidden" style="display:none;"><div class="pub-year">2021</div><div class="pub-content"><span class="pub-title no-link">Expanding Themes of Destination E-Image and Service Quality: A Qualitative Study Using Conversational Interview</span><div class="pub-venue">Academy of Strategic Management Journal, 20(4) &middot; Sharafuddin, Madhavan &amp; Wangtueai <span class="pub-badge q3">Q3</span></div></div></li>
+      <li class="pub-item pub-hidden" style="display:none;"><div class="pub-year">2020</div><div class="pub-content"><a href="https://ertr-ojs-tamu.tdl.org/ertr/article/view/459" class="pub-title" target="_blank" rel="noopener">Measurement Model for Assessing Community-Based Wellness Tourism Needs</a><div class="pub-venue">e-Review of Tourism Research, 18(2), 311–336 &middot; Sharafuddin &amp; Madhavan</div></div></li>
+      <li class="pub-item pub-hidden" style="display:none;"><div class="pub-year">2020</div><div class="pub-content"><a href="https://doi.org/10.1177/097215092096688" class="pub-title" target="_blank" rel="noopener">Thematic Evolution of Blue Tourism: A Scientometric Analysis and Systematic Review</a><div class="pub-venue">Global Business Review &middot; Sharafuddin &amp; Madhavan <span class="pub-badge q2">Q2</span></div></div></li>
+      <li class="pub-item pub-hidden" style="display:none;"><div class="pub-year">2018</div><div class="pub-content"><span class="pub-title no-link">Modeling and Mapping Personal Learning Environment of Thai International Higher Education Students</span><div class="pub-venue">Asian Journal of Education and Training, 4(1), 35–40 &middot; Sharafuddin, Sawad &amp; Wongwai</div></div></li>
+      <li class="pub-item pub-hidden" style="display:none;"><div class="pub-year">2017</div><div class="pub-content"><span class="pub-title no-link">China's Outbound Tourism and Thailand</span><div class="pub-venue">Journal of Asia Pacific Studies, 4(3), 386–394 &middot; Sharafuddin</div></div></li>
+      <li class="pub-item pub-hidden" style="display:none;"><div class="pub-year">2016</div><div class="pub-content"><span class="pub-title no-link">Understanding Personal Learning Environment Perspectives of Thai International Tourism and Hospitality Higher Education Students</span><div class="pub-venue">Journal of Education and Practice, 7(10), 128–139 &middot; Tanyong &amp; Sharafuddin</div></div></li>
+      <li class="pub-item pub-hidden" style="display:none;"><div class="pub-year">2015</div><div class="pub-content"><span class="pub-title no-link">Types of Tourism in Thailand</span><div class="pub-venue">E-Review of Tourism Research, 12(3/4), 210–219 &middot; Sharafuddin <span class="pub-badge q3">Q3</span></div></div></li>
+      <li class="pub-item pub-hidden" style="display:none;"><div class="pub-year">2015</div><div class="pub-content"><span class="pub-title no-link">Siddha and Wellness Tourism: Opportunities and Challenges for Brand Tamilnadu</span><div class="pub-venue">International Journal of Research Ayurveda Pharmacy, 6(3) &middot; Sharafuddin <span class="pub-badge q3">Q3</span></div></div></li>
+      <li class="pub-item pub-hidden" style="display:none;"><div class="pub-year">2014</div><div class="pub-content"><span class="pub-title no-link">Halal Market in India — Opportunities and Challenges</span><div class="pub-venue">ISBN Book Chapter &middot; Alagappa Institute of Management International Conference &middot; Sharafuddin</div></div></li>
+    </ul>
+    <button class="show-more" id="pubToggle" onclick="togglePubs()">Show all 18 earlier papers ↓</button>
+    <div style="margin-top:0.8rem;">
+      <a href="https://scholar.google.com/citations?hl=en&user=DgaDtq4AAAAJ" target="_blank" rel="noopener" style="font-family:'JetBrains Mono',monospace; font-size:0.63rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent); text-decoration:none; border-bottom:1px solid var(--accent-lt); padding-bottom:1px;">View on Google Scholar →</a>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- Conferences -->
+  <section class="section">
+    <div class="section-label">Conference Presentations</div>
+    <ul class="pub-list" id="confList">
+      <li class="pub-item"><div class="pub-year">2026</div><div class="pub-content"><a href="https://fos.tsm.ac.in/" class="pub-title" target="_blank" rel="noopener">The DIPMA Framework: A Cyclical Workflow for Statistical Reasoning in Business Research</a><div class="pub-venue">FOS 2026 — Frontiers of Sustainability (GRIE) &middot; Thiagarajar School of Management, Madurai, India</div></div></li>
+      <li class="pub-item"><div class="pub-year">2026</div><div class="pub-content"><a href="https://fos.tsm.ac.in/" class="pub-title" target="_blank" rel="noopener">Technological Transformations and Their Impact on Human Resource Management and Industrial Relations: Systematic Review</a><div class="pub-venue">FOS 2026 — Frontiers of Sustainability (GRIE) &middot; Thiagarajar School of Management, Madurai, India</div></div></li>
+      <li class="pub-item"><div class="pub-year">2026</div><div class="pub-content"><a href="https://fos.tsm.ac.in/" class="pub-title" target="_blank" rel="noopener">Challenges and Solutions in Souvenir Practices for Sustainable Tourism: A Systematic Review Towards Achieving SDGs</a><div class="pub-venue">FOS 2026 — Frontiers of Sustainability (GRIE) &middot; Thiagarajar School of Management, Madurai, India</div></div></li>
+      <li class="pub-item"><div class="pub-year">2026</div><div class="pub-content"><a href="https://fos.tsm.ac.in/" class="pub-title" target="_blank" rel="noopener">Gastronomic E-Image and Behavioural Intentions: A Feedback-Loop Framework</a><div class="pub-venue">FOS 2026 — Frontiers of Sustainability (GRIE) &middot; Thiagarajar School of Management, Madurai, India</div></div></li>
+      <li class="pub-item"><div class="pub-year">2026</div><div class="pub-content"><a href="https://nu.edu.om/imlc-2026/" class="pub-title" target="_blank" rel="noopener">Digital Government, Maritime Connectivity, and Container Port Performance: Evidence from the UN Online Services Index, LSCI, and CPPI, 2008–2024</a><div class="pub-venue">IMLC 2026 &middot; National University of Science &amp; Technology (IMCO), Sohar, Oman &middot; Sharafuddin &amp; Madhavan</div></div></li>
+      <li class="pub-item conf-hidden" style="display:none;"><div class="pub-year">2026</div><div class="pub-content"><span class="pub-title no-link">IMO 2020 and Global Shipping Connectivity: A Causal Analysis</span><div class="pub-venue">TES 2026 &middot; Chiang Mai University, Thailand &middot; Sharafuddin, Madhavan &amp; Nair</div></div></li>
+      <li class="pub-item conf-hidden" style="display:none;"><div class="pub-year">2026</div><div class="pub-content"><span class="pub-title no-link">Post-Pandemic Drivers of Deep-Sea Freight Rate Volatility</span><div class="pub-venue">TES 2026 &middot; Chiang Mai University, Thailand &middot; Madhavan, Sharafuddin, Nair &amp; Kiran</div></div></li>
+      <li class="pub-item conf-hidden" style="display:none;"><div class="pub-year">2025</div><div class="pub-content"><span class="pub-title no-link">Logistics Performance and Trade in Small Island Developing States: A Regional Fixed Effects Analysis</span><div class="pub-venue">ICSRI 2025 &middot; Villa College, Maldives &middot; Sharafuddin &amp; Madhavan</div></div></li>
+      <li class="pub-item conf-hidden" style="display:none;"><div class="pub-year">2024</div><div class="pub-content"><span class="pub-title no-link">The Antecedent Role of Digital Marketing Effectiveness on Tourist Perception and Behavioural Intention</span><div class="pub-venue">ICON-24 &middot; Hindustan College of Arts and Science, Tamil Nadu, India</div></div></li>
+      <li class="pub-item conf-hidden" style="display:none;"><div class="pub-year">2024</div><div class="pub-content"><span class="pub-title no-link">A Review on Factors Influencing Cross-Border E-Commerce of MSMEs</span><div class="pub-venue">ICON-24 &middot; Hindustan College of Arts and Science, Tamil Nadu, India</div></div></li>
+      <li class="pub-item conf-hidden" style="display:none;"><div class="pub-year">2023</div><div class="pub-content"><span class="pub-title no-link">Impact of Industry 5.0 Competitiveness Readiness on the Sustainable Growth of SMEs</span><div class="pub-venue">PSG Institute of Management, Coimbatore, India</div></div></li>
+      <li class="pub-item conf-hidden" style="display:none;"><div class="pub-year">2023</div><div class="pub-content"><span class="pub-title no-link">Conceptual Gap between Industry 1.0–5.0: Can SMEs Escalate in the Industrial Revolution?</span><div class="pub-venue">PSG Institute of Management, Coimbatore, India</div></div></li>
+      <li class="pub-item conf-hidden" style="display:none;"><div class="pub-year">2020</div><div class="pub-content"><span class="pub-title no-link">Systematic Review of Service Quality in Maritime Business Research</span><div class="pub-venue">PIMSAT, Thanjavur, India &middot; Sharafuddin &amp; Madhavan</div></div></li>
+      <li class="pub-item conf-hidden" style="display:none;"><div class="pub-year">2019</div><div class="pub-content"><span class="pub-title no-link">Time Series Forecasting Using ARIMA vs. Bayesian Structural Time Series Models</span><div class="pub-venue">IFSPA &middot; Hong Kong Polytechnic University &middot; Madhavan, Piboonrungroj &amp; Sharafuddin</div></div></li>
+      <li class="pub-item conf-hidden" style="display:none;"><div class="pub-year">2019</div><div class="pub-content"><span class="pub-title no-link">Coastal, Marine and Maritime Tourism: A Scientometrics Analysis of 21st Century Research</span><div class="pub-venue">PIMSAT, Thanjavur, India</div></div></li>
+      <li class="pub-item conf-hidden" style="display:none;"><div class="pub-year">2015</div><div class="pub-content"><span class="pub-title no-link">Segmenting Shopping Tourism Market Based on Retail Store Images, Puducherry</span><div class="pub-venue">Bon Secours College, Thanjavur, India</div></div></li>
+      <li class="pub-item conf-hidden" style="display:none;"><div class="pub-year">2014</div><div class="pub-content"><span class="pub-title no-link">Determinants of Sub-Urban Consumers' Intention to Purchase Frozen Food at Convenience Stores in Thailand</span><div class="pub-venue">Uttaradit Rajabhat University International Conference, Thailand</div></div></li>
+      <li class="pub-item conf-hidden" style="display:none;"><div class="pub-year">2014</div><div class="pub-content"><span class="pub-title no-link">Applicability of RSQS at Convenience Stores in Ongkharak, Thailand</span><div class="pub-venue">PIMSAT, Thanjavur, India &middot; Madhavan &amp; Sharafuddin</div></div></li>
+      <li class="pub-item conf-hidden" style="display:none;"><div class="pub-year">2014</div><div class="pub-content"><span class="pub-title no-link">Online Presence and Current Status of Tamil Nadu Tourist Omni Bus Services in Social Media</span><div class="pub-venue">Fatima College, Madurai, India</div></div></li>
+      <li class="pub-item conf-hidden" style="display:none;"><div class="pub-year">2014</div><div class="pub-content"><span class="pub-title no-link">Tourists' Motivations, Experience and Satisfaction Towards Nakhon Nayok Province</span><div class="pub-venue">NEU National and International Research Conference, Khon Kaen, Thailand</div></div></li>
+    </ul>
+    <button class="show-more" id="confToggle" onclick="toggleConf()">Show all 15 earlier presentations ↓</button>
+  </section>
+
+  <hr class="divider">
+
+  <!-- Grants -->
+  <section class="section">
+    <div class="section-label">Funded Research Projects</div>
+    <ul class="pub-list">
+      <li class="pub-item"><div class="pub-year">2025–27</div><div class="pub-content"><span class="pub-title no-link">Assessing and Navigating Digital Readiness in GVC Integration and SMEs Competitiveness for Sustainable Growth in Oman's Blue Economy Sectors</span><div class="pub-venue">Co-Investigator &middot; Ministry of Higher Education, Research and Innovation, Oman</div></div></li>
+      <li class="pub-item"><div class="pub-year">2023–24</div><div class="pub-content"><span class="pub-title no-link">Assessing the Digital Marketing Effectiveness of Blue Tourism Services in Thailand</span><div class="pub-venue">Project Leader &middot; Chiang Mai University, Thailand</div></div></li>
+      <li class="pub-item"><div class="pub-year">2023–24</div><div class="pub-content"><span class="pub-title no-link">Exploring Thailand's E-Commerce Attractiveness towards Cross-Border Trade</span><div class="pub-venue">Co-Investigator &middot; Chiang Mai University, Thailand</div></div></li>
+      <li class="pub-item"><div class="pub-year">2023–24</div><div class="pub-content"><span class="pub-title no-link">Modelling Opportunities and Challenges for Seafood Processing SMEs in Global Value Chains</span><div class="pub-venue">Co-Investigator &middot; Chiang Mai University, Thailand</div></div></li>
+      <li class="pub-item"><div class="pub-year">2021–23</div><div class="pub-content"><span class="pub-title no-link">Assessing the Determinants of Industry 5.0 Competitiveness Readiness among Thailand's Marine Food Processing SMEs</span><div class="pub-venue">Co-Investigator &middot; National Research Council, Thailand</div></div></li>
+      <li class="pub-item"><div class="pub-year">2020–21</div><div class="pub-content"><span class="pub-title no-link">Impact of Business Model Innovation on Sustainable Performance of Processed Marine Food Product SMEs in Thailand</span><div class="pub-venue">Co-Investigator &middot; กสว., Thailand</div></div></li>
+      <li class="pub-item"><div class="pub-year">2020–21</div><div class="pub-content"><span class="pub-title no-link">The Mediating and Moderating Role of Social Factors and Innovation Adoption in the Relationship between Sustainable Supply Chain Practices and Firm Performance</span><div class="pub-venue">Project Leader &middot; กสว., Thailand</div></div></li>
+      <li class="pub-item"><div class="pub-year">2018</div><div class="pub-content"><span class="pub-title no-link">Supply Chain Management and Logistics in Processed Food and Agro Products Industry</span><div class="pub-venue">Project Leader &middot; Embassy of India, Bangkok, Thailand</div></div></li>
+    </ul>
+  </section>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-note">Mohammed Ali Sharafuddin &mdash; Senior Lecturer, Villa College, Malé, Maldives.</p>
+    <span class="footer-mono">Updated March 2026</span>
+  </div>
+</footer>
+
+<script>
+  let pubsOpen = false;
+  function togglePubs() {
+    pubsOpen = !pubsOpen;
+    document.querySelectorAll('.pub-item.pub-hidden').forEach(el => el.style.display = pubsOpen ? 'flex' : 'none');
+    document.getElementById('pubToggle').textContent = pubsOpen ? 'Show fewer ↑' : 'Show all 18 earlier papers ↓';
+  }
+  let confOpen = false;
+  function toggleConf() {
+    confOpen = !confOpen;
+    document.querySelectorAll('.pub-item.conf-hidden').forEach(el => el.style.display = confOpen ? 'flex' : 'none');
+    document.getElementById('confToggle').textContent = confOpen ? 'Show fewer ↑' : 'Show all 15 earlier presentations ↓';
+  }
+</script>
+
+</body>
+</html>

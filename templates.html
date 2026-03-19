@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Templates &amp; Dashboards — Mohammed Ali Sharafuddin</title>
+<meta name="description" content="Excel dashboards, analytical worksheets, and practical templates created by Mohammed Ali Sharafuddin / FlairMI.">
+<style>
+/* ─────────────────────────────────────────
+   FlairMI / MAS — Shared Stylesheet
+   Light academic editorial
+───────────────────────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --ink:        #1C1C1A;
+  --ink-soft:   #3D3D38;
+  --rule:       #D4D0C8;
+  --rule-light: #ECEAE4;
+  --warm-white: #FAF9F6;
+  --warm-mid:   #F0EEE8;
+  --grey:       #8A8780;
+  --accent:     #6B4F35;
+  --accent-lt:  #C9AA87;
+  --tag-bg:     #EDEAE2;
+  --max-w:      1180px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--warm-white);
+  color: var(--ink);
+  font-family: 'Lora', Georgia, serif;
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAV ── */
+.site-nav {
+  border-bottom: 1px solid var(--rule);
+  background: var(--warm-white);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 5vw, 3rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  height: 52px;
+}
+
+.nav-brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+.nav-brand span { color: var(--accent); font-style: italic; }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-soft);
+  text-decoration: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 2px;
+  transition: color 0.18s, background 0.18s;
+  white-space: nowrap;
+}
+
+.nav-links a:hover,
+.nav-links a.active { color: var(--accent); }
+
+.nav-links a.nav-cta {
+  border: 1px solid var(--rule);
+  color: var(--ink);
+}
+
+.nav-links a.nav-cta:hover {
+  border-color: var(--accent-lt);
+  color: var(--accent);
+}
+
+/* ── PAGE MASTHEAD ── */
+.page-masthead {
+  border-bottom: 3px double var(--ink);
+  padding: 2.5rem clamp(1.5rem, 5vw, 3rem) 1.8rem;
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.page-masthead .eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.page-masthead h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+.page-masthead .lead {
+  font-size: 0.97rem;
+  color: var(--ink-soft);
+  margin-top: 0.6rem;
+  max-width: 60ch;
+}
+
+/* ── LAYOUT ── */
+.page-body {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 3rem clamp(1.5rem, 5vw, 3rem) 5rem;
+}
+
+.section {
+  margin-bottom: 3.5rem;
+}
+
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.64rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--grey);
+  border-bottom: 1px solid var(--rule-light);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: 1.55rem;
+  color: var(--ink);
+  margin-bottom: 0.8rem;
+}
+
+/* ── CARD GRID ── */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: 1.5rem;
+}
+
+.card-grid.two-col {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr));
+}
+
+.card {
+  border: 1px solid var(--rule);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.22s, border-color 0.22s, transform 0.2s;
+}
+
+.card:hover {
+  border-color: var(--accent-lt);
+  box-shadow: 3px 5px 22px rgba(0,0,0,0.06);
+  transform: translateY(-2px);
+}
+
+.card-band {
+  height: 3px;
+}
+.band-textbook  { background: linear-gradient(90deg, #3A5A8C, #7AABD4); }
+.band-template  { background: linear-gradient(90deg, #6B4F35, #C9AA87); }
+.band-tool      { background: linear-gradient(90deg, #3A6835, #7BA67A); }
+.band-research  { background: linear-gradient(90deg, #4A6741, #7BA67A); }
+.band-web       { background: linear-gradient(90deg, #5A3D6B, #A07DC0); }
+.band-course    { background: linear-gradient(90deg, #7A4A3A, #D4907A); }
+.band-conf      { background: linear-gradient(90deg, #3A5A5A, #7AB4B4); }
+.band-workshop  { background: linear-gradient(90deg, #4A3A6B, #9A7AC0); }
+
+.card-body {
+  padding: 1.3rem 1.4rem 1.1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.7rem;
+  margin-bottom: 0.75rem;
+}
+
+.card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+.card-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.58rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.badge-live    { background: #EAF2E8; color: #3A6835; border: 1px solid #B4D4AF; }
+.badge-planned { background: #F0EDEA; color: #7A6050; border: 1px solid #D4C4B4; }
+.badge-wip     { background: #EDF0F5; color: #3A507A; border: 1px solid #B0C4DA; }
+.badge-free    { background: #EAF2E8; color: #3A6835; border: 1px solid #B4D4AF; }
+.badge-open    { background: var(--tag-bg); color: var(--grey); border: 1px solid var(--rule); }
+
+.card-desc {
+  font-size: 0.9rem;
+  line-height: 1.72;
+  color: var(--ink-soft);
+  flex: 1;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 1rem;
+}
+
+.tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.18rem 0.5rem;
+  background: var(--tag-bg);
+  color: var(--grey);
+  border-radius: 2px;
+}
+
+.card-footer {
+  border-top: 1px solid var(--rule-light);
+  padding: 0.75rem 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.card-meta {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--grey);
+}
+
+.card-link {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent-lt);
+  padding-bottom: 1px;
+  transition: opacity 0.18s;
+  white-space: nowrap;
+}
+.card-link:hover { opacity: 0.65; }
+.card-link.disabled { color: var(--grey); border-color: var(--rule); pointer-events: none; }
+
+/* ── TOOL ENTRY (tools page) ── */
+.tool-entry {
+  border: 1px solid var(--rule-light);
+  padding: 1.2rem 1.4rem;
+  background: #fff;
+  margin-bottom: 0.85rem;
+  transition: border-color 0.18s;
+}
+.tool-entry:hover { border-color: var(--accent-lt); }
+
+.tool-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+  margin-bottom: 0.4rem;
+}
+
+.tool-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--ink);
+}
+
+.tool-role {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.58rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  background: var(--tag-bg);
+  padding: 0.15rem 0.45rem;
+  border-radius: 2px;
+}
+
+.tool-desc {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  line-height: 1.68;
+}
+
+.tool-link {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--grey);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 1px;
+  margin-top: 0.5rem;
+  display: inline-block;
+  transition: color 0.18s, border-color 0.18s;
+}
+.tool-link:hover { color: var(--accent); border-color: var(--accent-lt); }
+
+/* ── PUB LIST ── */
+.pub-list { list-style: none; border-top: 1px solid var(--rule-light); }
+
+.pub-item {
+  display: flex;
+  gap: 1.1rem;
+  align-items: flex-start;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--rule-light);
+}
+
+.pub-year {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  min-width: 2.8rem;
+  flex-shrink: 0;
+  padding-top: 0.15rem;
+}
+
+.pub-content { flex: 1; }
+
+.pub-title {
+  font-family: 'Lora', serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  line-height: 1.5;
+  display: block;
+  transition: color 0.18s;
+}
+a.pub-title:hover { color: var(--accent); }
+.pub-title.no-link { font-weight: 400; color: var(--ink-soft); }
+
+.pub-venue {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 0.77rem;
+  color: var(--grey);
+  margin-top: 0.12rem;
+  line-height: 1.4;
+}
+
+.pub-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.55rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.1rem 0.4rem;
+  border-radius: 2px;
+  margin-left: 0.4rem;
+  vertical-align: middle;
+}
+.pub-badge.q1 { background: #EAF2E8; color: #3A6835; }
+.pub-badge.q2 { background: #EDF0F5; color: #3A507A; }
+.pub-badge.q3 { background: #F5F0ED; color: #6A5040; }
+
+/* ── STATS ROW ── */
+.stat-row {
+  display: flex;
+  gap: 0;
+  border: 1px solid var(--rule-light);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.stat-cell {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.8rem 0.5rem;
+  border-right: 1px solid var(--rule-light);
+  background: var(--warm-mid);
+}
+.stat-cell:last-child { border-right: none; }
+
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 1.55rem;
+  line-height: 1;
+  color: var(--ink);
+}
+
+.stat-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.56rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--grey);
+  margin-top: 0.2rem;
+  text-align: center;
+}
+
+/* ── TOGGLE BUTTON ── */
+.show-more {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.63rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--accent);
+  background: none;
+  border: 1px solid var(--accent-lt);
+  padding: 0.35rem 0.9rem;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-top: 0.9rem;
+  transition: background 0.18s, color 0.18s;
+  display: block;
+}
+.show-more:hover { background: var(--accent); color: var(--warm-white); }
+
+/* ── FOOTER ── */
+.site-footer {
+  border-top: 3px double var(--rule);
+  padding: 1.8rem clamp(1.5rem, 5vw, 3rem);
+}
+
+.footer-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-note {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.88rem;
+  color: var(--grey);
+}
+
+.footer-mono {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  color: var(--rule);
+  text-transform: uppercase;
+}
+
+/* ── UTILITIES ── */
+.divider {
+  border: none;
+  border-top: 1px solid var(--rule-light);
+  margin: 2.5rem 0;
+}
+
+.text-mono {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 700px) {
+  .nav-links { display: none; }
+  .stat-row  { flex-wrap: wrap; }
+  .stat-cell { min-width: 45%; }
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">Mohammed Ali <span>Sharafuddin</span></a>
+    <div class="nav-links">
+      <a href="textbooks.html">Textbooks</a>
+      <a href="templates.html" class="active">Templates</a>
+      <a href="tools.html">Open-Source Tools</a>
+      <a href="blog.html">Blog</a>
+      <a href="research.html">Research</a>
+      <a href="about.html">About</a>
+      <a href="assets/docs/MAS_CV.pdf" class="nav-cta" target="_blank" rel="noopener">CV</a>
+      <a href="index.html#contact" class="nav-cta">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<div style="max-width:var(--max-w); margin:0 auto;">
+  <div class="page-masthead">
+    <div class="eyebrow">Created by Mohammed Ali Sharafuddin / FlairMI</div>
+    <h1>Templates &amp; Dashboards</h1>
+    <p class="lead">Excel dashboards, web tools, and analytical worksheets — practical outputs built for real business and academic use. All free to download.</p>
+  </div>
+</div>
+
+<div class="page-body">
+
+  <!-- Excel Dashboards -->
+  <section class="section">
+    <div class="section-label">Excel Dashboards</div>
+    <p style="font-size:0.9rem; color:var(--ink-soft); margin-bottom:1.5rem; max-width:62ch;">Built with Python and openpyxl. Consistent design language throughout: dark navy headers, KPI summary cards, blue input cells, alternating row fills, two-sheet architecture (inputs + results).</p>
+
+    <div class="card-grid">
+
+      <article class="card">
+        <div class="card-band band-template"></div>
+        <div class="card-body">
+          <div class="card-header">
+            <h2 class="card-title">Campaign ROI Tracker</h2>
+            <span class="card-badge badge-free">Free</span>
+          </div>
+          <p class="card-desc">Track marketing spend, revenue, and return on investment across multiple campaigns. Includes a KPI summary card row, channel breakdown table, period-over-period trend chart, and a simple data entry sheet. Suitable for digital, print, and event campaigns.</p>
+          <div class="card-tags"><span class="tag">Excel</span><span class="tag">Marketing</span><span class="tag">ROI</span></div>
+        </div>
+        <div class="card-footer">
+          <span class="card-meta">Marketing Dashboard</span>
+          <a href="#" class="card-link disabled">Download →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-band band-template"></div>
+        <div class="card-body">
+          <div class="card-header">
+            <h2 class="card-title">Sales Pipeline Tracker</h2>
+            <span class="card-badge badge-free">Free</span>
+          </div>
+          <p class="card-desc">Track deals by stage, expected value, owner, and close date. Funnel visualisation, win-rate summary, and a weighted pipeline value calculation. Designed for small sales teams and MBA case studies.</p>
+          <div class="card-tags"><span class="tag">Excel</span><span class="tag">Sales</span><span class="tag">CRM</span></div>
+        </div>
+        <div class="card-footer">
+          <span class="card-meta">Sales Dashboard</span>
+          <a href="#" class="card-link disabled">Download →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-band band-template"></div>
+        <div class="card-body">
+          <div class="card-header">
+            <h2 class="card-title">Break-Even Analysis Tool</h2>
+            <span class="card-badge badge-free">Free</span>
+          </div>
+          <p class="card-desc">Input fixed costs, variable costs, and price to calculate break-even units and revenue. Includes a sensitivity table and a break-even chart. Used in managerial economics and marketing management teaching.</p>
+          <div class="card-tags"><span class="tag">Excel</span><span class="tag">Finance</span><span class="tag">Teaching</span></div>
+        </div>
+        <div class="card-footer">
+          <span class="card-meta">Financial Tool</span>
+          <a href="#" class="card-link disabled">Download →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-band band-template"></div>
+        <div class="card-body">
+          <div class="card-header">
+            <h2 class="card-title">Customer Lifetime Value Calculator</h2>
+            <span class="card-badge badge-free">Free</span>
+          </div>
+          <p class="card-desc">Calculate CLV across customer segments using historical purchase frequency, average order value, and gross margin. Segment comparison chart and a simple cohort input table. Useful for marketing strategy courses and SME analysis.</p>
+          <div class="card-tags"><span class="tag">Excel</span><span class="tag">Marketing</span><span class="tag">CLV</span></div>
+        </div>
+        <div class="card-footer">
+          <span class="card-meta">Marketing Tool</span>
+          <a href="#" class="card-link disabled">Download →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-band band-template"></div>
+        <div class="card-body">
+          <div class="card-header">
+            <h2 class="card-title">Competitive Positioning Map</h2>
+            <span class="card-badge badge-free">Free</span>
+          </div>
+          <p class="card-desc">A two-axis perceptual map built in Excel. Enter competitor names and scores on two dimensions — price, quality, service, or any pair of attributes — and the chart updates automatically. Used in marketing management and strategic marketing courses.</p>
+          <div class="card-tags"><span class="tag">Excel</span><span class="tag">Strategy</span><span class="tag">Marketing</span></div>
+        </div>
+        <div class="card-footer">
+          <span class="card-meta">Strategy Tool</span>
+          <a href="#" class="card-link disabled">Download →</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- Web Tools -->
+  <section class="section">
+    <div class="section-label">Web Tools</div>
+
+    <div class="card-grid">
+      <article class="card">
+        <div class="card-band band-web"></div>
+        <div class="card-body">
+          <div class="card-header">
+            <h2 class="card-title">Price Memory</h2>
+            <span class="card-badge badge-live">Live</span>
+          </div>
+          <p class="card-desc">A single-file progressive web app for tracking grocery prices over time. Runs entirely in the browser — no backend, no account. Features IndexedDB storage, a Canvas price chart, and a 16-currency onboarding selector. Deploys directly to GitHub Pages.</p>
+          <div class="card-tags"><span class="tag">PWA</span><span class="tag">IndexedDB</span><span class="tag">Canvas API</span><span class="tag">Vanilla JS</span></div>
+        </div>
+        <div class="card-footer">
+          <span class="card-meta">Web Application</span>
+          <a href="#" class="card-link">Open App →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section class="section">
+    <div class="section-label">Download Note</div>
+    <p style="font-size:0.93rem; color:var(--ink-soft); max-width:60ch; line-height:1.78;">Download links will be added as files are uploaded to GitHub. All templates are free for academic and professional use. If you adapt any template for a course or workshop, attribution to <em>Mohammed Ali Sharafuddin / FlairMI</em> is appreciated. For custom versions or bulk licensing, write to <a href="/cdn-cgi/l/email-protection#c8a5a7a0a9a5a5adaca9a4a1e6b8a9afad88afa5a9a1a4e6aba7a5" style="color:var(--accent); text-decoration:none; border-bottom:1px solid var(--accent-lt);"><span class="__cf_email__" data-cfemail="690406010804040c0d0805004719080e0c290e04080005470a0604">[email&#160;protected]</span></a>.</p>
+  </section>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-note">Mohammed Ali Sharafuddin &mda
