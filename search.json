@@ -280,41 +280,6 @@
     "text": "Practical statistics tutorials for marketing and e-commerce analytics. Each post includes:\n\nInteractive calculations running directly in your browser (powered by WebR)\nReal-world business cases from A/B testing, conversion optimization, and revenue analysis\nComprehensive explanations with method, assumptions, limitations, and decision frameworks\nSample size planning guidance for designing future experiments\nReproducible code with detailed statistical computations\n\nAll posts use academic-style presentation with no dependency on Python or external servers - just open and run R code in your browser.\n\n\n\nConfidence Intervals: Margin of error analysis for conversion rates\nHypothesis Testing: Two-proportion tests, t-tests (Welch and pooled methods)\nRegression Analysis: Simple linear regression for ad spend modeling\nLogistic Regression: Purchase prediction from behavioral data\nEffect Sizes: Cohen’s h, Cohen’s d, Hedges g with practical interpretation\n\nBrowse posts below or explore the Stats Suite for interactive tools."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "Mohammed_Ali_Sharafuddin\n\n\n\n\nMohammed Ali Sharafuddin is an academic researcher and educator with over twenty years’ experience. His work focuses on digital marketing, marketing analytics, quantitative methods, and market research. He teaches digital marketing and analytics, builds open-source teaching materials, and develops free tools for survey research and reporting.\n\n\n\n\nBuilding Flairmi Survey Suite for form building, analysis, and report writing using a free and open-source stack.\nWriting Applied Marketing Intelligence and Analytics Using R and a practical guide on small sample statistics for students and early-career researchers.\nOngoing studies on international trade, SIDS trade, digital marketing capabilities, digital marketing effectiveness, and firm behaviour using R and reproducible workflows.\n\n\n\n\n\nDigital marketing analytics, consumer behaviour, and measurement\nSurvey design, PLS-SEM, and reproducible methods in R\nOpen educational resources and practice-centred teaching"
-  },
-  {
-    "objectID": "about.html#mohammed-ali-sharafuddin",
-    "href": "about.html#mohammed-ali-sharafuddin",
-    "title": "About",
-    "section": "",
-    "text": "Mohammed_Ali_Sharafuddin\n\n\n\n\nMohammed Ali Sharafuddin is an academic researcher and educator with over twenty years’ experience. His work focuses on digital marketing, marketing analytics, quantitative methods, and market research. He teaches digital marketing and analytics, builds open-source teaching materials, and develops free tools for survey research and reporting.\n\n\n\n\nBuilding Flairmi Survey Suite for form building, analysis, and report writing using a free and open-source stack.\nWriting Applied Marketing Intelligence and Analytics Using R and a practical guide on small sample statistics for students and early-career researchers.\nOngoing studies on international trade, SIDS trade, digital marketing capabilities, digital marketing effectiveness, and firm behaviour using R and reproducible workflows.\n\n\n\n\n\nDigital marketing analytics, consumer behaviour, and measurement\nSurvey design, PLS-SEM, and reproducible methods in R\nOpen educational resources and practice-centred teaching"
-  },
-  {
-    "objectID": "about.html#about-flairmi",
-    "href": "about.html#about-flairmi",
-    "title": "About",
-    "section": "About FlairMI",
-    "text": "About FlairMI\nFlair Marketing Intelligence (FlairMI) provides practical, actionable statistical tools and tutorials for marketing professionals. The focus is on clear explanations, reproducible code, and real-world applications.\n\nWhat we offer\n\nInteractive statistical calculators\nStep-by-step tutorials with real data\nReport templates for common analyses\nSurvey design and sampling tools\n\n\n\nOur approach\n\nMobile-first design for accessibility\nBrowser-based R execution (WebR), no server required\nTraditional statistical methods with modern tools\nClear language without jargon"
-  },
-  {
-    "objectID": "about.html#contact",
-    "href": "about.html#contact",
-    "title": "About",
-    "section": "Contact",
-    "text": "Contact\nFor enquiries about consulting, workshops, or sponsorship opportunities:\nEmail: mohammedali.page@gmail.com"
-  },
-  {
-    "objectID": "about.html#connect",
-    "href": "about.html#connect",
-    "title": "About",
-    "section": "Connect",
-    "text": "Connect\n\n\nGoogle Scholar: [link]\nORCID: [link]\nGitHub: [link]\nLinkedIn: [link]\n\n\nLast updated: 26 October 2025"
-  },
-  {
     "objectID": "blog/posts/01-margin-of-error.html",
     "href": "blog/posts/01-margin-of-error.html",
     "title": "Confidence Interval for a Proportion: Analyzing Add-to-Cart Rate",
