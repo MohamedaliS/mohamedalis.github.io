@@ -1,5 +1,5 @@
 (function (window, document, measurementId) {
-  if (!measurementId || measurementId === "G-XXXXXXXXXX" || window.__ga4Loaded) {
+  if (!measurementId || window.__ga4Loaded) {
     return;
   }
 
@@ -23,4 +23,4 @@
   window.gtag("config", measurementId, {
     page_path: window.location.pathname + window.location.search
   });
-})(window, document, "G-XXXXXXXXXX");
+})(window, document, "G-PGCF01SJKZ");
