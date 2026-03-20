@@ -12,6 +12,7 @@ Live site:
 - Textbook and teaching-material pages
 - Excel templates and dashboard downloads
 - Browser-based tools such as `price-memory` and `margin-guard`
+- External public brand site: `flairmi.com`
 - Archived and embedded project sections, including `DDMM_Suite`
 
 ## Main Entry Points
@@ -23,6 +24,7 @@ Live site:
 - `templates.html`: templates, dashboards, and web-tool links
 - `tools.html`: open-source tools used and taught
 - `DDMM_Suite/`: deployed DDMM Suite public outputs
+- `flairmi.com`: external public site for FlairMI
 
 ## Deployment
 
