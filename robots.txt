@@ -1,1 +1,4 @@
-Sitemap: https://flairmi.com/sitemap.xml
+User-agent: *
+Allow: /
+
+Sitemap: https://mohammedalisharafuddin.github.io/sitemap.xml

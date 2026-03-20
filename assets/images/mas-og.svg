@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Mohammed Ali Sharafuddin</title>
+  <desc id="desc">Research, textbooks, templates, and teaching tools by Mohammed Ali Sharafuddin.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#fbf8f3" />
+      <stop offset="100%" stop-color="#f2ede4" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect x="72" y="72" width="1056" height="486" rx="28" fill="#fffdf9" stroke="#d7d0c5" />
+  <text x="112" y="156" fill="#6b4f35" font-family="JetBrains Mono, Menlo, monospace" font-size="22" letter-spacing="3">MOHAMMED ALI SHARAFUDDIN</text>
+  <text x="112" y="244" fill="#1f1d19" font-family="Cormorant Garamond, Georgia, serif" font-size="74">Research, textbooks,</text>
+  <text x="112" y="324" fill="#1f1d19" font-family="Cormorant Garamond, Georgia, serif" font-size="74">templates, and tools.</text>
+  <text x="112" y="404" fill="#575047" font-family="Lora, Georgia, serif" font-size="30">Public academic work, teaching materials, and practical decision-support resources.</text>
+  <rect x="112" y="456" width="310" height="52" rx="10" fill="#1f1d19" />
+  <text x="144" y="490" fill="#ffffff" font-family="JetBrains Mono, Menlo, monospace" font-size="22">MOHAMMEDALISHARAFUDDIN.GITHUB.IO</text>
+  <rect x="824" y="160" width="228" height="80" rx="16" fill="#f2ece3" stroke="#dacdbb" />
+  <text x="854" y="210" fill="#6b4f35" font-family="JetBrains Mono, Menlo, monospace" font-size="22">RESEARCH</text>
+  <rect x="824" y="260" width="228" height="80" rx="16" fill="#f2ece3" stroke="#dacdbb" />
+  <text x="854" y="310" fill="#6b4f35" font-family="JetBrains Mono, Menlo, monospace" font-size="22">TEXTBOOKS</text>
+  <rect x="824" y="360" width="228" height="80" rx="16" fill="#f2ece3" stroke="#dacdbb" />
+  <text x="854" y="410" fill="#6b4f35" font-family="JetBrains Mono, Menlo, monospace" font-size="22">TEMPLATES</text>
+</svg>

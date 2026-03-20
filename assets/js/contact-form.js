@@ -51,6 +51,7 @@
       var subject = form.getAttribute("data-form-subject") || "Website enquiry";
 
       payload._subject = subject;
+      payload._replyto = payload.email || "";
       payload._captcha = "false";
       payload._template = "table";
       payload.page = window.location.href;
