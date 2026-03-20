@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Worked Example 15: Scatter Plots and Correlation in Retail Data – DMM Worked Examples</title>
+<title>Worked Example 15: Scatter Plots and Correlation in Retail Data - DMM Worked Examples</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -108,6 +108,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="../../styles/examples.css">
+<script defer src="/assets/js/ga4.js"></script>
+<script defer src="/assets/js/contact-form.js"></script>
 </head>
 
 <body class="nav-sidebar floating quarto-light">
@@ -309,37 +311,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../units/unit-22/ex22.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Worked Example 22: One-Sample t-Test — Fill Volume Quality Control</span></a>
+ <span class="menu-text">Worked Example 22: One-Sample t-Test - Fill Volume Quality Control</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../units/unit-23/ex23.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Worked Example 23: Independent and Paired t-Tests — Sales Training</span></a>
+ <span class="menu-text">Worked Example 23: Independent and Paired t-Tests - Sales Training</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../units/unit-24/ex24.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Worked Example 24: One-Way ANOVA — Logistics Provider Comparison</span></a>
+ <span class="menu-text">Worked Example 24: One-Way ANOVA - Logistics Provider Comparison</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../units/unit-25/ex25.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Worked Example 25: Chi-Square Test — Segment and Channel Association</span></a>
+ <span class="menu-text">Worked Example 25: Chi-Square Test - Segment and Channel Association</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../units/unit-26/ex26.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Worked Example 26: Non-Parametric Tests — Employee Wellbeing</span></a>
+ <span class="menu-text">Worked Example 26: Non-Parametric Tests - Employee Wellbeing</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../units/unit-27/ex27.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Worked Example 27: End-to-End Analysis — Selecting, Running, and Reporting Five Tests</span></a>
+ <span class="menu-text">Worked Example 27: End-to-End Analysis - Selecting, Running, and Reporting Five Tests</span></a>
   </div>
 </li>
       </ul>
@@ -356,7 +358,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#context" id="toc-context" class="nav-link active" data-scroll-target="#context">Context</a></li>
   <li><a href="#step-1-inspect-the-data" id="toc-step-1-inspect-the-data" class="nav-link" data-scroll-target="#step-1-inspect-the-data">Step 1: Inspect the data</a></li>
-  <li><a href="#step-2-scatter-plot-ad-spend-vs-sales" id="toc-step-2-scatter-plot-ad-spend-vs-sales" class="nav-link" data-scroll-target="#step-2-scatter-plot-ad-spend-vs-sales">Step 2: Scatter plot — ad spend vs sales</a></li>
+  <li><a href="#step-2-scatter-plot-ad-spend-vs-sales" id="toc-step-2-scatter-plot-ad-spend-vs-sales" class="nav-link" data-scroll-target="#step-2-scatter-plot-ad-spend-vs-sales">Step 2: Scatter plot - ad spend vs sales</a></li>
   <li><a href="#step-3-correlation-matrix" id="toc-step-3-correlation-matrix" class="nav-link" data-scroll-target="#step-3-correlation-matrix">Step 3: Correlation matrix</a></li>
   <li><a href="#step-4-correlation-by-store-format" id="toc-step-4-correlation-by-store-format" class="nav-link" data-scroll-target="#step-4-correlation-by-store-format">Step 4: Correlation by store format</a></li>
   <li><a href="#step-5-effect-of-removing-outliers" id="toc-step-5-effect-of-removing-outliers" class="nav-link" data-scroll-target="#step-5-effect-of-removing-outliers">Step 5: Effect of removing outliers</a></li>
@@ -491,7 +493,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <hr>
 </section>
 <section id="step-2-scatter-plot-ad-spend-vs-sales" class="level2">
-<h2 class="anchored" data-anchor-id="step-2-scatter-plot-ad-spend-vs-sales">Step 2: Scatter plot — ad spend vs sales</h2>
+<h2 class="anchored" data-anchor-id="step-2-scatter-plot-ad-spend-vs-sales">Step 2: Scatter plot - ad spend vs sales</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> ad_spend_gbp, <span class="at">y =</span> weekly_sales_gbp)) <span class="sc">+</span></span>

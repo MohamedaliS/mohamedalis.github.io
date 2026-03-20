@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2026-03-20">
 
-<title>27&nbsp; Chapter 27: Choosing the Right Test and Reading Output – Data-Driven Management: Statistics for Managers</title>
+<title>27&nbsp; Chapter 27: Choosing the Right Test and Reading Output - Data-Driven Management: Statistics for Managers</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -129,6 +129,8 @@ div.csl-indent {
 
 
 <link rel="stylesheet" href="../../styles/book.css">
+<script defer src="/assets/js/ga4.js"></script>
+<script defer src="/assets/js/contact-form.js"></script>
 </head>
 
 <body class="nav-sidebar floating quarto-light">
@@ -1054,7 +1056,7 @@ Note
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Q1: One-sample t-test — salary vs benchmark</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Q1: One-sample t-test - salary vs benchmark</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>salary_test <span class="ot">&lt;-</span> <span class="fu">t.test</span>(df<span class="sc">$</span>salary_gbp, <span class="at">mu =</span> <span class="dv">30000</span>)</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>d_sal <span class="ot">&lt;-</span> (<span class="fu">mean</span>(df<span class="sc">$</span>salary_gbp) <span class="sc">-</span> <span class="dv">30000</span>) <span class="sc">/</span> <span class="fu">sd</span>(df<span class="sc">$</span>salary_gbp)</span>
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Salary vs GBP 30,000 benchmark</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1085,7 +1087,7 @@ Note
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Q2: Kruskal-Wallis — ordinal engagement by department</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Q2: Kruskal-Wallis - ordinal engagement by department</span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>kw_dept <span class="ot">&lt;-</span> <span class="fu">kruskal.test</span>(engagement_score <span class="sc">~</span> department, <span class="at">data =</span> df)</span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>dept_med <span class="ot">&lt;-</span> <span class="fu">tapply</span>(df<span class="sc">$</span>engagement_score, df<span class="sc">$</span>department, median)</span>
 <span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Engagement by department (Kruskal-Wallis)</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1112,7 +1114,7 @@ Note
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Q3: Chi-square — training vs satisfaction band</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Q3: Chi-square - training vs satisfaction band</span></span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>ct_cap  <span class="ot">&lt;-</span> <span class="fu">table</span>(df<span class="sc">$</span>training_completed, df<span class="sc">$</span>satisfaction_band)</span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>chi_cap <span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(ct_cap, <span class="at">correct =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>V_cap   <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(chi_cap<span class="sc">$</span>statistic <span class="sc">/</span></span>
@@ -1137,7 +1139,7 @@ Note
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="ch27-choosing-the-right-test-and-reading-output_files/figure-html/ch27-capstone-synthesis-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption>Figure 27.1: Productivity, engagement, and training — three views of the same workforce</figcaption>
+<figcaption>Figure 27.1: Productivity, engagement, and training - three views of the same workforce</figcaption>
 </figure>
 </div>
 </div>
@@ -1148,7 +1150,7 @@ Note
 <h2 data-number="27.8" class="anchored" data-anchor-id="summary"><span class="header-section-number">27.8</span> Summary</h2>
 <p>Choosing the right test requires four decisions: the outcome variable type, the number and structure of groups, whether observations are independent or paired, and whether parametric assumptions hold. Table 27.1 maps these decisions to the tests covered in this book.</p>
 <p>Complete reporting requires the test name, hypotheses, test statistic with degrees of freedom, p-value, confidence interval where applicable, effect size, and a plain-language conclusion. Statistical significance and practical importance are separate judgements: always assess both.</p>
-<p>The six-step workflow — question, variable types, test selection, assumption checking, analysis, and reporting — provides a repeatable structure for any inferential task.</p>
+<p>The six-step workflow - question, variable types, test selection, assumption checking, analysis, and reporting - provides a repeatable structure for any inferential task.</p>
 <hr>
 </section>
 <section id="key-terms" class="level2" data-number="27.9">
@@ -1207,7 +1209,7 @@ Note
 </section>
 <section id="closing-note" class="level2" data-number="27.11">
 <h2 data-number="27.11" class="anchored" data-anchor-id="closing-note"><span class="header-section-number">27.11</span> Closing note</h2>
-<p>This chapter closes the statistical toolkit introduced in <em>Data-Driven Management: Statistics for Managers</em>. The tools covered — from frequency distributions to chi-square tests — form a coherent, interconnected system. Description (Parts 1 and 2) motivates inference. Probability (Part 3) provides the theoretical foundation. The relationship and estimation tools in Parts 4 and 5 expand the range of questions that can be answered. The hypothesis testing framework in Parts 6 and 7 provides a principled way to draw conclusions from data.</p>
+<p>This chapter closes the statistical toolkit introduced in <em>Data-Driven Management: Statistics for Managers</em>. The tools covered - from frequency distributions to chi-square tests - form a coherent, interconnected system. Description (Parts 1 and 2) motivates inference. Probability (Part 3) provides the theoretical foundation. The relationship and estimation tools in Parts 4 and 5 expand the range of questions that can be answered. The hypothesis testing framework in Parts 6 and 7 provides a principled way to draw conclusions from data.</p>
 <p>The most important skill is not knowing which formula to apply. It is asking the right question, selecting the right tool with awareness of its assumptions, and reporting the answer in a way that serves the decision at hand.</p>
 <hr>
 </section>
@@ -2157,7 +2159,7 @@ Note
 <span id="cb43-496"><a href="#cb43-496" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb43-497"><a href="#cb43-497" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ch27-capstone-q1</span></span>
 <span id="cb43-498"><a href="#cb43-498" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
-<span id="cb43-499"><a href="#cb43-499" aria-hidden="true" tabindex="-1"></a><span class="co"># Q1: One-sample t-test — salary vs benchmark</span></span>
+<span id="cb43-499"><a href="#cb43-499" aria-hidden="true" tabindex="-1"></a><span class="co"># Q1: One-sample t-test - salary vs benchmark</span></span>
 <span id="cb43-500"><a href="#cb43-500" aria-hidden="true" tabindex="-1"></a>salary_test <span class="ot">&lt;-</span> <span class="fu">t.test</span>(df<span class="sc">$</span>salary_gbp, <span class="at">mu =</span> <span class="dv">30000</span>)</span>
 <span id="cb43-501"><a href="#cb43-501" aria-hidden="true" tabindex="-1"></a>d_sal <span class="ot">&lt;-</span> (<span class="fu">mean</span>(df<span class="sc">$</span>salary_gbp) <span class="sc">-</span> <span class="dv">30000</span>) <span class="sc">/</span> <span class="fu">sd</span>(df<span class="sc">$</span>salary_gbp)</span>
 <span id="cb43-502"><a href="#cb43-502" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Salary vs GBP 30,000 benchmark</span><span class="sc">\n</span><span class="st">"</span>)</span>
@@ -2173,7 +2175,7 @@ Note
 <span id="cb43-514"><a href="#cb43-514" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb43-515"><a href="#cb43-515" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ch27-capstone-q2</span></span>
 <span id="cb43-516"><a href="#cb43-516" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
-<span id="cb43-517"><a href="#cb43-517" aria-hidden="true" tabindex="-1"></a><span class="co"># Q2: Kruskal-Wallis — ordinal engagement by department</span></span>
+<span id="cb43-517"><a href="#cb43-517" aria-hidden="true" tabindex="-1"></a><span class="co"># Q2: Kruskal-Wallis - ordinal engagement by department</span></span>
 <span id="cb43-518"><a href="#cb43-518" aria-hidden="true" tabindex="-1"></a>kw_dept <span class="ot">&lt;-</span> <span class="fu">kruskal.test</span>(engagement_score <span class="sc">~</span> department, <span class="at">data =</span> df)</span>
 <span id="cb43-519"><a href="#cb43-519" aria-hidden="true" tabindex="-1"></a>dept_med <span class="ot">&lt;-</span> <span class="fu">tapply</span>(df<span class="sc">$</span>engagement_score, df<span class="sc">$</span>department, median)</span>
 <span id="cb43-520"><a href="#cb43-520" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Engagement by department (Kruskal-Wallis)</span><span class="sc">\n</span><span class="st">"</span>)</span>
@@ -2185,7 +2187,7 @@ Note
 <span id="cb43-528"><a href="#cb43-528" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb43-529"><a href="#cb43-529" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ch27-capstone-q3</span></span>
 <span id="cb43-530"><a href="#cb43-530" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
-<span id="cb43-531"><a href="#cb43-531" aria-hidden="true" tabindex="-1"></a><span class="co"># Q3: Chi-square — training vs satisfaction band</span></span>
+<span id="cb43-531"><a href="#cb43-531" aria-hidden="true" tabindex="-1"></a><span class="co"># Q3: Chi-square - training vs satisfaction band</span></span>
 <span id="cb43-532"><a href="#cb43-532" aria-hidden="true" tabindex="-1"></a>ct_cap  <span class="ot">&lt;-</span> <span class="fu">table</span>(df<span class="sc">$</span>training_completed, df<span class="sc">$</span>satisfaction_band)</span>
 <span id="cb43-533"><a href="#cb43-533" aria-hidden="true" tabindex="-1"></a>chi_cap <span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(ct_cap, <span class="at">correct =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb43-534"><a href="#cb43-534" aria-hidden="true" tabindex="-1"></a>V_cap   <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(chi_cap<span class="sc">$</span>statistic <span class="sc">/</span></span>
@@ -2200,7 +2202,7 @@ Note
 <span id="cb43-545"><a href="#cb43-545" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ch27-capstone-synthesis</span></span>
 <span id="cb43-546"><a href="#cb43-546" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
 <span id="cb43-547"><a href="#cb43-547" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 4.0</span></span>
-<span id="cb43-548"><a href="#cb43-548" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Figure 27.1: Productivity, engagement, and training — three views of the same workforce"</span></span>
+<span id="cb43-548"><a href="#cb43-548" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Figure 27.1: Productivity, engagement, and training - three views of the same workforce"</span></span>
 <span id="cb43-549"><a href="#cb43-549" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span>
 <span id="cb43-550"><a href="#cb43-550" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb43-551"><a href="#cb43-551" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> department, <span class="at">y =</span> productivity, <span class="at">fill =</span> department)) <span class="sc">+</span></span>
@@ -2241,7 +2243,7 @@ Note
 <span id="cb43-586"><a href="#cb43-586" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb43-587"><a href="#cb43-587" aria-hidden="true" tabindex="-1"></a>Complete reporting requires the test name, hypotheses, test statistic with degrees of freedom, p-value, confidence interval where applicable, effect size, and a plain-language conclusion. Statistical significance and practical importance are separate judgements: always assess both.</span>
 <span id="cb43-588"><a href="#cb43-588" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-589"><a href="#cb43-589" aria-hidden="true" tabindex="-1"></a>The six-step workflow — question, variable types, test selection, assumption checking, analysis, and reporting — provides a repeatable structure for any inferential task.</span>
+<span id="cb43-589"><a href="#cb43-589" aria-hidden="true" tabindex="-1"></a>The six-step workflow - question, variable types, test selection, assumption checking, analysis, and reporting - provides a repeatable structure for any inferential task.</span>
 <span id="cb43-590"><a href="#cb43-590" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb43-591"><a href="#cb43-591" aria-hidden="true" tabindex="-1"></a>---</span>
 <span id="cb43-592"><a href="#cb43-592" aria-hidden="true" tabindex="-1"></a></span>
@@ -2289,7 +2291,7 @@ Note
 <span id="cb43-636"><a href="#cb43-636" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb43-637"><a href="#cb43-637" aria-hidden="true" tabindex="-1"></a><span class="fu">## Closing note</span></span>
 <span id="cb43-638"><a href="#cb43-638" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-639"><a href="#cb43-639" aria-hidden="true" tabindex="-1"></a>This chapter closes the statistical toolkit introduced in *Data-Driven Management: Statistics for Managers*. The tools covered — from frequency distributions to chi-square tests — form a coherent, interconnected system. Description (Parts 1 and 2) motivates inference. Probability (Part 3) provides the theoretical foundation. The relationship and estimation tools in Parts 4 and 5 expand the range of questions that can be answered. The hypothesis testing framework in Parts 6 and 7 provides a principled way to draw conclusions from data.</span>
+<span id="cb43-639"><a href="#cb43-639" aria-hidden="true" tabindex="-1"></a>This chapter closes the statistical toolkit introduced in *Data-Driven Management: Statistics for Managers*. The tools covered - from frequency distributions to chi-square tests - form a coherent, interconnected system. Description (Parts 1 and 2) motivates inference. Probability (Part 3) provides the theoretical foundation. The relationship and estimation tools in Parts 4 and 5 expand the range of questions that can be answered. The hypothesis testing framework in Parts 6 and 7 provides a principled way to draw conclusions from data.</span>
 <span id="cb43-640"><a href="#cb43-640" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb43-641"><a href="#cb43-641" aria-hidden="true" tabindex="-1"></a>The most important skill is not knowing which formula to apply. It is asking the right question, selecting the right tool with awareness of its assumptions, and reporting the answer in a way that serves the decision at hand.</span>
 <span id="cb43-642"><a href="#cb43-642" aria-hidden="true" tabindex="-1"></a></span>

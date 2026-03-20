@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Worked Example 25: Chi-Square Test — Segment and Channel Association – DMM Worked Examples</title>
+<title>Worked Example 25: Chi-Square Test - Segment and Channel Association - DMM Worked Examples</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -108,6 +108,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="../../styles/examples.css">
+<script defer src="/assets/js/ga4.js"></script>
+<script defer src="/assets/js/contact-form.js"></script>
 </head>
 
 <body class="nav-sidebar floating quarto-light">
@@ -119,7 +121,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../units/unit-11/ex11.html">Parts 3-8</a></li><li class="breadcrumb-item"><a href="../../units/unit-25/ex25.html">Worked Example 25: Chi-Square Test — Segment and Channel Association</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../units/unit-11/ex11.html">Parts 3-8</a></li><li class="breadcrumb-item"><a href="../../units/unit-25/ex25.html">Worked Example 25: Chi-Square Test - Segment and Channel Association</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -309,37 +311,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../units/unit-22/ex22.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Worked Example 22: One-Sample t-Test — Fill Volume Quality Control</span></a>
+ <span class="menu-text">Worked Example 22: One-Sample t-Test - Fill Volume Quality Control</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../units/unit-23/ex23.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Worked Example 23: Independent and Paired t-Tests — Sales Training</span></a>
+ <span class="menu-text">Worked Example 23: Independent and Paired t-Tests - Sales Training</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../units/unit-24/ex24.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Worked Example 24: One-Way ANOVA — Logistics Provider Comparison</span></a>
+ <span class="menu-text">Worked Example 24: One-Way ANOVA - Logistics Provider Comparison</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../units/unit-25/ex25.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Worked Example 25: Chi-Square Test — Segment and Channel Association</span></a>
+ <span class="menu-text">Worked Example 25: Chi-Square Test - Segment and Channel Association</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../units/unit-26/ex26.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Worked Example 26: Non-Parametric Tests — Employee Wellbeing</span></a>
+ <span class="menu-text">Worked Example 26: Non-Parametric Tests - Employee Wellbeing</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../units/unit-27/ex27.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Worked Example 27: End-to-End Analysis — Selecting, Running, and Reporting Five Tests</span></a>
+ <span class="menu-text">Worked Example 27: End-to-End Analysis - Selecting, Running, and Reporting Five Tests</span></a>
   </div>
 </li>
       </ul>
@@ -358,7 +360,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#step-1-inspect-the-data" id="toc-step-1-inspect-the-data" class="nav-link" data-scroll-target="#step-1-inspect-the-data">Step 1: Inspect the data</a></li>
   <li><a href="#step-2-contingency-table-and-row-percentages" id="toc-step-2-contingency-table-and-row-percentages" class="nav-link" data-scroll-target="#step-2-contingency-table-and-row-percentages">Step 2: Contingency table and row percentages</a></li>
   <li><a href="#step-3-chi-square-test-of-independence" id="toc-step-3-chi-square-test-of-independence" class="nav-link" data-scroll-target="#step-3-chi-square-test-of-independence">Step 3: Chi-square test of independence</a></li>
-  <li><a href="#step-4-expected-frequencies-check-assumption" id="toc-step-4-expected-frequencies-check-assumption" class="nav-link" data-scroll-target="#step-4-expected-frequencies-check-assumption">Step 4: Expected frequencies — check assumption</a></li>
+  <li><a href="#step-4-expected-frequencies-check-assumption" id="toc-step-4-expected-frequencies-check-assumption" class="nav-link" data-scroll-target="#step-4-expected-frequencies-check-assumption">Step 4: Expected frequencies - check assumption</a></li>
   <li><a href="#step-5-stacked-bar-chart" id="toc-step-5-stacked-bar-chart" class="nav-link" data-scroll-target="#step-5-stacked-bar-chart">Step 5: Stacked bar chart</a></li>
   <li><a href="#reflection-questions" id="toc-reflection-questions" class="nav-link" data-scroll-target="#reflection-questions">Reflection questions</a></li>
   </ul>
@@ -367,9 +369,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../units/unit-11/ex11.html">Parts 3-8</a></li><li class="breadcrumb-item"><a href="../../units/unit-25/ex25.html">Worked Example 25: Chi-Square Test — Segment and Channel Association</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../units/unit-11/ex11.html">Parts 3-8</a></li><li class="breadcrumb-item"><a href="../../units/unit-25/ex25.html">Worked Example 25: Chi-Square Test - Segment and Channel Association</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Worked Example 25: Chi-Square Test — Segment and Channel Association</h1>
+<h1 class="title">Worked Example 25: Chi-Square Test - Segment and Channel Association</h1>
 </div>
 
 
@@ -605,7 +607,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <hr>
 </section>
 <section id="step-4-expected-frequencies-check-assumption" class="level2">
-<h2 class="anchored" data-anchor-id="step-4-expected-frequencies-check-assumption">Step 4: Expected frequencies — check assumption</h2>
+<h2 class="anchored" data-anchor-id="step-4-expected-frequencies-check-assumption">Step 4: Expected frequencies - check assumption</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>exp_df <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">as.data.frame.matrix</span>(chi_result<span class="sc">$</span>expected), <span class="dv">1</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(exp_df,</span>

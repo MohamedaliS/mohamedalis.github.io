@@ -37,3 +37,6 @@ User site:
 
 - The repository is primarily static HTML, CSS, and published site assets.
 - Some folders contain preserved legacy or project-specific public outputs that are intentionally kept available.
+- GA4 loader lives in `assets/js/ga4.js`
+- Contact form handling lives in `assets/js/contact-form.js`
+- Public contact email: `mohammedali.page@gmail.com`

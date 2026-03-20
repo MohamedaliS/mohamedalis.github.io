@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2026-03-20">
 
-<title>14&nbsp; Chapter 14: Binomial and Poisson Distributions – Data-Driven Management: Statistics for Managers</title>
+<title>14&nbsp; Chapter 14: Binomial and Poisson Distributions - Data-Driven Management: Statistics for Managers</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -159,6 +159,8 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="../../styles/book.css">
+<script defer src="/assets/js/ga4.js"></script>
+<script defer src="/assets/js/contact-form.js"></script>
 </head>
 
 <body class="nav-sidebar floating quarto-light">
@@ -859,9 +861,9 @@ window.Quarto = {
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>p_quiet <span class="ot">&lt;-</span> <span class="fu">ppois</span>(<span class="dv">5</span>, lambda)</span>
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>pois_queries <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">Query =</span> <span class="fu">c</span>(<span class="st">"P(X &gt;= 15) — high demand"</span>,</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>            <span class="st">"P(X &lt;= 5)  — low demand"</span>,</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>            <span class="st">"P(X = 10)  — near average"</span>),</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">Query =</span> <span class="fu">c</span>(<span class="st">"P(X &gt;= 15) - high demand"</span>,</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>            <span class="st">"P(X &lt;= 5)  - low demand"</span>,</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>            <span class="st">"P(X = 10)  - near average"</span>),</span>
 <span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">Value =</span> <span class="fu">round</span>(<span class="fu">c</span>(p_busy, p_quiet,</span>
 <span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">dpois</span>(<span class="dv">10</span>, lambda)), <span class="dv">4</span>)</span>
 <span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>)</span>
@@ -883,15 +885,15 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">P(X &gt;= 15) — high demand</td>
+<td style="text-align: left;">P(X &gt;= 15) - high demand</td>
 <td style="text-align: right;">0.2750</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">P(X &lt;= 5) — low demand</td>
+<td style="text-align: left;">P(X &lt;= 5) - low demand</td>
 <td style="text-align: right;">0.0148</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">P(X = 10) — near average</td>
+<td style="text-align: left;">P(X = 10) - near average</td>
 <td style="text-align: right;">0.0956</td>
 </tr>
 </tbody>
@@ -974,8 +976,8 @@ Note
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>p_normal  <span class="ot">&lt;-</span> <span class="fu">ppois</span>(threshold, lambda)</span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>worked <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">Scenario =</span> <span class="fu">c</span>(<span class="fu">paste</span>(<span class="st">"P(arrivals &gt; "</span>, threshold, <span class="st">") — contingency needed"</span>),</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>               <span class="fu">paste</span>(<span class="st">"P(arrivals &lt;= "</span>, threshold, <span class="st">") — standard staffing"</span>)),</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">Scenario =</span> <span class="fu">c</span>(<span class="fu">paste</span>(<span class="st">"P(arrivals &gt; "</span>, threshold, <span class="st">") - contingency needed"</span>),</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>               <span class="fu">paste</span>(<span class="st">"P(arrivals &lt;= "</span>, threshold, <span class="st">") - standard staffing"</span>)),</span>
 <span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">Probability =</span> <span class="fu">round</span>(<span class="fu">c</span>(p_exceed, p_normal), <span class="dv">4</span>)</span>
 <span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a></span>
@@ -996,11 +998,11 @@ Note
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">P(arrivals &gt; 12 ) — contingency needed</td>
+<td style="text-align: left;">P(arrivals &gt; 12 ) - contingency needed</td>
 <td style="text-align: right;">0.481</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">P(arrivals &lt;= 12 ) — standard staffing</td>
+<td style="text-align: left;">P(arrivals &lt;= 12 ) - standard staffing</td>
 <td style="text-align: right;">0.519</td>
 </tr>
 </tbody>
@@ -1757,9 +1759,9 @@ In an 8-hour shift, expected hours requiring contingency staffing:</code></pre>
 <span id="cb18-210"><a href="#cb18-210" aria-hidden="true" tabindex="-1"></a>p_quiet <span class="ot">&lt;-</span> <span class="fu">ppois</span>(<span class="dv">5</span>, lambda)</span>
 <span id="cb18-211"><a href="#cb18-211" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-212"><a href="#cb18-212" aria-hidden="true" tabindex="-1"></a>pois_queries <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb18-213"><a href="#cb18-213" aria-hidden="true" tabindex="-1"></a>  <span class="at">Query =</span> <span class="fu">c</span>(<span class="st">"P(X &gt;= 15) — high demand"</span>,</span>
-<span id="cb18-214"><a href="#cb18-214" aria-hidden="true" tabindex="-1"></a>            <span class="st">"P(X &lt;= 5)  — low demand"</span>,</span>
-<span id="cb18-215"><a href="#cb18-215" aria-hidden="true" tabindex="-1"></a>            <span class="st">"P(X = 10)  — near average"</span>),</span>
+<span id="cb18-213"><a href="#cb18-213" aria-hidden="true" tabindex="-1"></a>  <span class="at">Query =</span> <span class="fu">c</span>(<span class="st">"P(X &gt;= 15) - high demand"</span>,</span>
+<span id="cb18-214"><a href="#cb18-214" aria-hidden="true" tabindex="-1"></a>            <span class="st">"P(X &lt;= 5)  - low demand"</span>,</span>
+<span id="cb18-215"><a href="#cb18-215" aria-hidden="true" tabindex="-1"></a>            <span class="st">"P(X = 10)  - near average"</span>),</span>
 <span id="cb18-216"><a href="#cb18-216" aria-hidden="true" tabindex="-1"></a>  <span class="at">Value =</span> <span class="fu">round</span>(<span class="fu">c</span>(p_busy, p_quiet,</span>
 <span id="cb18-217"><a href="#cb18-217" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">dpois</span>(<span class="dv">10</span>, lambda)), <span class="dv">4</span>)</span>
 <span id="cb18-218"><a href="#cb18-218" aria-hidden="true" tabindex="-1"></a>)</span>
@@ -1821,8 +1823,8 @@ In an 8-hour shift, expected hours requiring contingency staffing:</code></pre>
 <span id="cb18-278"><a href="#cb18-278" aria-hidden="true" tabindex="-1"></a>p_normal  <span class="ot">&lt;-</span> <span class="fu">ppois</span>(threshold, lambda)</span>
 <span id="cb18-279"><a href="#cb18-279" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-280"><a href="#cb18-280" aria-hidden="true" tabindex="-1"></a>worked <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb18-281"><a href="#cb18-281" aria-hidden="true" tabindex="-1"></a>  <span class="at">Scenario =</span> <span class="fu">c</span>(<span class="fu">paste</span>(<span class="st">"P(arrivals &gt; "</span>, threshold, <span class="st">") — contingency needed"</span>),</span>
-<span id="cb18-282"><a href="#cb18-282" aria-hidden="true" tabindex="-1"></a>               <span class="fu">paste</span>(<span class="st">"P(arrivals &lt;= "</span>, threshold, <span class="st">") — standard staffing"</span>)),</span>
+<span id="cb18-281"><a href="#cb18-281" aria-hidden="true" tabindex="-1"></a>  <span class="at">Scenario =</span> <span class="fu">c</span>(<span class="fu">paste</span>(<span class="st">"P(arrivals &gt; "</span>, threshold, <span class="st">") - contingency needed"</span>),</span>
+<span id="cb18-282"><a href="#cb18-282" aria-hidden="true" tabindex="-1"></a>               <span class="fu">paste</span>(<span class="st">"P(arrivals &lt;= "</span>, threshold, <span class="st">") - standard staffing"</span>)),</span>
 <span id="cb18-283"><a href="#cb18-283" aria-hidden="true" tabindex="-1"></a>  <span class="at">Probability =</span> <span class="fu">round</span>(<span class="fu">c</span>(p_exceed, p_normal), <span class="dv">4</span>)</span>
 <span id="cb18-284"><a href="#cb18-284" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb18-285"><a href="#cb18-285" aria-hidden="true" tabindex="-1"></a></span>

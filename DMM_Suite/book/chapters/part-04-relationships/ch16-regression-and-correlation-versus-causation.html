@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2026-03-20">
 
-<title>16&nbsp; Chapter 16: Regression and Correlation versus Causation – Data-Driven Management: Statistics for Managers</title>
+<title>16&nbsp; Chapter 16: Regression and Correlation versus Causation - Data-Driven Management: Statistics for Managers</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -159,6 +159,8 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="../../styles/book.css">
+<script defer src="/assets/js/ga4.js"></script>
+<script defer src="/assets/js/contact-form.js"></script>
 </head>
 
 <body class="nav-sidebar floating quarto-light">
@@ -583,7 +585,7 @@ window.Quarto = {
 <div class="cell">
 <div class="cell-output-display">
 <table class="table table-striped table-hover caption-top table-sm small">
-<caption>Table 16.1: Regression results — productivity on training hours</caption>
+<caption>Table 16.1: Regression results - productivity on training hours</caption>
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th"></th>
@@ -622,7 +624,7 @@ window.Quarto = {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="ch16-regression-and-correlation-versus-causation_files/figure-html/ch16-regression-plot-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption>Figure 16.1: Simple linear regression — training hours and productivity</figcaption>
+<figcaption>Figure 16.1: Simple linear regression - training hours and productivity</figcaption>
 </figure>
 </div>
 </div>
@@ -685,7 +687,7 @@ window.Quarto = {
 <p><span class="math inline">\(R^2\)</span>, the coefficient of determination, measures what proportion of the variation in Y is accounted for by the linear relationship with X.</p>
 <p><span class="math display">\[R^2 = r^2\]</span></p>
 <p>where r is Pearson’s correlation coefficient. <span class="math inline">\(R^2\)</span> ranges from 0 to 1. A value of 0.42, for instance, means that 42% of the variability in productivity scores is accounted for by variation in training hours. The remaining 58% is due to other factors not in the model.</p>
-<p><span class="math inline">\(R^2\)</span> does not tell you whether the model is appropriate or whether the relationship is causal. A high <span class="math inline">\(R^2\)</span> simply means the line fits the data well — not that X causes Y.</p>
+<p><span class="math inline">\(R^2\)</span> does not tell you whether the model is appropriate or whether the relationship is causal. A high <span class="math inline">\(R^2\)</span> simply means the line fits the data well - not that X causes Y.</p>
 <hr>
 </section>
 <section id="residuals" class="level2" data-number="16.7">
@@ -1487,7 +1489,7 @@ Note
 <span id="cb10-91"><a href="#cb10-91" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb10-92"><a href="#cb10-92" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(coef_df,</span>
 <span id="cb10-93"><a href="#cb10-93" aria-hidden="true" tabindex="-1"></a>  <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Term"</span>, <span class="st">"Value"</span>, <span class="st">"Interpretation"</span>),</span>
-<span id="cb10-94"><a href="#cb10-94" aria-hidden="true" tabindex="-1"></a>  <span class="at">caption   =</span> <span class="st">"Table 16.1: Regression results — productivity on training hours"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb10-94"><a href="#cb10-94" aria-hidden="true" tabindex="-1"></a>  <span class="at">caption   =</span> <span class="st">"Table 16.1: Regression results - productivity on training hours"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb10-95"><a href="#cb10-95" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>),</span>
 <span id="cb10-96"><a href="#cb10-96" aria-hidden="true" tabindex="-1"></a>                             <span class="at">full_width =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
 <span id="cb10-97"><a href="#cb10-97" aria-hidden="true" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">column_spec</span>(<span class="dv">1</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>, <span class="at">width =</span> <span class="st">"20%"</span>) <span class="sc">|&gt;</span></span>
@@ -1501,7 +1503,7 @@ Note
 <span id="cb10-107"><a href="#cb10-107" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: ch16-regression-plot</span></span>
 <span id="cb10-108"><a href="#cb10-108" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
 <span id="cb10-109"><a href="#cb10-109" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 4.0</span></span>
-<span id="cb10-110"><a href="#cb10-110" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Figure 16.1: Simple linear regression — training hours and productivity"</span></span>
+<span id="cb10-110"><a href="#cb10-110" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Figure 16.1: Simple linear regression - training hours and productivity"</span></span>
 <span id="cb10-111"><a href="#cb10-111" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> training_hours, <span class="at">y =</span> productivity_score)) <span class="sc">+</span></span>
 <span id="cb10-112"><a href="#cb10-112" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">"#1B3A5C"</span>, <span class="at">alpha =</span> <span class="fl">0.55</span>, <span class="at">size =</span> <span class="fl">1.8</span>) <span class="sc">+</span></span>
 <span id="cb10-113"><a href="#cb10-113" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">TRUE</span>,</span>
@@ -1548,7 +1550,7 @@ Note
 <span id="cb10-156"><a href="#cb10-156" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-157"><a href="#cb10-157" aria-hidden="true" tabindex="-1"></a>where r is Pearson's correlation coefficient. $R^2$ ranges from 0 to 1. A value of 0.42, for instance, means that 42% of the variability in productivity scores is accounted for by variation in training hours. The remaining 58% is due to other factors not in the model.</span>
 <span id="cb10-158"><a href="#cb10-158" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-159"><a href="#cb10-159" aria-hidden="true" tabindex="-1"></a>$R^2$ does not tell you whether the model is appropriate or whether the relationship is causal. A high $R^2$ simply means the line fits the data well — not that X causes Y.</span>
+<span id="cb10-159"><a href="#cb10-159" aria-hidden="true" tabindex="-1"></a>$R^2$ does not tell you whether the model is appropriate or whether the relationship is causal. A high $R^2$ simply means the line fits the data well - not that X causes Y.</span>
 <span id="cb10-160"><a href="#cb10-160" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-161"><a href="#cb10-161" aria-hidden="true" tabindex="-1"></a>---</span>
 <span id="cb10-162"><a href="#cb10-162" aria-hidden="true" tabindex="-1"></a></span>
