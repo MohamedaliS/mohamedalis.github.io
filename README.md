@@ -2,6 +2,11 @@
 
 Public website and resource hub for Mohammed Ali Sharafuddin.
 
+Role in the portfolio:
+
+- academic identity layer for biography, research, and publications
+- public products, templates, and textbook discovery are organized on `flairmi.com`
+
 Live site:
 <https://mohammedalisharafuddin.github.io/>
 
@@ -11,8 +16,8 @@ Live site:
 - Research and publication pages
 - Textbook and teaching-material pages
 - Excel templates and dashboard downloads
-- Browser-based tools such as `price-memory` and `margin-guard`
 - External public brand site: `flairmi.com`
+- Canonical public product pages for browser tools now live on FlairMI
 - Archived and embedded project sections, including `DDMM_Suite`
 
 ## Main Entry Points
