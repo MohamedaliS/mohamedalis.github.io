@@ -6,531 +6,7 @@
 <title>Textbooks &amp; Teaching Materials: Mohammed Ali Sharafuddin</title>
 <meta name="description" content="Open textbooks, lecture decks, quiz banks, and course materials by Mohammed Ali Sharafuddin.">
 <link rel="canonical" href="https://mohammedalisharafuddin.github.io/textbooks.html">
-<style>
-/* ─────────────────────────────────────────
-   FlairMI / MAS: Shared Stylesheet
-   Light academic editorial
-───────────────────────────────────────── */
-
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
-
-:root {
-  --ink:        #1C1C1A;
-  --ink-soft:   #3D3D38;
-  --rule:       #D4D0C8;
-  --rule-light: #ECEAE4;
-  --warm-white: #FAF9F6;
-  --warm-mid:   #F0EEE8;
-  --grey:       #8A8780;
-  --accent:     #6B4F35;
-  --accent-lt:  #C9AA87;
-  --tag-bg:     #EDEAE2;
-  --max-w:      1180px;
-}
-
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-
-body {
-  background: var(--warm-white);
-  color: var(--ink);
-  font-family: 'Lora', Georgia, serif;
-  font-size: 16px;
-  line-height: 1.7;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* ── NAV ── */
-.site-nav {
-  border-bottom: 1px solid var(--rule);
-  background: var(--warm-white);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.nav-inner {
-  max-width: var(--max-w);
-  margin: 0 auto;
-  padding: 0 clamp(1.5rem, 5vw, 3rem);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
-  height: 52px;
-}
-
-.nav-brand {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 500;
-  font-size: 1.1rem;
-  color: var(--ink);
-  text-decoration: none;
-  white-space: nowrap;
-  letter-spacing: 0.02em;
-}
-
-.nav-brand span { color: var(--accent); font-style: italic; }
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 0.15rem;
-  flex-wrap: wrap;
-}
-
-.nav-links a {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.62rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--ink-soft);
-  text-decoration: none;
-  padding: 0.3rem 0.6rem;
-  border-radius: 2px;
-  transition: color 0.18s, background 0.18s;
-  white-space: nowrap;
-}
-
-.nav-links a:hover,
-.nav-links a.active { color: var(--accent); }
-
-.nav-links a.nav-cta {
-  border: 1px solid var(--rule);
-  color: var(--ink);
-}
-
-.nav-links a.nav-cta:hover {
-  border-color: var(--accent-lt);
-  color: var(--accent);
-}
-
-/* ── PAGE MASTHEAD ── */
-.page-masthead {
-  border-bottom: 3px double var(--ink);
-  padding: 2.5rem clamp(1.5rem, 5vw, 3rem) 1.8rem;
-  max-width: var(--max-w);
-  margin: 0 auto;
-}
-
-.page-masthead .eyebrow {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--accent);
-  margin-bottom: 0.5rem;
-}
-
-.page-masthead h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 300;
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1.1;
-  color: var(--ink);
-}
-
-.page-masthead .lead {
-  font-size: 0.97rem;
-  color: var(--ink-soft);
-  margin-top: 0.6rem;
-  max-width: 60ch;
-}
-
-/* ── LAYOUT ── */
-.page-body {
-  max-width: var(--max-w);
-  margin: 0 auto;
-  padding: 3rem clamp(1.5rem, 5vw, 3rem) 5rem;
-}
-
-.section {
-  margin-bottom: 3.5rem;
-}
-
-.section-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.64rem;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--grey);
-  border-bottom: 1px solid var(--rule-light);
-  padding-bottom: 0.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.section-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 500;
-  font-size: 1.55rem;
-  color: var(--ink);
-  margin-bottom: 0.8rem;
-}
-
-/* ── CARD GRID ── */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
-  gap: 1.5rem;
-}
-
-.card-grid.two-col {
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr));
-}
-
-.card {
-  border: 1px solid var(--rule);
-  background: #fff;
-  display: flex;
-  flex-direction: column;
-  transition: box-shadow 0.22s, border-color 0.22s, transform 0.2s;
-}
-
-.card:hover {
-  border-color: var(--accent-lt);
-  box-shadow: 3px 5px 22px rgba(0,0,0,0.06);
-  transform: translateY(-2px);
-}
-
-.card-band {
-  height: 3px;
-}
-.band-textbook  { background: linear-gradient(90deg, #3A5A8C, #7AABD4); }
-.band-template  { background: linear-gradient(90deg, #6B4F35, #C9AA87); }
-.band-tool      { background: linear-gradient(90deg, #3A6835, #7BA67A); }
-.band-research  { background: linear-gradient(90deg, #4A6741, #7BA67A); }
-.band-web       { background: linear-gradient(90deg, #5A3D6B, #A07DC0); }
-.band-course    { background: linear-gradient(90deg, #7A4A3A, #D4907A); }
-.band-conf      { background: linear-gradient(90deg, #3A5A5A, #7AB4B4); }
-.band-workshop  { background: linear-gradient(90deg, #4A3A6B, #9A7AC0); }
-
-.card-body {
-  padding: 1.3rem 1.4rem 1.1rem;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.card-header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 0.7rem;
-  margin-bottom: 0.75rem;
-}
-
-.card-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 600;
-  font-size: 1.2rem;
-  line-height: 1.25;
-  color: var(--ink);
-}
-
-.card-subtitle {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 0.98rem;
-  color: var(--ink-soft);
-  margin-top: 0.18rem;
-}
-
-.card-badge {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.58rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  padding: 0.2rem 0.5rem;
-  border-radius: 2px;
-  white-space: nowrap;
-  flex-shrink: 0;
-  margin-top: 0.1rem;
-}
-
-.badge-live    { background: #EAF2E8; color: #3A6835; border: 1px solid #B4D4AF; }
-.badge-planned { background: #F0EDEA; color: #7A6050; border: 1px solid #D4C4B4; }
-.badge-wip     { background: #EDF0F5; color: #3A507A; border: 1px solid #B0C4DA; }
-.badge-review  { background: #F6EEDF; color: #7A5B2E; border: 1px solid #E3C995; }
-.badge-free    { background: #EAF2E8; color: #3A6835; border: 1px solid #B4D4AF; }
-.badge-open    { background: var(--tag-bg); color: var(--grey); border: 1px solid var(--rule); }
-
-.card-desc {
-  font-size: 0.9rem;
-  line-height: 1.72;
-  color: var(--ink-soft);
-  flex: 1;
-}
-
-.card-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-  margin-top: 1rem;
-}
-
-.tag {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.58rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 0.18rem 0.5rem;
-  background: var(--tag-bg);
-  color: var(--grey);
-  border-radius: 2px;
-}
-
-.card-footer {
-  border-top: 1px solid var(--rule-light);
-  padding: 0.75rem 1.4rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
-}
-
-.card-meta {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 0.85rem;
-  color: var(--grey);
-}
-
-.card-link {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.62rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  text-decoration: none;
-  color: var(--accent);
-  border-bottom: 1px solid var(--accent-lt);
-  padding-bottom: 1px;
-  transition: opacity 0.18s;
-  white-space: nowrap;
-}
-.card-link:hover { opacity: 0.65; }
-.card-link.disabled { color: var(--grey); border-color: var(--rule); pointer-events: none; }
-
-/* ── TOOL ENTRY (tools page) ── */
-.tool-entry {
-  border: 1px solid var(--rule-light);
-  padding: 1.2rem 1.4rem;
-  background: #fff;
-  margin-bottom: 0.85rem;
-  transition: border-color 0.18s;
-}
-.tool-entry:hover { border-color: var(--accent-lt); }
-
-.tool-header {
-  display: flex;
-  align-items: baseline;
-  gap: 0.8rem;
-  margin-bottom: 0.4rem;
-}
-
-.tool-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 600;
-  font-size: 1.05rem;
-  color: var(--ink);
-}
-
-.tool-role {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.58rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--accent);
-  background: var(--tag-bg);
-  padding: 0.15rem 0.45rem;
-  border-radius: 2px;
-}
-
-.tool-desc {
-  font-size: 0.88rem;
-  color: var(--ink-soft);
-  line-height: 1.68;
-}
-
-.tool-link {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.6rem;
-  text-transform: uppercase;
-  letter-spacing: 0.09em;
-  color: var(--grey);
-  text-decoration: none;
-  border-bottom: 1px solid var(--rule);
-  padding-bottom: 1px;
-  margin-top: 0.5rem;
-  display: inline-block;
-  transition: color 0.18s, border-color 0.18s;
-}
-.tool-link:hover { color: var(--accent); border-color: var(--accent-lt); }
-
-/* ── PUB LIST ── */
-.pub-list { list-style: none; border-top: 1px solid var(--rule-light); }
-
-.pub-item {
-  display: flex;
-  gap: 1.1rem;
-  align-items: flex-start;
-  padding: 0.75rem 0;
-  border-bottom: 1px solid var(--rule-light);
-}
-
-.pub-year {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.65rem;
-  color: var(--accent);
-  letter-spacing: 0.05em;
-  min-width: 2.8rem;
-  flex-shrink: 0;
-  padding-top: 0.15rem;
-}
-
-.pub-content { flex: 1; }
-
-.pub-title {
-  font-family: 'Lora', serif;
-  font-size: 0.88rem;
-  font-weight: 500;
-  color: var(--ink);
-  text-decoration: none;
-  line-height: 1.5;
-  display: block;
-  transition: color 0.18s;
-}
-a.pub-title:hover { color: var(--accent); }
-.pub-title.no-link { font-weight: 400; color: var(--ink-soft); }
-
-.pub-venue {
-  font-family: 'Lora', serif;
-  font-style: italic;
-  font-size: 0.77rem;
-  color: var(--grey);
-  margin-top: 0.12rem;
-  line-height: 1.4;
-}
-
-.pub-badge {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.55rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  padding: 0.1rem 0.4rem;
-  border-radius: 2px;
-  margin-left: 0.4rem;
-  vertical-align: middle;
-}
-.pub-badge.q1 { background: #EAF2E8; color: #3A6835; }
-.pub-badge.q2 { background: #EDF0F5; color: #3A507A; }
-.pub-badge.q3 { background: #F5F0ED; color: #6A5040; }
-
-/* ── STATS ROW ── */
-.stat-row {
-  display: flex;
-  gap: 0;
-  border: 1px solid var(--rule-light);
-  overflow: hidden;
-  margin-bottom: 1.5rem;
-}
-
-.stat-cell {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0.8rem 0.5rem;
-  border-right: 1px solid var(--rule-light);
-  background: var(--warm-mid);
-}
-.stat-cell:last-child { border-right: none; }
-
-.stat-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 600;
-  font-size: 1.55rem;
-  line-height: 1;
-  color: var(--ink);
-}
-
-.stat-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.56rem;
-  text-transform: uppercase;
-  letter-spacing: 0.09em;
-  color: var(--grey);
-  margin-top: 0.2rem;
-  text-align: center;
-}
-
-/* ── TOGGLE BUTTON ── */
-.show-more {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.63rem;
-  text-transform: uppercase;
-  letter-spacing: 0.09em;
-  color: var(--accent);
-  background: none;
-  border: 1px solid var(--accent-lt);
-  padding: 0.35rem 0.9rem;
-  border-radius: 2px;
-  cursor: pointer;
-  margin-top: 0.9rem;
-  transition: background 0.18s, color 0.18s;
-  display: block;
-}
-.show-more:hover { background: var(--accent); color: var(--warm-white); }
-
-/* ── FOOTER ── */
-.site-footer {
-  border-top: 3px double var(--rule);
-  padding: 1.8rem clamp(1.5rem, 5vw, 3rem);
-}
-
-.footer-inner {
-  max-width: var(--max-w);
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.footer-note {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 0.88rem;
-  color: var(--grey);
-}
-
-.footer-mono {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.6rem;
-  letter-spacing: 0.08em;
-  color: var(--rule);
-  text-transform: uppercase;
-}
-
-/* ── UTILITIES ── */
-.divider {
-  border: none;
-  border-top: 1px solid var(--rule-light);
-  margin: 2.5rem 0;
-}
-
-.text-mono {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.75rem;
-}
-
-/* ── RESPONSIVE ── */
-@media (max-width: 700px) {
-  .nav-links { display: none; }
-  .stat-row  { flex-wrap: wrap; }
-  .stat-cell { min-width: 45%; }
-}
-</style>
+<link rel="stylesheet" href="assets/css/portfolio.css">
 <script defer src="/assets/js/ga4.js"></script>
 <script defer src="/assets/js/contact-form.js"></script>
 <meta name="robots" content="index,follow">
@@ -563,7 +39,7 @@ a.pub-title:hover { color: var(--accent); }
   </div>
 </nav>
 
-<div style="max-width:var(--max-w); margin:0 auto;">
+<div class="site-frame">
   <div class="page-masthead">
     <div class="eyebrow">Authored by Mohammed Ali Sharafuddin</div>
     <h1>Textbooks &amp; Teaching Materials</h1>
@@ -576,51 +52,51 @@ a.pub-title:hover { color: var(--accent); }
   <section class="section">
     <div class="section-label">Current</div>
 
-    <div style="border:1px solid var(--rule); background:#fff; margin-bottom:1.5rem;">
-      <div style="height:3px; background:linear-gradient(90deg,#3A5A8C,#7AABD4);"></div>
-      <div style="padding:1.6rem 1.8rem;">
-        <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:1rem; margin-bottom:1rem; flex-wrap:wrap;">
+    <div class="feature-showcase">
+      <div class="feature-showcase-band"></div>
+      <div class="feature-showcase-body">
+        <div class="feature-showcase-header">
           <div>
-            <h2 style="font-family:'Cormorant Garamond',serif; font-weight:600; font-size:1.45rem; color:var(--ink);">Data-Driven Management</h2>
-            <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.05rem; color:var(--ink-soft); margin-top:0.2rem;">Statistics for Managers</p>
+            <h2 class="feature-showcase-title">Data-Driven Management</h2>
+            <p class="feature-showcase-subtitle">Statistics for Managers</p>
           </div>
-          <span class="card-badge badge-review" style="margin-top:0.2rem;">Under Review</span>
+          <span class="card-badge badge-review feature-showcase-badge">Under Review</span>
         </div>
-        <p style="font-size:0.93rem; line-height:1.78; color:var(--ink-soft); max-width:68ch; margin-bottom:1.2rem;">
+        <p class="feature-showcase-desc">
           A Quarto-based textbook and teaching suite for management students and practitioners. The first public release is being proofread ahead of a planned June 2026 launch, with the book, decks, datasets, and Moodle-ready teaching materials being finalised together.
         </p>
 
-        <div style="border-top:1px solid var(--rule-light); padding-top:1rem; margin-top:1rem;">
-          <div class="section-label" style="margin-bottom:0.8rem;">Release Components</div>
-          <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:0.6rem;">
-            <div style="border:1px solid var(--rule-light); padding:0.6rem 0.8rem; font-family:'JetBrains Mono',monospace; font-size:0.65rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--ink-soft);">HTML Book</div>
-            <div style="border:1px solid var(--rule-light); padding:0.6rem 0.8rem; font-family:'JetBrains Mono',monospace; font-size:0.65rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--ink-soft);">Lecture Slide Decks</div>
-            <div style="border:1px solid var(--rule-light); padding:0.6rem 0.8rem; font-family:'JetBrains Mono',monospace; font-size:0.65rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--ink-soft);">Companion Site</div>
-            <div style="border:1px solid var(--rule-light); padding:0.6rem 0.8rem; font-family:'JetBrains Mono',monospace; font-size:0.65rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--ink-soft);">Worked Examples</div>
-            <div style="border:1px solid var(--rule-light); padding:0.6rem 0.8rem; font-family:'JetBrains Mono',monospace; font-size:0.65rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--ink-soft);">Instructor Resources</div>
-            <div style="border:1px solid var(--rule-light); padding:0.6rem 0.8rem; font-family:'JetBrains Mono',monospace; font-size:0.65rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--ink-soft);">Datasets</div>
-            <div style="border:1px solid var(--rule-light); padding:0.6rem 0.8rem; font-family:'JetBrains Mono',monospace; font-size:0.65rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--ink-soft);">Moodle Package</div>
+        <div class="feature-showcase-section">
+          <div class="section-label">Release Components</div>
+          <div class="feature-showcase-items">
+            <div class="feature-showcase-item">HTML Book</div>
+            <div class="feature-showcase-item">Lecture Slide Decks</div>
+            <div class="feature-showcase-item">Companion Site</div>
+            <div class="feature-showcase-item">Worked Examples</div>
+            <div class="feature-showcase-item">Instructor Resources</div>
+            <div class="feature-showcase-item">Datasets</div>
+            <div class="feature-showcase-item">Moodle Package</div>
           </div>
         </div>
 
-        <div style="border-top:1px solid var(--rule-light); padding-top:1rem; margin-top:1rem;">
-          <div class="section-label" style="margin-bottom:0.8rem;">Opening Chapters</div>
-          <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:0.4rem; font-size:0.87rem; color:var(--ink-soft);">
+        <div class="feature-showcase-section">
+          <div class="section-label">Opening Chapters</div>
+          <div class="feature-showcase-chapters">
             <div>Chapter 01: What Statistics Is and Why Managers Use It</div>
             <div>Chapter 02: Descriptive and Inferential Statistics</div>
             <div>Chapter 03: Populations, Samples, Parameters, Statistics, and Sampling Error</div>
             <div>Chapter 04: Sampling Methods</div>
             <div>Chapter 05: Types of Variables, Independent and Dependent Variables, and Measurement Scales</div>
           </div>
-          <div style="margin-top:0.6rem; font-family:'JetBrains Mono',monospace; font-size:0.62rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--grey);">The teaching suite currently spans 27 chapters across 8 parts, from Foundations through Interpretation and Decision Use.</div>
+          <div class="feature-showcase-summary">The teaching suite currently spans 27 chapters across 8 parts, from Foundations through Interpretation and Decision Use.</div>
         </div>
 
-        <div style="display:flex; gap:1.2rem; margin-top:1.2rem; flex-wrap:wrap;">
+        <div class="tag-row">
           <div class="card-tags">
             <span class="tag">Quarto</span><span class="tag">R</span><span class="tag">RevealJS</span><span class="tag">Moodle</span><span class="tag">Under Review</span>
           </div>
         </div>
-        <div style="border-top:1px solid var(--rule-light); padding-top:0.85rem; margin-top:1rem; display:flex; gap:1.5rem; flex-wrap:wrap;">
+        <div class="feature-showcase-section feature-showcase-link-section link-row">
           <a href="https://flairmi.com/textbooks/ddmm.html" class="card-link">Review Release Status →</a>
         </div>
       </div>
@@ -657,7 +133,7 @@ a.pub-title:hover { color: var(--accent); }
           <div class="card-header">
             <div>
               <h2 class="card-title">AI-Powered Marketing Analytics</h2>
-              <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:0.98rem; color:var(--ink-soft); margin-top:0.18rem;">Applied Methods for Managers</p>
+              <p class="card-subtitle">Applied Methods for Managers</p>
             </div>
             <span class="card-badge badge-wip">Work in Progress</span>
           </div>
@@ -676,7 +152,7 @@ a.pub-title:hover { color: var(--accent); }
           <div class="card-header">
             <div>
               <h2 class="card-title">Quantitative Analysis with Small Samples</h2>
-              <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:0.98rem; color:var(--ink-soft); margin-top:0.18rem;">A Practical Guide for Students and Early-Career Researchers</p>
+              <p class="card-subtitle">A Practical Guide for Students and Early-Career Researchers</p>
             </div>
             <span class="card-badge badge-wip">Work in Progress</span>
           </div>
@@ -696,7 +172,7 @@ a.pub-title:hover { color: var(--accent); }
 
   <section class="section">
     <div class="section-label">Using These Materials</div>
-    <p style="font-size:0.93rem; color:var(--ink-soft); max-width:60ch; line-height:1.78;">Published textbooks are released for open educational use, and the works in progress are being prepared for the same teaching-oriented release model. If you use <em>Data-Driven Management</em> in a course or workshop, a note to <a href="mailto:mohammedali.page@gmail.com" style="color:var(--accent); text-decoration:none; border-bottom:1px solid var(--accent-lt);">mohammedali.page@gmail.com</a> is appreciated but not required.</p>
+    <p class="section-intro">Published textbooks are released for open educational use, and the works in progress are being prepared for the same teaching-oriented release model. If you use <em>Data-Driven Management</em> in a course or workshop, a note to <a href="mailto:mohammedali.page@gmail.com" class="inline-link">mohammedali.page@gmail.com</a> is appreciated but not required.</p>
   </section>
 
 </div>
