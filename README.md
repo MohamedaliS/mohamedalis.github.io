@@ -18,7 +18,7 @@ Live site:
 - Excel templates and dashboard downloads
 - External public brand site: `flairmi.com`
 - Canonical public product pages for browser tools now live on FlairMI
-- Archived and embedded project sections, including `DDMM_Suite`
+- Archived and embedded project sections used for selected public releases
 
 ## Main Entry Points
 
@@ -28,7 +28,6 @@ Live site:
 - `textbooks.html`: textbook and teaching-material links
 - `templates.html`: templates, dashboards, and web-tool links
 - `tools.html`: open-source tools used and taught
-- `DDMM_Suite/`: deployed DDMM Suite public outputs
 - `flairmi.com`: external public site for FlairMI
 
 ## Deployment
@@ -41,7 +40,7 @@ User site:
 ## Notes
 
 - The repository is primarily static HTML, CSS, and published site assets.
-- Some folders contain preserved legacy or project-specific public outputs that are intentionally kept available.
+- Some folders contain preserved legacy or project-specific outputs used for selected releases.
 - GA4 loader lives in `assets/js/ga4.js`
 - Contact form handling lives in `assets/js/contact-form.js`
 - Public contact email: `mohammedali.page@gmail.com`
