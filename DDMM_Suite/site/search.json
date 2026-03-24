@@ -46,14 +46,14 @@
     "href": "downloads/index.html",
     "title": "Downloads",
     "section": "",
-    "text": "Resource\nFormat\nDescription\n\n\n\n\nFull textbook\nHTML\nAll 27 chapters\n\n\nLecture slides\nHTML (RevealJS)\n27 decks\n\n\nWorked examples\nHTML\n5 complete examples (Part 1)\n\n\nDatasets\nCSV\nAvailable in shared/datasets/dmm/clean/\n\n\nMoodle quizzes\nXML\nAvailable in shared/quizzes/moodle_xml/\n\n\n\n\n\nThe full source is available at: https://github.com/MohammedAliSharafuddin/DMM_Suite\nClone the repo and run source(\"render_all.R\") to rebuild all outputs locally."
+    "text": "Resource\nFormat\nDescription\n\n\n\n\nFull textbook\nHTML\nAll 27 chapters\n\n\nLecture slides\nHTML (RevealJS)\n27 decks\n\n\nWorked examples\nHTML\n5 complete examples (Part 1)\n\n\nDatasets\nCSV\nAvailable in shared/datasets/dmm/clean/\n\n\nMoodle quizzes\nXML\nAvailable in shared/quizzes/moodle_xml/\n\n\n\n\n\nSource access is temporarily private during editorial review."
   },
   {
     "objectID": "downloads/index.html#downloads",
     "href": "downloads/index.html#downloads",
     "title": "Downloads",
     "section": "",
-    "text": "Resource\nFormat\nDescription\n\n\n\n\nFull textbook\nHTML\nAll 27 chapters\n\n\nLecture slides\nHTML (RevealJS)\n27 decks\n\n\nWorked examples\nHTML\n5 complete examples (Part 1)\n\n\nDatasets\nCSV\nAvailable in shared/datasets/dmm/clean/\n\n\nMoodle quizzes\nXML\nAvailable in shared/quizzes/moodle_xml/\n\n\n\n\n\nThe full source is available at: https://github.com/MohammedAliSharafuddin/DMM_Suite\nClone the repo and run source(\"render_all.R\") to rebuild all outputs locally."
+    "text": "Resource\nFormat\nDescription\n\n\n\n\nFull textbook\nHTML\nAll 27 chapters\n\n\nLecture slides\nHTML (RevealJS)\n27 decks\n\n\nWorked examples\nHTML\n5 complete examples (Part 1)\n\n\nDatasets\nCSV\nAvailable in shared/datasets/dmm/clean/\n\n\nMoodle quizzes\nXML\nAvailable in shared/quizzes/moodle_xml/\n\n\n\n\n\nSource access is temporarily private during editorial review."
   },
   {
     "objectID": "examples/index.html",
