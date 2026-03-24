@@ -39,7 +39,7 @@
   </div>
 </nav>
 
-<div style="max-width:var(--max-w); margin:0 auto;">
+<div class="site-frame">
   <div class="page-masthead">
     <div class="eyebrow">Curated by Mohammed Ali Sharafuddin</div>
     <h1>Open-Source Tools</h1>
@@ -49,18 +49,28 @@
 
 <div class="page-body">
 
+  <section class="section">
+    <div class="section-label">Start Here</div>
+
+    <div class="tool-entry">
+      <p class="tool-desc">If you are choosing quickly, start with <strong>JASP</strong> or <strong>jamovi</strong> for point-and-click statistics teaching, move to <strong>R + RStudio</strong> when you need programmable analysis and full reproducibility, use <strong>Quarto</strong> for reports and teaching materials, and choose <strong>LimeSurvey</strong> or <strong>KoboToolbox</strong> when your data collection requires structured logic or offline fieldwork.</p>
+    </div>
+  </section>
+
+  <hr class="divider">
+
   <!-- Statistics -->
   <section class="section">
     <div class="section-label">Statistics &amp; Analysis</div>
 
     <div class="tool-entry">
       <div class="tool-header">
-        <span class="tool-name">R &amp; Posit</span>
+        <span class="tool-name">R + RStudio</span>
         <span class="tool-role">Teaching &amp; Research</span>
       </div>
-      <p class="tool-desc">The primary statistical environment used in the statistics teaching suite and related teaching materials. It supports descriptive statistics, modelling, and reproducible reporting for classroom and research workflows. Posit provides the desktop interface used for most of that work.</p>
-      <p class="tool-desc" style="margin-top:0.4rem;"><strong>Who should use it:</strong> Researchers and postgraduate students who want full analytical control and reproducible outputs. The learning curve is real but the payoff across the full research lifecycle is substantial.</p>
-      <a href="https://posit.co/download/rstudio-desktop/" class="tool-link" target="_blank" rel="noopener">Download RStudio →</a>
+      <p class="tool-desc">R is the statistical language behind the teaching suite, and RStudio Desktop is the open-source development environment used for most of that work. Together they support descriptive statistics, modelling, visualisation, and reproducible reporting for classroom and research workflows.</p>
+      <p class="tool-desc"><strong>Who should use it:</strong> Researchers and postgraduate students who want full analytical control, reproducible outputs, and a toolchain that scales from coursework to publishable analysis.</p>
+      <a href="https://posit.co/download/rstudio-desktop/" class="tool-link" target="_blank" rel="noopener">Get R + RStudio →</a>
     </div>
 
     <div class="tool-entry">
@@ -69,7 +79,7 @@
         <span class="tool-role">Teaching</span>
       </div>
       <p class="tool-desc">A point-and-click statistics application developed by the University of Amsterdam. Covers standard frequentist tests and adds Bayesian counterparts alongside them, making it useful for teaching the conceptual difference between the two. Output is formatted in APA style and exported directly to Word or PDF. It works well as a no-cost SPSS replacement.</p>
-      <p class="tool-desc" style="margin-top:0.4rem;"><strong>Who should use it:</strong> Undergraduate and postgraduate students, faculty who want a clean teaching tool, and practitioners who need statistical results without writing code.</p>
+      <p class="tool-desc"><strong>Who should use it:</strong> Undergraduate and postgraduate students, faculty who want a clean teaching tool, and practitioners who need statistical results without writing code.</p>
       <a href="https://jasp-stats.org/download/" class="tool-link" target="_blank" rel="noopener">Download JASP →</a>
     </div>
 
@@ -79,7 +89,7 @@
         <span class="tool-role">Teaching</span>
       </div>
       <p class="tool-desc">Like JASP, jamovi provides a free, open-source interface for common statistical tests, with a spreadsheet-like data view that many students find easier to navigate. It supports mediation, moderation, and factor analysis via the jmv and medmod modules. Because it runs R beneath the surface, it also works well as a bridge toward programming.</p>
-      <p class="tool-desc" style="margin-top:0.4rem;"><strong>Who should use it:</strong> Students transitioning from Excel to proper statistical software, or anyone who needs a familiar spreadsheet layout alongside inferential statistics.</p>
+      <p class="tool-desc"><strong>Who should use it:</strong> Students transitioning from Excel to proper statistical software, or anyone who needs a familiar spreadsheet layout alongside inferential statistics.</p>
       <a href="https://www.jamovi.org/download.html" class="tool-link" target="_blank" rel="noopener">Download jamovi →</a>
     </div>
 
@@ -89,6 +99,7 @@
         <span class="tool-role">Teaching</span>
       </div>
       <p class="tool-desc">A free drop-in replacement for SPSS, maintained by the GNU project. Reads and writes .sav files, supports the most common SPSS syntax, and covers regression, ANOVA, factor analysis, and non-parametric tests. It is useful wherever learners need SPSS-style work without a licence.</p>
+      <p class="tool-desc"><strong>Who should use it:</strong> Students and instructors who still work in SPSS-oriented environments but need a fully open-source option for teaching, practice, or light applied analysis.</p>
       <a href="https://www.gnu.org/software/pspp/" class="tool-link" target="_blank" rel="noopener">Download PSPP →</a>
     </div>
   </section>
@@ -104,18 +115,9 @@
         <span class="tool-name">LimeSurvey</span>
         <span class="tool-role">Research</span>
       </div>
-      <p class="tool-desc">A full-featured open-source survey platform that supports complex branching logic, quota management, multiple languages, and direct SPSS/R export. It is far more capable than Google Forms for academic research designs that need randomisation, conditional questions, or multi-page instruments. It can be self-hosted on university servers for data sovereignty or used through limesurvey.org as a hosted service.</p>
-      <p class="tool-desc" style="margin-top:0.4rem;"><strong>Who should use it:</strong> Researchers designing structured questionnaires with complex logic, multi-language instruments, or any study requiring formal sampling controls.</p>
+      <p class="tool-desc">A full-featured open-source survey platform that supports complex branching logic, quota management, multiple languages, and direct SPSS/R export. It is well suited to academic research designs that need randomisation, conditional questions, or multi-page instruments. It can be self-hosted on university servers for data sovereignty or deployed through institutional hosting.</p>
+      <p class="tool-desc"><strong>Who should use it:</strong> Researchers designing structured questionnaires with complex logic, multi-language instruments, or any study requiring formal sampling controls.</p>
       <a href="https://www.limesurvey.org/" class="tool-link" target="_blank" rel="noopener">LimeSurvey.org →</a>
-    </div>
-
-    <div class="tool-entry">
-      <div class="tool-header">
-        <span class="tool-name">Google Forms</span>
-        <span class="tool-role">Teaching &amp; Quick Surveys</span>
-      </div>
-      <p class="tool-desc">The fastest route from a questionnaire design to a shareable link. Sufficient for most classroom surveys, pilot instruments, and simple student research projects. Exports directly to Google Sheets for immediate analysis and works well as an entry point before moving to more demanding survey platforms.</p>
-      <a href="https://docs.google.com/forms/" class="tool-link" target="_blank" rel="noopener">Google Forms →</a>
     </div>
 
     <div class="tool-entry">
@@ -124,6 +126,7 @@
         <span class="tool-role">Field Research</span>
       </div>
       <p class="tool-desc">Designed for data collection in low-connectivity environments. Used extensively in humanitarian and development research but equally suitable for fieldwork in tourism, maritime, or SME contexts where internet access is unreliable. Supports offline collection on Android, GPS stamping, image capture, and direct export to SPSS, Stata, or Excel. Hosted free for academic researchers.</p>
+      <p class="tool-desc"><strong>Who should use it:</strong> Researchers collecting field data in locations with unstable internet, distributed teams, or device-based data capture requirements.</p>
       <a href="https://www.kobotoolbox.org/" class="tool-link" target="_blank" rel="noopener">KoboToolbox →</a>
     </div>
   </section>
@@ -140,7 +143,7 @@
         <span class="tool-role">Teaching &amp; Publishing</span>
       </div>
       <p class="tool-desc">The publishing system behind the statistics teaching suite. It is used to produce the book, companion site, lecture decks, worked examples, and related teaching materials from a single source project. Quarto keeps content and output format separate, which makes it well suited to reproducible teaching and structured publishing workflows.</p>
-      <p class="tool-desc" style="margin-top:0.4rem;"><strong>Who should use it:</strong> Anyone producing textbooks, course materials, technical reports, or academic papers who wants reproducible, version-controlled outputs.</p>
+      <p class="tool-desc"><strong>Who should use it:</strong> Anyone producing textbooks, course materials, technical reports, or academic papers who wants reproducible, version-controlled outputs.</p>
       <a href="https://quarto.org/docs/get-started/" class="tool-link" target="_blank" rel="noopener">Get started with Quarto →</a>
     </div>
 
@@ -150,6 +153,7 @@
         <span class="tool-role">Research</span>
       </div>
       <p class="tool-desc">Reference management software that captures references directly from browser pages, PDFs, and DOI lookups. Generates citations and bibliographies in APA, MLA, Chicago, and hundreds of journal-specific formats. The Word and LibreOffice plugins handle in-text citations automatically and help reduce formatting errors.</p>
+      <p class="tool-desc"><strong>Who should use it:</strong> Students, researchers, and faculty who manage literature reviews, academic writing, or citation-heavy teaching materials.</p>
       <a href="https://www.zotero.org/download/" class="tool-link" target="_blank" rel="noopener">Download Zotero →</a>
     </div>
 
@@ -159,6 +163,7 @@
         <span class="tool-role">Teaching</span>
       </div>
       <p class="tool-desc">A complete Microsoft Office alternative: Writer for documents, Calc for spreadsheets, and Impress for presentations, maintained by the Document Foundation. Reads and writes .docx, .xlsx, and .pptx formats without conversion loss in most cases.</p>
+      <p class="tool-desc"><strong>Who should use it:</strong> Students and instructors who want a fully open-source office suite for everyday writing, spreadsheets, and slide preparation.</p>
       <a href="https://www.libreoffice.org/download/libreoffice/" class="tool-link" target="_blank" rel="noopener">Download LibreOffice →</a>
     </div>
   </section>
@@ -171,11 +176,12 @@
 
     <div class="tool-entry">
       <div class="tool-header">
-        <span class="tool-name">GitHub &amp; GitHub Pages</span>
+        <span class="tool-name">Git</span>
         <span class="tool-role">Research &amp; Publishing</span>
       </div>
-      <p class="tool-desc">The statistics teaching suite is maintained in a version-controlled GitHub repository, with rendered teaching materials published through GitHub Pages when public release is active. Version control keeps changes traceable, makes collaboration reviewable, and lets course materials be redeployed consistently.</p>
-      <a href="https://github.com/MohammedAliSharafuddin" class="tool-link" target="_blank" rel="noopener">GitHub Profile →</a>
+      <p class="tool-desc">Git is the version-control system behind reproducible teaching and research workflows. It keeps manuscripts, slides, datasets, and code in a traceable history, makes collaboration reviewable, and allows teaching materials to be rebuilt from known states. It can be used locally or paired with open-source forges such as Gitea, Forgejo, or self-hosted GitLab CE.</p>
+      <p class="tool-desc"><strong>Who should use it:</strong> Anyone maintaining textbooks, lecture materials, code, or analysis scripts who wants version history, safer collaboration, and repeatable release workflows.</p>
+      <a href="https://git-scm.com/downloads" class="tool-link" target="_blank" rel="noopener">Download Git →</a>
     </div>
 
     <div class="tool-entry">
@@ -184,6 +190,7 @@
         <span class="tool-role">Teaching</span>
       </div>
       <p class="tool-desc">WebR compiles R to WebAssembly, allowing R code to run directly in a web browser with no server, no installation, and no account. It is particularly effective for interactive statistical examples because readers can experiment with parameters and see results change in real time. Quarto has native WebR support via the quarto-webr extension.</p>
+      <p class="tool-desc"><strong>Who should use it:</strong> Instructors and authors who want interactive browser-based statistical examples without requiring students to install software first.</p>
       <a href="https://docs.r-wasm.org/webr/latest/" class="tool-link" target="_blank" rel="noopener">WebR documentation →</a>
     </div>
   </section>

@@ -645,6 +645,10 @@ body {
   line-height: 1.68;
 }
 
+.tool-desc + .tool-desc {
+  margin-top: 0.4rem;
+}
+
 .tool-link {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.6rem;
