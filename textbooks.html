@@ -227,6 +227,14 @@ body {
   color: var(--ink);
 }
 
+.card-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.98rem;
+  color: var(--ink-soft);
+  margin-top: 0.18rem;
+}
+
 .card-badge {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.58rem;
@@ -242,6 +250,7 @@ body {
 .badge-live    { background: #EAF2E8; color: #3A6835; border: 1px solid #B4D4AF; }
 .badge-planned { background: #F0EDEA; color: #7A6050; border: 1px solid #D4C4B4; }
 .badge-wip     { background: #EDF0F5; color: #3A507A; border: 1px solid #B0C4DA; }
+.badge-review  { background: #F6EEDF; color: #7A5B2E; border: 1px solid #E3C995; }
 .badge-free    { background: #EAF2E8; color: #3A6835; border: 1px solid #B4D4AF; }
 .badge-open    { background: var(--tag-bg); color: var(--grey); border: 1px solid var(--rule); }
 
@@ -575,10 +584,10 @@ a.pub-title:hover { color: var(--accent); }
             <h2 style="font-family:'Cormorant Garamond',serif; font-weight:600; font-size:1.45rem; color:var(--ink);">Data-Driven Management</h2>
             <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.05rem; color:var(--ink-soft); margin-top:0.2rem;">Statistics for Managers</p>
           </div>
-          <span class="card-badge badge-live" style="margin-top:0.2rem;">Live</span>
+          <span class="card-badge badge-review" style="margin-top:0.2rem;">Under Review</span>
         </div>
         <p style="font-size:0.93rem; line-height:1.78; color:var(--ink-soft); max-width:68ch; margin-bottom:1.2rem;">
-          A Quarto-based statistics teaching suite for management students and practitioners. The next public release is being proofread and revised, so the live teaching outputs are temporarily offline while the materials are prepared for relaunch.
+          A Quarto-based textbook and teaching suite for management students and practitioners. The first public release is being proofread ahead of a planned June 2026 launch, with the book, decks, datasets, and Moodle-ready teaching materials being finalised together.
         </p>
 
         <div style="border-top:1px solid var(--rule-light); padding-top:1rem; margin-top:1rem;">
@@ -590,6 +599,7 @@ a.pub-title:hover { color: var(--accent); }
             <div style="border:1px solid var(--rule-light); padding:0.6rem 0.8rem; font-family:'JetBrains Mono',monospace; font-size:0.65rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--ink-soft);">Worked Examples</div>
             <div style="border:1px solid var(--rule-light); padding:0.6rem 0.8rem; font-family:'JetBrains Mono',monospace; font-size:0.65rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--ink-soft);">Instructor Resources</div>
             <div style="border:1px solid var(--rule-light); padding:0.6rem 0.8rem; font-family:'JetBrains Mono',monospace; font-size:0.65rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--ink-soft);">Datasets</div>
+            <div style="border:1px solid var(--rule-light); padding:0.6rem 0.8rem; font-family:'JetBrains Mono',monospace; font-size:0.65rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--ink-soft);">Moodle Package</div>
           </div>
         </div>
 
@@ -607,7 +617,7 @@ a.pub-title:hover { color: var(--accent); }
 
         <div style="display:flex; gap:1.2rem; margin-top:1.2rem; flex-wrap:wrap;">
           <div class="card-tags">
-            <span class="tag">Quarto</span><span class="tag">R</span><span class="tag">RevealJS</span><span class="tag">Moodle</span><span class="tag">In Review</span>
+            <span class="tag">Quarto</span><span class="tag">R</span><span class="tag">RevealJS</span><span class="tag">Moodle</span><span class="tag">Under Review</span>
           </div>
         </div>
         <div style="border-top:1px solid var(--rule-light); padding-top:0.85rem; margin-top:1rem; display:flex; gap:1.5rem; flex-wrap:wrap;">

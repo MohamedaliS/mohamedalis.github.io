@@ -227,6 +227,14 @@ body {
   color: var(--ink);
 }
 
+.card-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 0.98rem;
+  color: var(--ink-soft);
+  margin-top: 0.18rem;
+}
+
 .card-badge {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.58rem;
@@ -242,8 +250,48 @@ body {
 .badge-live    { background: #EAF2E8; color: #3A6835; border: 1px solid #B4D4AF; }
 .badge-planned { background: #F0EDEA; color: #7A6050; border: 1px solid #D4C4B4; }
 .badge-wip     { background: #EDF0F5; color: #3A507A; border: 1px solid #B0C4DA; }
+.badge-review  { background: #F6EEDF; color: #7A5B2E; border: 1px solid #E3C995; }
 .badge-free    { background: #EAF2E8; color: #3A6835; border: 1px solid #B4D4AF; }
 .badge-open    { background: var(--tag-bg); color: var(--grey); border: 1px solid var(--rule); }
+
+.card.card-review {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #fff 0%, #fcfaf5 100%);
+}
+
+.card.card-review::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top right, rgba(122, 171, 212, 0.18), transparent 38%),
+    linear-gradient(180deg, rgba(240, 238, 232, 0.52), rgba(255, 255, 255, 0));
+  pointer-events: none;
+}
+
+.card.card-review .card-band.band-textbook {
+  height: 5px;
+  background: linear-gradient(90deg, #2c4d74 0%, #6f9aca 58%, #d0a25b 100%);
+}
+
+.card.card-review .card-body,
+.card.card-review .card-footer {
+  position: relative;
+}
+
+.card.card-review .card-title {
+  font-size: 1.28rem;
+}
+
+.card.card-review .card-link {
+  color: var(--ink);
+  border-color: var(--accent-lt);
+}
+
+.card.card-review .card-footer {
+  background: rgba(250, 249, 246, 0.78);
+}
 
 .card-desc {
   font-size: 0.9rem;
@@ -608,21 +656,24 @@ a.pub-title:hover { color: var(--accent); }
     <div class="section-label">Textbooks &amp; Teaching Materials</div>
     <div class="card-grid">
 
-      <article class="card">
+      <article class="card card-review">
         <div class="card-band band-textbook"></div>
         <div class="card-body">
           <div class="card-header">
-            <h2 class="card-title">Data-Driven Management</h2>
-            <span class="card-badge badge-wip">In Review</span>
+            <div>
+              <h2 class="card-title">Data-Driven Management</h2>
+              <p class="card-subtitle">Statistics for Managers</p>
+            </div>
+            <span class="card-badge badge-review">Under Review</span>
           </div>
-          <p class="card-desc">A Quarto-based teaching suite built around <em>Data-Driven Management: Statistics for Managers</em>. The next public release is currently being proofread, so the live public entry points are temporarily paused while the teaching materials are revised for relaunch.</p>
+          <p class="card-desc">A Quarto-based textbook and teaching suite for management students and practitioners. The first public release is being proofread ahead of a planned June 2026 launch, with the book, decks, datasets, and Moodle-ready teaching materials being finalised together.</p>
           <div class="card-tags">
-            <span class="tag">Quarto</span><span class="tag">R</span><span class="tag">RevealJS</span><span class="tag">Teaching Suite</span>
+            <span class="tag">Quarto</span><span class="tag">R</span><span class="tag">RevealJS</span><span class="tag">Moodle</span>
           </div>
         </div>
         <div class="card-footer">
-          <span class="card-meta">Statistics Teaching Suite</span>
-          <a href="https://flairmi.com/textbooks/ddmm.html" class="card-link">Details →</a>
+          <span class="card-meta">First public release: June 2026</span>
+          <a href="https://flairmi.com/textbooks/ddmm.html" class="card-link">Review status →</a>
         </div>
       </article>
 
